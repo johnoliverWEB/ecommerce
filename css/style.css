@@ -357,17 +357,24 @@ header .header-logo-title{
 }
 
 header .header-menu{
-    text-align: center;
+    margin: 3vh;
+    text-align: justify;
+    position: absolute;
+    right: 1em;
+    
+
 }
 
 header .header-menu ul{
     align-items: center;
     display: flex;
     justify-content: end;
+    font-size: x-large;
+    font-style: bold;
 }
 
 main{
-
+  
 }
 
 footer{
