@@ -9,13 +9,13 @@
             <!-- ^^ Esto es lo que se encarga del web responsive ^^ -->
             <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
             <!-- ^^^Enlace a un recurso externo, a un icono que servirá como favicon de 36x36 o 42 x 42 ^^^ -->
-            <title>Título</title>
+            <title>Ilulo Ceramics</title>
             <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
             <meta name="keywords"    content="palabras clave, separadas, por comas">
-         
-            <link href="style.css" rel="stylesheet"> 
+            
+            <link href="css/grid.css" rel="stylesheet"> 
+            <link rel="stylesheet" href="CSS/style.css">
             <!-- Comando que enlaza al archivo css que hemos hecho -->
-          
         </head>
     
        <!-- Aquí van los contenidos que se corresponden con la parte visible de la web -->
@@ -25,25 +25,23 @@
                 <div class="two-columns">
                     <div class="column">
                         <div class="header-logo">
-                            <!-- Aquí va nombre -->
                             <div class="header-image">
-                                <!-- aquí va svg logo -->
+                                <img src="imagenes/ilulogo.svg" alt="logo">
                             </div>
                             <div class="header-title">
-                                <!-- aquí nombre de empresa -->
+                                <h1>Ilulo Ceramics</h1>
                             </div>
                         </div>
                     </div>
-             
                     <div class="column">
-                        <div class="header-menu">
+                        <div class="header-menu-ul">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>Inicio</li>
+                                <li>Tienda</li>
+                                <li>Contacto</li>
                             </ul>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </header>
     
@@ -51,132 +49,218 @@
                 <div class="cart">
                     <div class="one column">
                         <div class="column">
-                            <div class="cart-title">
-                                <!-- Aquí texto Carrito de la compra -->
+                            <div class="page-title">
+                                <h2>Carrito de la compra</h2>
                             </div>
                         </div>
                     </div>
 
                     <div class="cart-table">
-                        <div class="four-columns">
-                            <div class="cart-table-header">
-                                <div class="column">
-                                </div>
-                                <div class="column">
-                                    <div>producto</div>
-                                </div>
-                                <div class="column">
-                                    <div>precio</div>
-                                </div>
-                                <div class="column"></div>
-                                    <div>precio</div>
+                        <table class="default">
+                            <div class="four-columns">
+                                <div class="cart-table-header">
+                                    <tr>
+                                        <td>
+                                            <div class="column">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="column">
+                                                <h3>Producto</h3>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="column">
+                                                <h3>Precio</h3>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="column"></div>
+                                                <h3>Cantidad</h3>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </div>
                             </div>
-                        </div>
-                        <div class="four columns">
-                            <div class="cart-table-elements">
+                        </table>
+                    <div class="cart-table-elements">
+                        <table class="default">
+                            <div class="four columns">
                                 <div class="cart-table-elements-row">
-                                        <!-- aquí producto 1 -->
-                                    <div class="column">
-                                        <div class="cart-table-element">miniatura</div>
-                                    </div>
-                                    <div class="column">
-                                        <div class="cart-table-element">nombre</div>
-                                    </div>
-                                    <div class="column">
-                                        <div class="cart-table-element">precio</div>
-                                    </div>
-                                    <div class="column">
-                                        <div class="plus-minus-button">
-                                            <!-- aquí va caja cantidad -->
-                                            <div class="plus-minus-button-text">
-                                            <!-- aquí texto cantidad -->
+                                    <tr>
+                                        <td>
+                                            <div class="cart-table-element"><img src="imagenes/featured/producto1.jpg" alt="lafemme"></div>
                                             </div>
-                                            <div class="plus-minus-button-plus">
-                                            <!-- botón + -->
+                                        </td>
+                                        <td>
+                                            <div class="cart-table-element"><h4>La feme</h4></div>
                                             </div>
-                                            <div class="plus-minus-button-imput">
-                                            <!-- casilla número -->
+                                        </td>
+                                        <td>
+                                            <div class="cart-table-element"><p>150 €</p></div>
                                             </div>
-                                            <div class="plus-minus-button-minus">
-                                            <!-- botón - -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cart-table-elements-row">
-                                        <div class="column">
-                                            <div class="cart-table-element">miniatura</div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="cart-table-element">nombre</div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="cart-table-element">precio</div>
-                                        </div>
-                                        <div class="column">
+                                        </td>
+                                        <td>
                                             <div class="plus-minus-button">
-                                                <!-- aquí va caja cantidad -->
-                                                <div class="plus-minus-button-text">
-                                                <!-- aquí texto cantidad -->
-                                                </div>
-                                                <div class="plus-minus-button-plus">
-                                                <!-- botón + -->
-                                                </div>
-                                                <div class="plus-minus-button-imput">
-                                                <!-- casilla número -->
-                                                </div>
-                                                <div class="plus-minus-button-minus">
-                                                <!-- botón - -->
-                                                </div>
+                                                <table class="default">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="plus-minus-button-text">
+                                                                <p>Unidades</p>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="plus-minus-button">
+                                                                <div class="plus-minus-button-plus">
+                                                                    <button>+</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="plus-minus-button-input">
+                                                                <select name="" id=""></select>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="plus-minus-button-minus">
+                                                                <button>-</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
-                                        </div>
+                                        </td>
+                                    </tr>
+                                    <div class="cart-table-elements-row">
+                                        <tr>
+                                            <td>
+                                                <div class="cart-table-element"><img src="imagenes/featured/producto3.jpg" alt="tournesolblanc"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-table-element"><h4>Tournesol blanc</h4></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-table-element"><p>120 €</p></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="plus-minus-button">
+                                                    <table class="default">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="plus-minus-button-text">
+                                                                    <p>Unidades</p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="plus-minus-button">
+                                                                    <div class="plus-minus-button-plus">
+                                                                        <button>+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="plus-minus-button-input">
+                                                                    <select name="" id=""></select>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="plus-minus-button-minus">
+                                                                    <button>-</button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </div>
                                 </div>
                             </div>   
-                        </div>
+                        </table>
                     </div>
 
-                    <div class="one-column">
-                        <div class="resume-table">
-                            <!-- tabla resumen de compra -->
-                            <div class="resume-table-title">
-                                    <!-- fila texto resumen de compra -->
-                            </div>
-                            
-                            <div class="resume-table-concept">
-                                <!-- fila IVA-->
-                                <div class="resume-table-concept-text"> IVA </div>
-                                <div class="resume-table-concept-amount">IMPORTE</div>
-                            </div>
-                            <div class="resume-table-concept">
-                                <!-- fila IVA-->
-                                <div class="resume-table-concept-text"> IVA </div>
-                                <div class="resume-table-concept-amount">IMPORTE</div>
-                            </div>
-                            <div class="resume-table-concept">
-                                <!-- fila IVA-->
-                                <div class="resume-table-concept-text"> IVA </div>
-                                <div class="resume-table-concept-amount">IMPORTE</div>
-                            </div>
+                    <div class="resume-table">
+                            <table class="default">
+                                <th>
+                                    <div class="resume-table-title">
+                                        <h2>Resumen de compra</h2>
+                                    </div>
+                                </th>
+                                <tr>
+                                    <div class="resume-table-concept">
+                                        <div class="resume-table-concept-text">
+                                            <td>21% I.V.A.</td>
+                                        </div>
+                                        <div class="resume-table-concept-amount">
+                                            <td>56,70 €</td>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div class="resume-table-concept">
+                                        <div class="resume-table-concept-text"> 
+                                            <td>Costes de envío</td>
+                                        </div>
+                                        <div class="resume-table-concept-amount">
+                                            <td>5,50 €</td>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div class="resume-table-concept">
+                                        <div class="resume-table-concept-text">
+                                            <td>TOTAL</td>
+                                        </div>
+                                        <div class="resume-table-concept-amount">
+                                            <td>332,30 €</td>
+                                        </div>
+                                    </div>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-
-                    <div class="resume-table-buttons">
-                        <div class="resume-table-button">
-                        </div>
-
-                        <div class="resume-table-button">
+                    <div class="cart-navigation-buttons">
+                        <div class="two-columns">
+                            <div class="column">
+                                <div class="cart-navigation-button">
+                                    <button> Volver</button>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="cart-navigation-button">
+                                    <button>Comprar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </main>
     
             <footer>
-                <div class="footer-copyright">
-                    <!-- Aquí va el año y copyright -->
-                </div>
-                <div class="footer-link">
-                    <!-- Aquí enlace a la web de verdad -->
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="footer-copyright">
+                            <p>Todos los derechos reservados © 2022</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="three-columns">
+                            <div class="footer-link">
+                                <div class="column">
+                                    <a href="">Política de cookies</a>
+                                </div>
+                                <div class="column">
+                                    <a href="">Aviso Legal</a>
+                                </div>
+                                <div class="column">
+                                    <a href="">Enlaces</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </footer>
               

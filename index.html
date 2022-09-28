@@ -13,7 +13,10 @@
             <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
             <meta name="keywords"    content="palabras clave, separadas, por comas">
          
-            <link href="style.css" rel="stylesheet"> 
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/style.css">
             <!-- Comando que enlaza al archivo css que hemos hecho -->
         </head>
     
@@ -24,42 +27,39 @@
                 <div class="two-columns">
                     <div class="column">
                         <div class="header-logo">
-                            <div class="header-image">
-                            <img src="" alt="">
+                            <div class="header-logo-image">
+                                <img src="imagenes/ilulogo.svg" alt="logo">
                             </div>
-                            <div class="header-title">
-                                <h1>Ilulo Ceramics</h1>
+                            <div class="header-logo-title">
+                                <h1>ILULO CERAMICS</h1>
                             </div>
                         </div>
                     </div>
-             
                     <div class="column">
                         <div class="header-menu">
-                            <ul class="header-menu-list">
+                            <ul>
                                 <li>Inicio</li>
                                 <li>Tienda</li>
                                 <li>Contacto</li>
                             </ul>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </header>
     
             <main>
                 <div class="home">
                     <div class="one-column">
-                        <div class="home">
-                            <div class="column">
-                                <div class="slider">
-                                    <div class="slider-image">
-                                        <img src="" alt="">
-                                    </div>
-                                    <div class="slider-title">
-                                        <h2>Cerámica exclusiva para todos los días</h2>
-                                    </div>
-                                    <div class="slider-button">
-                                        <button>¡Mola!</button>
-                                    </div>
+                        <div class="column">
+                            <div class="slider">
+                                <div class="slider-image">
+                                    <img src="imagenes/slider/slider.jpg" alt="slider">
+                                </div>
+                                <div class="slider-title">
+                                    <h2>Cerámica exclusiva para todos los días</h2>
+                                </div>
+                                <div class="slider-button">
+                                    <button>¡Mola!</button>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                         <div class="one-column">
                                 <div class="column">
                                     <div class="featured-title">
-                                    <h3>Descubre las últimas novedades</h3>
+                                        <h3>Descubre las últimas novedades</h3>
                                     </div>
                                 </div>
                             </div>
@@ -82,13 +82,13 @@
                                 <div class="column">
                                     <div class="featured-item">
                                         <div class="featured-item-image">
-                                            <img src="" alt="">
+                                            <img src="imagenes/featured/producto1.jpg" alt="lafemme">
                                         </div>
                                         <div class="featured-item-name">
                                             <h4>La femme</h4>
                                         </div>
                                         <div class="featured-item-category">
-                                            <!-- categoria? -->
+                                            <h5>Jarrones decorativos</h5>
                                         </div>
                                         <div class="featured-item-description">
                                             <p>Juego de jarrones con figura de mujer</p>
@@ -99,13 +99,13 @@
                                 <div class="column">
                                     <div class="featured-item">
                                         <div class="featured-item-image">
-                                            <img src="" alt="">
+                                            <img src="imagenes/featured/producto2.jpg" alt="statuevide">
                                         </div>
                                         <div class="featured-item-name">
                                             <h4>Statue vide</h4>
                                         </div>
                                         <div class="featured-item-category">
-                                            <!-- categoria? -->
+                                            <h5>Jarrones decorativos</h5>
                                         </div>
                                         <div class="featured-item-description">
                                             <p>Jarrón de piedra vacía</p>
@@ -116,13 +116,13 @@
                                 <div class="column">
                                     <div class="featured-item">
                                         <div class="featured-item-image">
-                                            <img src="" alt="">
+                                            <img src="imagenes/featured/producto3.jpg" alt="tournesolblanc">
                                         </div>
                                         <div class="featured-item-name">
                                             <h4>Tournesol blanc</h4>
                                         </div>
                                         <div class="featured-item-category">
-                                            <!-- categoria? -->
+                                            <h5>Jarrones decorativos</h5>
                                         </div>
                                         <div class="featured-item-description">
                                             <p>Jarrón de diseño minimalista</p>
@@ -133,13 +133,13 @@
                                 <div class="column">
                                     <div class="featured-item">
                                         <div class="featured-item-image">
-                                            <img src="" alt="">
+                                            <img src="imagenes/featured/producto.jpg" alt="laboucherose">
                                         </div>
                                         <div class="featured-item-name">
                                             <h4>La bouche rose</h4>
                                         </div>
                                         <div class="featured-item-category">
-                                            <!-- categoria? -->
+                                            <h5>Jarrones decorativos</h5>
                                         </div>
                                         <div class="featured-item-description">
                                             <p>Contenedor de pajitas de diseño</p>
@@ -150,18 +150,17 @@
                             </div>
                         </div>      
                     </div>
-                    
-                                   
+                                                
                     <div class="two-columns">
                         <div class="banner-text">
                             <div class="column">
-                                <div class="banner-text description">
-                                    <strong>La cerámica es al mismo tiempo un arte y una artesanía destinada a crear productos exclusivos, funcionales y duraderos.</strong>
+                                <div class="banner-text-description">
+                                    <p>La cerámica es al mismo tiempo un arte y una artesanía destinada a crear productos exclusivos, funcionales y duraderos.</p>
                                 </div>
                             </div>
                             <div class="column">
-                                <div class="banner-text image">
-                                <img src="" alt="">
+                                <div class="banner-text-image">
+                                    <img src="imagenes/home.jpg" alt="modelado">
                                 </div>
                             </div>
                         </div>
@@ -170,13 +169,27 @@
             </main>
     
             <footer>
-                <div class="footer-copyright">
-                    <p>Todos los derechos reservados © 2022</p>
-                </div>
-                <div class="footer-link">
-                    <p>Política de cookies</p>
-                    <p>Aviso Legal</p>
-                    <p>Enlaces</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="footer-copyright">
+                            <p>Todos los derechos reservados © 2022</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="three-columns">
+                            <div class="footer-link">
+                                <div class="column">
+                                    <a href="">Política de cookies</a>
+                                </div>
+                                <div class="column">
+                                    <a href="">Aviso Legal</a>
+                                </div>
+                                <div class="column">
+                                    <a href="">Enlaces</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </footer>
               

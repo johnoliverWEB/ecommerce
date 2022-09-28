@@ -9,13 +9,13 @@
             <!-- ^^ Esto es lo que se encarga del web responsive ^^ -->
             <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
             <!-- ^^^Enlace a un recurso externo, a un icono que servirá como favicon de 36x36 o 42 x 42 ^^^ -->
-            <title>Título</title>
+            <title>Ilulo Ceramics</title>
             <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
             <meta name="keywords"    content="palabras clave, separadas, por comas">
          
-            <link href="style.css" rel="stylesheet"> 
+            <link href="css/grid.css" rel="stylesheet"> 
+            <link rel="stylesheet" href="CSS/style.css">
             <!-- Comando que enlaza al archivo css que hemos hecho -->
-          
         </head>
     
        <!-- Aquí van los contenidos que se corresponden con la parte visible de la web -->
@@ -26,24 +26,22 @@
                     <div class="column">
                         <div class="header-logo">
                             <div class="header-image">
-                                <img src="" alt="">
-                                </div>
-                                <div class="header-title">
-                                    <h1>Ilulo Ceramics</h1>
-                                </div>
+                                <img src="imagenes/ilulogo.svg" alt="logo">
                             </div>
-                        </div>
-                 
-                        <div class="column">
-                            <div class="header-menu">
-                                <ul class="header-menu-list">
-                                    <li>Inicio</li>
-                                    <li>Tienda</li>
-                                    <li>Contacto</li>
-                                </ul>
+                            <div class="header-title">
+                                <h1>Ilulo Ceramics</h1>
                             </div>
                         </div>
                     </div>
+                    <div class="column">
+                        <div class="header-menu-ul">
+                            <ul>
+                                <li>Inicio</li>
+                                <li>Tienda</li>
+                                <li>Contacto</li>
+                            </ul>
+                        </div>
+                    </div>  
                 </div>  
             </header>
     
@@ -53,14 +51,14 @@
                         <div class="column">
                             <div class="slider-gallery">
                                 <div class="slider-gallery-main">
-                                <img src="" alt="">
+                                <img src="imagenes/featured/producto1.jpg" alt="lafemme">
                                 </div>
                                 <div class="slider-gallery-miniatures">
-                                    <div class="slider-gallery-miniature"> <img src="" alt=""> </div>
-                                    <div class="slider-gallery-miniature"> <img src="" alt=""> </div>
-                                    <div class="slider-gallery-miniature"> <img src="" alt=""> </div>
-                                    <div class="slider-gallery-miniature"> <img src="" alt=""> </div>
-                                    <div class="slider-gallery-miniature"> <img src="" alt=""> </div>
+                                    <div class="slider-gallery-miniature"> <img src="imagenes/featured/producto1.jpg" alt="lafemmeminiature"> </div>
+                                    <div class="slider-gallery-miniature"> <img src="imagenes/featured/producto1.jpg" alt="lafemmeminiature"> </div>
+                                    <div class="slider-gallery-miniature"> <img src="imagenes/featured/producto1.jpg" alt="lafemmeminiature"> </div>
+                                    <div class="slider-gallery-miniature"> <img src="imagenes/featured/producto1.jpg" alt="lafemmeminiature"> </div>
+                                    <div class="slider-gallery-miniature"> <img src="imagenes/featured/producto1.jpg" alt="lafemmeminiature"> </div>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +68,7 @@
                                 <h2>La femme</h2>
                                 </div>
                                 <div class= "product-details-price">
-                                <strong>150 €</strong>
+                                <span>150 €</span>
                                 </div>
                                 <div class= "product-details-text">
                                 <p>Juego de jarrones con diseño de mujer, modelados y esmaltados a mano. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget magna elit. Proin faucibus at velit interdum malesuada. Aliquam commodo euismod nulla sed venenatis. Nullam bibendum turpis id augue tempus, vitae volutpat ex vestibulum. Suspendisse ultricies nisl sit amet mattis semper. Phasellus orci urna, sollicitudin a orci sit amet, sollicitudin scelerisque justo. Aenean gravida posuere elit a finibus. Donec suscipit, purus sed mattis ultrices, lorem turpis vestibulum dui, in pulvinar orci odio id sapien. Mauris posuere, arcu quis rhoncus volutpat, lacus diam lacinia enim, ac vestibulum sem dolor non nunc. Etiam aliquet, purus et facilisis condimentum, libero odio varius nibh, vel condimentum nisi diam vel neque. Maecenas efficitur diam quis gravida bibendum. Morbi efficitur laoreet ultrices. Nulla nec semper neque. Sed vitae est dictum, suscipit felis vitae, fermentum libero.</p>
@@ -79,7 +77,7 @@
 
                             <div class="product-details-amount">
                                 <div class="product-details-amount-text">
-                                <strong>¿Cuántos quieres?</strong>
+                                <span>¿Cuántos quieres?</span>
                                 </div>
                                 <div class="plus-minus-button">
                                     <div class="plus-minus-button-plus">
@@ -104,14 +102,28 @@
             </main>
     
             <footer>
-                <div class="footer-copyright">
-                    <p>Todos los derechos reservados 2022 ©</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="footer-copyright">
+                            <p>Todos los derechos reservados © 2022</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="three-columns">
+                            <div class="footer-link">
+                                <div class="column">
+                                    <a href="">Política de cookies</a>
+                                </div>
+                                <div class="column">
+                                    <a href="">Aviso Legal</a>
+                                </div>
+                                <div class="column">
+                                    <a href="">Enlaces</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-link">
-                    <p>Política de cookies</p>
-                    <p>Aviso Legal</p>
-                    <p>Enlaces</p>
-                <div>
             </footer>
             
         </body>
