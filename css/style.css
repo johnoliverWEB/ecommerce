@@ -7,7 +7,8 @@ html {
 
 body {
     margin: 0;
-    background-color: hsl(34, 52%, 85%);
+    background-image: linear-gradient(-225deg, hsl(42, 100%, 81%) 0%, hsl(24, 74%, 74%) 48%, hsl(27, 68%, 71%) 100%);
+    
 }
 
 main {
@@ -243,15 +244,32 @@ a, td, th, p, span, label, select, input, textarea, li{
     color: hsl(0, 0%, 100%);
     border-radius: 2rem;
     font-size: 1.5rem;
-    background-color: hsla(29, 84%, 75%);
+    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
     padding: 0.5rem 1.5rem;
     border-color: hsl(29, 79%, 85%);
     border-style:solid;
     box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
+    z-index: 1;
+         
+}
+
+.custom-button:after{
+  
+}
+
+.custom-button:hover{
 
 }
-    
 
+.custom-button:hover::after{
+       
+}
+
+.custom-button:active{
+ 
+}
+
+    
 h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 2.5rem;
@@ -291,6 +309,7 @@ a:hover, a:focus {
 
 .five-columns{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;  
 }
@@ -301,6 +320,7 @@ a:hover, a:focus {
 
 .four-columns{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
 }
@@ -311,6 +331,7 @@ a:hover, a:focus {
 
 .three-columns{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
 }
@@ -321,6 +342,7 @@ a:hover, a:focus {
 
 .two-columns{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
 }
@@ -356,7 +378,7 @@ a:hover, a:focus {
 /* Structure */ 
 
 header{
-    background-color: hsl(29, 85%, 75%);
+    background-image: linear-gradient(-225deg, hsl(42, 100%, 81%) 0%, hsl(17, 100%, 81%) 48%, hsl(22, 100%, 72%) 100%);
     height: 10vh;
     padding: 0 5%;
     width: 90%;
@@ -396,28 +418,25 @@ header .header-menu ul{
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
-
 }
 
 header .header-menu li{
     color: aliceblue;
-
 }
 
 main{
-  
+    background-image: linear-gradient(-225deg, hsl(42, 100%, 81%) 0%, hsl(24, 74%, 74%) 48%, hsl(27, 68%, 71%) 100%);
+
 }
 
 footer{
-
     left: 0;
     bottom: 0;
     width: 100%;
     max-width: 100%;
-    margin-top: 65vh;
-    background-color: hsl(29, 85%, 75%);
+    margin-top: 35rem;
+    background-image: linear-gradient(-225deg, hsl(24, 100%, 73%) 0%, hsl(17, 93%, 72%) 48%, hsl(22, 100%, 72%) 100%);
     text-align: center;
-
 }
 
 
@@ -445,16 +464,28 @@ footer .footer-link a{
 /* Pages */
 
 .home{
+  
 
 }
 
 .contact{
-
+    padding: 2rem;
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
+
 
 .product{
+    display:flex;
 
 }
+
+.column-product{
+    width: 50%;
+   
+}
+
 
 .products{
 
@@ -468,8 +499,10 @@ footer .footer-link a{
 
 }
 
-.page-title{
-
+.page-title h2{
+    text-align: center;
+    font-size: 4rem;
+    color: hsl(0, 0%, 100%); 
 }
 
 /* Components */
@@ -478,12 +511,13 @@ footer .footer-link a{
 
 .slider{
     height: 90vh;
-    max-height: 90vh;
+    max-height: 100vh;
     position: relative;
 }
 
 .slider-image{
     position:absolute; 
+    display: flex;
     z-index: 100;
 }
 
@@ -503,8 +537,7 @@ footer .footer-link a{
     position: absolute; 
     z-index: 1001;
     top: 30%;
-    left: 5%;
-             
+    left: 5%;     
 }
 
 
@@ -514,13 +547,12 @@ footer .footer-link a{
     padding: 2rem;
     position: relative;
     margin-bottom: -2rem;
-
 }
 
 .featured-title h3{
     text-align: center;
     font-size: 2rem;
-    color: hsl(29, 96%, 69%); 
+    color: hsl(0, 0%, 100%); 
 }
 
 .featured-elements{
@@ -561,7 +593,7 @@ footer .footer-link a{
 
 .featured-item-name h4{
     font-size: 1.5rem;
-    color: aliceblue;
+    color: hsl(0, 0%, 100%);
 }
 
 .featured-item-category{
@@ -588,7 +620,16 @@ footer .footer-link a{
 }
 
 .line.orange{
-    border-top: 0.2rem solid hsl(29, 96%, 69%);
+    border-top: 0.2rem solid hsl(0, 0%, 100%);
+}
+
+.vertical-line{
+    display: flex; 
+    margin-top: 10vh;
+    overflow: hidden; 
+    border-style: solid;
+    border-color: hsl(0, 0%, 100%);
+    border-width: 1px;
 }
 
 .banner-text{
@@ -597,7 +638,6 @@ footer .footer-link a{
     width: 100%;
     margin-top: 2rem;
     margin-bottom: 10rem;
-
 }
 
 .banner-text-description p{
@@ -610,7 +650,6 @@ footer .footer-link a{
     font-size: 3rem;
     width: 70%;
     color: hsl(0, 0%, 100%); 
-
 }
 
 .banner-text-description {
@@ -622,7 +661,6 @@ footer .footer-link a{
     width: 70%;
     align-items: center;
     border-radius: 30em;
-
 }
 
 
@@ -633,100 +671,153 @@ footer .footer-link a{
     margin-bottom: 10rem;
     display: flex;
     position: absolute;
-    
-
-
 }
 
 /* Contact options */
 
 .contact-options{
-    
-
+ padding: 10%;
+ margin-left: 10%;
 }
 
 .contact-options-element{
-
-
+    display: flex;
+    margin-top: 3vh;
 }
 
 .contact-options-element-icon{
-
+    color: hsl(0, 0%, 100%);
+    margin-right: 5rem;
 }
 
-.contact-options-element-text{
-
+.contact-options-element-text span{
+    color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
 }
 
 /* Form */
 
 .contact-form{
-
+    padding: 10%;
+    margin-right: 10%;
 }
 
 .form-element{
-
+    margin-top: 3vh;
+    width: 100%;
 }
 
-.form-element-label{
-
+.form-element-label label{
+    color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: auto;
 }
 
-.form-element-input{
+.form-element-input input{
+    width: 100%;
+    height: 2rem;
+}
 
+.form-element-input textarea{
+    width: 100%;
+    height: 10rem;
 }
 
 .form-button{
+    margin-top: 5vh;
+}
 
+.form-button button{
+    font-family: 'Raleway', sans-serif;
+    color: hsl(0, 0%, 100%);
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
+    padding: 0.5rem 1.5rem;
+    border-color: hsl(29, 79%, 85%);
+    border-style:solid;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
 }
 
 /* Slider Gallery*/
 
 .slider-gallery{
-
+    width: 100%;
 }
 
 .slider-gallery-main{
+    max-height: 73vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-gallery-miniatures{
+    display: flex;
+    max-height: 15vh;
+    overflow: hidden;
+
 
 }
 
 .slider-gallery-miniature{
-
+    width: 20%;
 }
+
 
 /* Product details */
 
 .product-details{
-
+    width: 100%;
+    margin-top: 10%;
 }
 
-.product-details-title{
-
+.product-details-title h2{
+    color: #f0f8ff;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2%;
 }
 
-.product-details-price{
-
+.product-details-price span{
+    color: aliceblue;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
-.product-details-text{
-
+.product-details-text p{
+    color: aliceblue;
+    font-size: 1.5rem;
+    text-align: justify;
 }
 
 .product-details-amount{
-
+    display: inline-flex;
+    margin: 2%;
+    justify-content: space-between;
 }
 
-.product-details-amount-text{
+.product-details-amount-text {
+    padding: 8%;
+    width: 100%;
+}
 
+.product-details-amount-text span{
+    color: aliceblue;
+    font-size: 1.5rem;
 }
 
 /* Plus minus button */
 
 .plus-minus-button{
-
+    padding: 10%;
+    display: inline-flex;
+    margin: 2%;
+    justify-content: space-between;
 }
 
 .plus-minus-button-text{
+   
 
 }
 
@@ -735,7 +826,7 @@ footer .footer-link a{
 }
 
 .plus-minus-button-input{
-
+    
 }
 
 .plus-minus-button-minus{
@@ -744,8 +835,17 @@ footer .footer-link a{
 
 /* Add to cart */
 
-.add-to-cart-button{
-
+.add-to-cart-button button{
+    font-family: 'Raleway', sans-serif;
+    width: 30%;
+    color: hsl(0, 0%, 100%);
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
+    padding: 0.5rem 1.5rem;
+    border-color: hsl(29, 79%, 85%);
+    border-style:solid;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);    
 }
 
 /* Product Categories */
