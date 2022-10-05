@@ -13,8 +13,10 @@
             <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
             <meta name="keywords"    content="palabras clave, separadas, por comas">
          
-            <link href="css/grid.css" rel="stylesheet"> 
-            <link rel="stylesheet" href="CSS/style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/style.css">
             <!-- Comando que enlaza al archivo css que hemos hecho -->
         </head>
     
@@ -24,16 +26,16 @@
                 <div class="two-columns">
                     <div class="column">
                         <div class="header-logo">
-                            <div class="header-image">
-                                <img src="imagenes/ilulogo.svg" alt="logo">
+                            <div class="header-logo-image">
+                                <img src="imagenes/logo-molon.svg" alt="logo">
                             </div>
-                            <div class="header-title">
-                                <h1>Ilulo Ceramics</h1>
+                            <div class="header-logo-title">
+                                <h1>ILULO CERAMICS</h1>
                             </div>
                         </div>
                     </div>
                     <div class="column">
-                        <div class="header-menu-ul">
+                        <div class="header-menu">
                             <ul>
                                 <li>Inicio</li>
                                 <li>Tienda</li>
@@ -48,11 +50,13 @@
                 <div class="checkout">
                     <div class="one-column">
                         <div class="column">
-                            <div class="page-title">
+                            <div class="page-title-checkout">
                                 <h2>Finalizar compra</h2>
                             </div>
                         </div>
                     </div>
+
+                    <div class="line"></div>
 
                     <form>
                         <div class="two-columns">
@@ -94,6 +98,24 @@
                                                 <div class="form-element-input"><input type="text"></div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="two-columns">
+                                        <div class="column">
+                                            <div class="form-element">  
+                                                <div class="form-element-label">
+                                                    <label>Ciudad</label>
+                                                </div>
+                                                <div class="form-element-input"><input type="text"></div>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="form-element">  
+                                                <div class="form-element-label">
+                                                    <label>Código postal</label>
+                                                </div>
+                                                <div class="form-element-input"><input type="text"></div>
+                                            </div>
+                                        </div>
                                         <div class="one-column">
                                             <div class="column">
                                                 <div class="form-element">  
@@ -102,23 +124,14 @@
                                                     </div>
                                                     <div class="form-element-input"><input type="text"></div>
                                                 </div>
-                                                <div class="form-element-input">
-                                                    <div class="form-element"> 
-                                                        <div class="form-element-input">
-                                                        </div>
-                                                        <div class="form-element-label">
-                                                        </div>
-                                                        <div class="form-element-input"></div>
-                                                        <div class="form-element-label"></div>
-                                                        <div class="form-element-input"></div>
-                                                        <div class="form-element-label"></div>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="vertical-line"></div>
 
                             <div class="column">
                                 <div class="resume-table">
@@ -131,10 +144,20 @@
                                         <tr>
                                             <div class="resume-table-concept">
                                                 <div class="resume-table-concept-text">
+                                                    <td>Precio</td>
+                                                </div>
+                                                <div class="resume-table-concept-amount">
+                                                    <td class="resume-table-concept-amount-result">150,00 €</td>
+                                                </div>
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <div class="resume-table-concept">
+                                                <div class="resume-table-concept-text">
                                                     <td>21% I.V.A.</td>
                                                 </div>
                                                 <div class="resume-table-concept-amount">
-                                                    <td>56,70 €</td>
+                                                    <td class="resume-table-concept-amount-result">56,70 €</td>
                                                 </div>
                                             </div>
                                         </tr>
@@ -144,7 +167,7 @@
                                                     <td>Costes de envío</td>
                                                 </div>
                                                 <div class="resume-table-concept-amount">
-                                                    <td>5,50 €</td>
+                                                    <td class="resume-table-concept-amount-result">5,50 €</td>
                                                 </div>
                                             </div>
                                         </tr>
@@ -154,17 +177,31 @@
                                                     <td>TOTAL</td>
                                                 </div>
                                                 <div class="resume-table-concept-amount">
-                                                    <td>332,30 €</td>
+                                                    <td class="resume-table-concept-amount-result">332,30 €</td>
                                                 </div>
                                             </div>
                                         </tr>
                                     </table>
+                                    <div class="form-element-input">
+                                        <div class="form-element"> 
+                                            <div class="form-element-radio">
+                                                <input type="radio" value="radio" name="pago"><label>Tarjeta de crédito/débito</label>
+                                            </div>
+                                            <div class="form-element-radio">
+                                                <input type="radio" value="radio" name="pago"><label>Paypal</label>
+                                            </div>
+                                            <div class="form-element-radio">
+                                                <input type="radio" value="radio" name="pago"><label>Transferencia bancaria</label>
+                                            </div>
+                                            <div class="form-element-radio">
+                                                <input type="radio" value="radio" name="pago"><label>Bizum</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="checkout-payment-button">
+                                        <button>Pagar</button>
+                                    </div>
                                 </div>
-                            </div>
-
-                            
-                            <div class="checkout-payment-button">
-                                <button>Pagar</button>
                             </div>
                         </div>
                     </form>
@@ -179,21 +216,20 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="three-columns">
+                        <div class="footer-links">
                             <div class="footer-link">
-                                <div class="column">
-                                    <a href="">Política de cookies</a>
-                                </div>
-                                <div class="column">
-                                    <a href="">Aviso Legal</a>
-                                </div>
-                                <div class="column">
-                                    <a href="">Enlaces</a>
-                                </div>
+                                <a href="">Política de cookies</a>
+                            </div>
+                    
+                            <div class="footer-link">
+                                <a href="">Aviso Legal</a>
+                            </div>
+                    
+                            <div class="footer-link">
+                                <a href="">Enlaces</a>
                             </div>
                         </div>
                     </div>
-                </div>
             </footer>
               
         </body>
