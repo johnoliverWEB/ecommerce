@@ -13,8 +13,10 @@
             <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
             <meta name="keywords"    content="palabras clave, separadas, por comas">
             
-            <link href="css/grid.css" rel="stylesheet"> 
-            <link rel="stylesheet" href="CSS/style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/style.css">
             <!-- Comando que enlaza al archivo css que hemos hecho -->
         </head>
     
@@ -25,16 +27,16 @@
                 <div class="two-columns">
                     <div class="column">
                         <div class="header-logo">
-                            <div class="header-image">
-                                <img src="imagenes/ilulogo.svg" alt="logo">
+                            <div class="header-logo-image">
+                                <img src="imagenes/logo-molon.svg" alt="logo">
                             </div>
-                            <div class="header-title">
-                                <h1>Ilulo Ceramics</h1>
+                            <div class="header-logo-title">
+                                <h1>ILULO CERAMICS</h1>
                             </div>
                         </div>
                     </div>
                     <div class="column">
-                        <div class="header-menu-ul">
+                        <div class="header-menu">
                             <ul>
                                 <li>Inicio</li>
                                 <li>Tienda</li>
@@ -55,132 +57,56 @@
                         </div>
                     </div>
 
-                    <div class="cart-table">
-                        <table class="default">
-                            <div class="four-columns">
-                                <div class="cart-table-header">
-                                    <tr>
-                                        <td>
-                                            <div class="column">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="column">
-                                                <h3>Producto</h3>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="column">
-                                                <h3>Precio</h3>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="column"></div>
-                                                <h3>Cantidad</h3>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </div>
-                            </div>
-                        </table>
-                    <div class="cart-table-elements">
-                        <table class="default">
-                            <div class="four columns">
-                                <div class="cart-table-elements-row">
-                                    <tr>
-                                        <td>
-                                            <div class="cart-table-element"><img src="imagenes/featured/producto1.jpg" alt="lafemme"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-table-element"><h4>La feme</h4></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-table-element"><p>150 €</p></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="plus-minus-button">
-                                                <table class="default">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="plus-minus-button-text">
-                                                                <p>Unidades</p>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="plus-minus-button">
-                                                                <div class="plus-minus-button-plus">
-                                                                    <button>+</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="plus-minus-button-input">
-                                                                <select name="" id=""></select>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="plus-minus-button-minus">
-                                                                <button>-</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <div class="cart-table-elements-row">
-                                        <tr>
-                                            <td>
-                                                <div class="cart-table-element"><img src="imagenes/featured/producto3.jpg" alt="tournesolblanc"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart-table-element"><h4>Tournesol blanc</h4></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart-table-element"><p>120 €</p></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="plus-minus-button">
-                                                    <table class="default">
-                                                        <tr>
-                                                            <td>
-                                                                <div class="plus-minus-button-text">
-                                                                    <p>Unidades</p>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="plus-minus-button">
-                                                                    <div class="plus-minus-button-plus">
-                                                                        <button>+</button>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="plus-minus-button-input">
-                                                                    <select name="" id=""></select>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="plus-minus-button-minus">
-                                                                    <button>-</button>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                            </td>
-                                        </tr>
+                    <div class="line"></div>
+
+                    <table class="cart-table">
+                        <tr class="cart-header">
+                            <th class="cart-header-product"></th>
+                            <th class="cart-header-product">Producto</th>
+                            <th class="cart-header-price">Precio</th>
+                            <th class="cart-header-amoun">Cantidad</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagenes/featured/producto1.jpg" alt="">
+                            </td>
+                            <td>La femme</td>
+                            <td>150,00 €</td>
+                            <td>
+                                <div class="plus-minus-button">
+                                    <div class="plus-minus-button-plus">
+                                        <button>+</button>
+                                    </div>
+                                    <div class="plus-minus-button-input">
+                                        <input type="number" value="1" size="5"/>
+                                    </div>
+                                    <div class="plus-minus-button-minus">
+                                        <button>-</button>
                                     </div>
                                 </div>
-                            </div>   
-                        </table>
-                    </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cart-image">
+                                <img src="imagenes/featured/producto3.jpg" alt="">
+                            </td>
+                            <td class="cart-product-title">Tournesol blanc</td>
+                            <td class="cart-product-price">120,00 €</td>
+                            <td>
+                                <div class="plus-minus-button">
+                                    <div class="plus-minus-button-plus">
+                                        <button>+</button>
+                                    </div>
+                                    <div class="plus-minus-button-input">
+                                        <input type="number" value="1" size="5"/>
+                                    </div>
+                                    <div class="plus-minus-button-minus">
+                                        <button>-</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
 
                     <div class="resume-table">
                             <table class="default">
@@ -247,17 +173,17 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="three-columns">
+                        <div class="footer-links">
                             <div class="footer-link">
-                                <div class="column">
-                                    <a href="">Política de cookies</a>
-                                </div>
-                                <div class="column">
-                                    <a href="">Aviso Legal</a>
-                                </div>
-                                <div class="column">
-                                    <a href="">Enlaces</a>
-                                </div>
+                                <a href="">Política de cookies</a>
+                            </div>
+                    
+                            <div class="footer-link">
+                                <a href="">Aviso Legal</a>
+                            </div>
+                    
+                            <div class="footer-link">
+                                <a href="">Enlaces</a>
                             </div>
                         </div>
                     </div>

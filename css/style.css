@@ -18,8 +18,10 @@ main {
 h1, h2, h3, h4, h5, h6, p, a {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 300;
+    font-size: 2rem;
     text-decoration: none;
+    color: hsl(0, 0%, 100%);
+ 
 }
 
 hr {
@@ -229,6 +231,7 @@ h1, h2, h3, h4, h5, h6, a, p{
 h1, h2, h3, h4 {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
+    color: hsl(208, 100%, 97%);
 }
 
 h5, h6 {
@@ -243,7 +246,10 @@ a, p, span, label, select, input, textarea, li{
 td, th {
     font-family: 'Raleway', sans-serif;
     color: hsl(0, 0%, 100%);
+    font-size: 2rem;
+ 
 }
+
 
 .custom-button{
     font-family: 'Raleway', sans-serif;
@@ -440,6 +446,7 @@ footer{
     max-width: 100%;
     background-image: linear-gradient(-225deg, hsl(24, 100%, 73%) 0%, hsl(17, 93%, 72%) 48%, hsl(22, 100%, 72%) 100%);
     text-align: center;
+    margin-top: 70vh;
 }
 
 
@@ -467,10 +474,10 @@ footer .footer-link a{
 /* Pages */
 
 .index{
-    min-height: 80vh;
+    margin-bottom: 100rem;
 }
+
 .home{
-    min-height: 80vh;
 
 }
 
@@ -478,10 +485,7 @@ footer .footer-link a{
     padding: 2rem;
     position: relative;
     font-weight: 600;
-    margin-bottom: 1rem;
-    min-height: 80vh;
 }
-
 
 .product{
     display:flex;
@@ -490,17 +494,17 @@ footer .footer-link a{
 
 .column-product{
     width: 50%;
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 
 .products{
+    width: 100%;
     min-height: 80vh;
 
 }
 
 .cart{
-    min-height: 80vh;
 
 }
 
@@ -509,7 +513,7 @@ footer .footer-link a{
     position: relative;
     font-weight: 600;
     margin: 20%;
-    min-height: 80vh;
+    min-height: 8vh;
 }
 
 .page-title h2{
@@ -522,6 +526,13 @@ footer .footer-link a{
     padding: 2rem;
     margin-bottom: 1rem;
     text-align: center;
+    font-size: 4rem;
+    color: hsl(0, 0%, 100%); 
+}
+
+.page-title-carrito h2{
+    padding: 30rem;
+    margin-bottom: 20rem;
     font-size: 4rem;
     color: hsl(0, 0%, 100%); 
 }
@@ -924,78 +935,129 @@ footer .footer-link a{
 /* Product Categories */
 
 .product-categories{
-
+    padding: 12%;
 }
 
 .product-categories-title{
+    margin-top: 1.5rem;
+}
 
+.product-categories-title h2{
+    color: hsl(208, 100%, 97%);
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 .product-categories-list{
+    margin-top: 2rem;
+}
 
+.product-categories-list li{
+    color: hsl(208, 100%, 97%);
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* Product results */
 
 .product-results{
-
+    padding: 5%;
+    display: flex;
 }
 
 .product-results-counter{
+}
 
+.product-results-counter span{
+    color: hsl(208, 100%, 97%);
+    font-size: 2rem;
 }
 
 .product-results-dropdown{
+    width: 50%;
+    position:relative;
+    left: 40%;
+}
 
+.product-results-dropdown input{
+    width: 50%;
+    padding: 1rem;
 }
 
 /* Product Gallery */
 
 .product-gallery{
-
+    display:flex;
+    justify-content: center;
+    padding-left: 5%;
 }
 
 .product-gallery-item{
-
+    width: 70%;
+    margin-bottom: 20%;
 }
 
 .product-gallery-item-image{
 
 }
 
-.product-gallery-item-name{
+.product-gallery-item-image img{
+border-style: solid;
+border-color: hsl(208, 100%, 97%);
+}
 
+.product-gallery-item-name{
+    padding-top: 1rem;
+}
+
+.product-gallery-item-name h3{
+    color: hsl(208, 100%, 97%);
+    font-size: 2rem;
 }
 
 .product-gallery-item-price{
+    padding: 1rem 0;
 
 }
 
-.product-gallery-item-button{
+.product-gallery-item-price span{
+    color: hsl(208, 100%, 97%);
+    font-size: 1.5rem;
+}
 
+.product-gallery-item-button{
+    width: 80%;
+    padding: 10% 15%;
+}
+
+.product-gallery-item-button button{
+    width: 80%;
+    height: 4rem;
+    color: hsl(0, 0%, 100%);
+    border-radius: 2rem;
+    font-size: 1.7rem;
+    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
+    border-color: hsl(29, 79%, 85%);
+    border-style:solid;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
 }
 
 /* Cart Table */
 
-.cart-table{
-
+.cart-table td{
+    text-align: center;
 }
 
-.cart-table-header{
-
+.cart-table td:nth-child(1){
+    max-height: 100px;
+    width: 5%;
 }
 
-.cart-table-elements{
-
+.cart-table td:nth-child(4){
+    max-height: 100px;
+    width: 20%;
 }
 
-.cart-table-elements-row{
-
-}
-
-.cart-table-element{
-
-}
 
 /* Resume Table */
 
@@ -1005,15 +1067,14 @@ footer .footer-link a{
 }
 
 .resume-table-title{
-    margin-bottom: 5rem;
-    margin-left: 6rem;
+    
 }
 
 .resume-table-title h2{
     color: hsl(208, 100%, 97%);
     border-bottom: solid hsl(0, 0%, 100%);
     font-weight: 300;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .resume-table table{
@@ -1043,6 +1104,7 @@ footer .footer-link a{
 .checkout-payment-button button{
     width: 20%;
     height: 4rem;
+    margin-top: 4vh;
     color: hsl(0, 0%, 100%);
     border-radius: 2rem;
     font-size: 2rem;
