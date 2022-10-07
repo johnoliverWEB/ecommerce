@@ -8,7 +8,6 @@ html {
 body {
     margin: 0;
     background-image: linear-gradient(-225deg, hsl(42, 100%, 81%) 0%, hsl(24, 74%, 74%) 48%, hsl(27, 68%, 71%) 100%);
-    
 }
 
 main {
@@ -21,7 +20,6 @@ h1, h2, h3, h4, h5, h6, p, a {
     font-size: 2rem;
     text-decoration: none;
     color: hsl(0, 0%, 100%);
- 
 }
 
 hr {
@@ -192,10 +190,6 @@ table {
     border-spacing: 0;
 }
 
-td, th {
-
-}
-
 ol, ul {
     list-style: none;
     padding-left: 0;
@@ -218,7 +212,6 @@ video{
     object-fit: cover;
     max-width: 100%;
 }
-
 
 /* Typography */
 
@@ -247,9 +240,7 @@ td, th {
     font-family: 'Raleway', sans-serif;
     color: hsl(0, 0%, 100%);
     font-size: 2rem;
- 
 }
-
 
 .custom-button{
     font-family: 'Raleway', sans-serif;
@@ -264,23 +255,6 @@ td, th {
     z-index: 1; 
 }
 
-.custom-button:after{
-  
-}
-
-.custom-button:hover{
-
-}
-
-.custom-button:hover::after{
-       
-}
-
-.custom-button:active{
- 
-}
-
-    
 h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 2.5rem;
@@ -389,7 +363,7 @@ a:hover, a:focus {
 /* Structure */ 
 
 header{
-    background-image: linear-gradient(-225deg, hsl(42, 100%, 81%) 0%, hsl(17, 100%, 81%) 48%, hsl(22, 100%, 72%) 100%);
+    background-image: linear-gradient(-225deg, hsl(19, 100%, 80%) 0%, hsl(17, 100%, 81%) 48%, hsl(22, 100%, 72%) 100%);
     height: 8vh;
     padding: 0 5%;
     width: 90%;
@@ -446,9 +420,7 @@ footer{
     max-width: 100%;
     background-image: linear-gradient(-225deg, hsl(24, 100%, 73%) 0%, hsl(17, 93%, 72%) 48%, hsl(22, 100%, 72%) 100%);
     text-align: center;
-    margin-top: 70vh;
 }
-
 
 footer .footer-copyright p{
     color: aliceblue;
@@ -474,11 +446,7 @@ footer .footer-link a{
 /* Pages */
 
 .index{
-    margin-bottom: 100rem;
-}
-
-.home{
-
+    min-height: 8vh;
 }
 
 .contact{
@@ -497,15 +465,16 @@ footer .footer-link a{
     min-height: 90vh;
 }
 
-
 .products{
     width: 100%;
     min-height: 80vh;
-
 }
 
+/* TODO trabajar los márgenes de las páginas con este estilo*/
 .cart{
-
+    min-height: 80vh;
+    padding: 3rem 10%;
+    width: 80%;
 }
 
 .chekout{
@@ -516,11 +485,7 @@ footer .footer-link a{
     min-height: 8vh;
 }
 
-.page-title h2{
-    text-align: center;
-    font-size: 4rem;
-    color: hsl(0, 0%, 100%); 
-}
+/* TODO unificar títulos de las páginas*/
 
 .page-title-checkout h2{
     padding: 2rem;
@@ -530,11 +495,17 @@ footer .footer-link a{
     color: hsl(0, 0%, 100%); 
 }
 
-.page-title-carrito h2{
-    padding: 30rem;
-    margin-bottom: 20rem;
+.page-title{
+    width: max-content;
+    padding: 0 10% 2rem;
+    margin: 0 auto;
+    border-bottom: 0.3rem solid white;
+}
+
+.page-title h2{
+    text-align: center;
     font-size: 4rem;
-    color: hsl(0, 0%, 100%); 
+    color: hsl(0, 0%, 100%);  
 }
 
 /* Components */
@@ -573,7 +544,6 @@ footer .footer-link a{
     top: 30%;
     left: 5%;     
 }
-
 
 /* Featured */ 
 
@@ -683,7 +653,8 @@ footer .footer-link a{
     font-weight: 600;
     font-size: 3rem;
     width: 70%;
-    color: hsl(0, 0%, 100%); 
+    color: hsl(0, 0%, 100%);
+    text-shadow: 3px 3px hsla(0, 0%, 0%, 0.527);
 }
 
 .banner-text-description {
@@ -701,9 +672,8 @@ footer .footer-link a{
     z-index: 1000;
     width: 100%;
     margin-top: 2rem;
-    margin-bottom: 10rem;
     display: flex;
-    position: absolute;
+    position: relative;
 }
 
 /* Contact options */
@@ -742,10 +712,6 @@ footer .footer-link a{
 
 .form-element-radio{
     width: 100%;
-}
-
-.form-element-radio-input{
-
 }
 
 .form-element-radio label{
@@ -965,9 +931,6 @@ footer .footer-link a{
     display: flex;
 }
 
-.product-results-counter{
-}
-
 .product-results-counter span{
     color: hsl(208, 100%, 97%);
     font-size: 2rem;
@@ -997,10 +960,6 @@ footer .footer-link a{
     margin-bottom: 20%;
 }
 
-.product-gallery-item-image{
-
-}
-
 .product-gallery-item-image img{
 border-style: solid;
 border-color: hsl(208, 100%, 97%);
@@ -1027,7 +986,7 @@ border-color: hsl(208, 100%, 97%);
 
 .product-gallery-item-button{
     width: 80%;
-    padding: 10% 15%;
+    padding: 15%;
 }
 
 .product-gallery-item-button button{
@@ -1044,30 +1003,71 @@ border-color: hsl(208, 100%, 97%);
 
 /* Cart Table */
 
-.cart-table td{
+.cart-header-product {
+    padding: 3rem;
+}
+
+.cart-table{
+    margin: 3rem 0;
+}
+
+.cart-table table td{
     text-align: center;
 }
 
-.cart-table td:nth-child(1){
+.cart-table table tr{
+    border-bottom: solid;
+    border-color: hsl(208, 100%, 97%);
+}
+
+.cart-table table td:nth-child(1){
     max-height: 100px;
     width: 5%;
 }
 
-.cart-table td:nth-child(4){
+.cart-table table td:nth-child(4){
     max-height: 100px;
     width: 20%;
 }
 
+.cart-image-box{
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+}
+
+.cart-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.resume-table-cart{
+    padding: 2%;
+    margin-left: 39%;
+}
+
+.resume-table-cart-title h2{
+    color: hsl(208, 100%, 97%);
+    border-bottom: solid hsl(0, 0%, 100%);
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.resume-table-cart table{
+    font-size: 1.8rem;
+    border-bottom: solid white;
+}
 
 /* Resume Table */
 
 .resume-table{
-    padding: 7rem 0 0 10rem;
-    width: 80%;
+    padding: 10% 0 0 40%;
 }
 
 .resume-table-title{
-    
+    margin-bottom: 3vh;
+    justify-content: center;
 }
 
 .resume-table-title h2{
@@ -1080,20 +1080,36 @@ border-color: hsl(208, 100%, 97%);
 .resume-table table{
     font-size: 1.8rem;
     border-bottom: solid white;
+    text-align: justify
 }
 
 .resume-table-concept-amount-result{
     text-align: right;
 }
 
+.resume-plus-minus-button{
+    display:flex;
+    padding-left: 35%;
+}
+
 /* Cart Navigation */
 
 .cart-navigation-buttons{
-
+    padding: 0 0 0 30%;
+    margin-top: -4rem;
 }
 
-.cart-navigation-button{
-
+.cart-navigation-button button{
+    width: 20%;
+    height: 4rem;
+    margin-top: 4vh;
+    color: hsl(0, 0%, 100%);
+    border-radius: 2rem;
+    font-size: 2rem;
+    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
+    border-color: hsl(29, 79%, 85%);
+    border-style:solid;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
 }
 
 .checkout-form{

@@ -57,97 +57,88 @@
                         </div>
                     </div>
 
-                    <div class="line"></div>
-
-                    <table class="cart-table">
-                        <tr class="cart-header">
-                            <th class="cart-header-product"></th>
-                            <th class="cart-header-product">Producto</th>
-                            <th class="cart-header-price">Precio</th>
-                            <th class="cart-header-amoun">Cantidad</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="imagenes/featured/producto1.jpg" alt="">
-                            </td>
-                            <td>La femme</td>
-                            <td>150,00 €</td>
-                            <td>
-                                <div class="plus-minus-button">
-                                    <div class="plus-minus-button-plus">
-                                        <button>+</button>
-                                    </div>
-                                    <div class="plus-minus-button-input">
-                                        <input type="number" value="1" size="5"/>
-                                    </div>
-                                    <div class="plus-minus-button-minus">
-                                        <button>-</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart-image">
-                                <img src="imagenes/featured/producto3.jpg" alt="">
-                            </td>
-                            <td class="cart-product-title">Tournesol blanc</td>
-                            <td class="cart-product-price">120,00 €</td>
-                            <td>
-                                <div class="plus-minus-button">
-                                    <div class="plus-minus-button-plus">
-                                        <button>+</button>
-                                    </div>
-                                    <div class="plus-minus-button-input">
-                                        <input type="number" value="1" size="5"/>
-                                    </div>
-                                    <div class="plus-minus-button-minus">
-                                        <button>-</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <div class="resume-table">
-                            <table class="default">
-                                <th>
-                                    <div class="resume-table-title">
-                                        <h2>Resumen de compra</h2>
-                                    </div>
-                                </th>
-                                <tr>
-                                    <div class="resume-table-concept">
-                                        <div class="resume-table-concept-text">
-                                            <td>21% I.V.A.</td>
+                    <div class="cart-table">
+                        <table>
+                            <tr class="cart-header">
+                                <th class="cart-header-product"></th>
+                                <th class="cart-header-product-product">Producto</th>
+                                <th class="cart-header-price">Precio</th>
+                                <th class="cart-header-amoun">Cantidad</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cart-image-box"><img src="imagenes/featured/cartimage1.jpg" alt=""></div>
+                                </td>
+                                <td>La femme</td>
+                                <td>150,00 €</td>
+                                <td>
+                                    <div class="resume-plus-minus-button">
+                                        <div class="plus-minus-button-plus">
+                                            <button>+</button>
                                         </div>
-                                        <div class="resume-table-concept-amount">
-                                            <td>56,70 €</td>
+                                        <div class="plus-minus-button-input">
+                                            <input type="number" value="1" size="5"/>
+                                        </div>
+                                        <div class="plus-minus-button-minus">
+                                            <button>-</button>
                                         </div>
                                     </div>
-                                </tr>
-                                <tr>
-                                    <div class="resume-table-concept">
-                                        <div class="resume-table-concept-text"> 
-                                            <td>Costes de envío</td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cart-image">
+                                    <div class="cart-image-box"><img src="imagenes/featured/producto3cart.jpg" alt=""></div>
+                                </td>
+                                <td class="cart-product-title">Tournesol blanc</td>
+                                <td class="cart-product-price">120,00 €</td>
+                                <td>
+                                    <div class="resume-plus-minus-button">
+                                        <div class="plus-minus-button-plus">
+                                            <button>+</button>
                                         </div>
-                                        <div class="resume-table-concept-amount">
-                                            <td>5,50 €</td>
+                                        <div class="plus-minus-button-input">
+                                            <input type="number" value="1" size="5"/>
+                                        </div>
+                                        <div class="plus-minus-button-minus">
+                                            <button>-</button>
                                         </div>
                                     </div>
-                                </tr>
-                                <tr>
-                                    <div class="resume-table-concept">
-                                        <div class="resume-table-concept-text">
-                                            <td>TOTAL</td>
-                                        </div>
-                                        <div class="resume-table-concept-amount">
-                                            <td>332,30 €</td>
-                                        </div>
-                                    </div>
-                                </tr>
-                            </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- TODO Darle estilo a este elemento -->
+                    <div class="resume-table-cart">
+                        <div class="resume-table-cart-title">
+                            <h2>Resumen de compra</h2>
+                        </div>
+                        <div class="resume-table-cart-concept">
+                            <div class="resume-table-cart-concept-text">
+                                <td>21% I.V.A.</td>
+                            </div>
+                            <div class="resume-table-cart-concept-amount-result">
+                                <td>56,70 €</td>
+                            </div>
+                        </div>
+                        <div class="resume-table-cart-concept">
+                            <div class="resume-table-concept-text"> 
+                                <td>Costes de envío</td>
+                            </div>
+                            <div class="resume-table-cart-concept-amount-result">
+                                <td>5,50 €</td>
+                            </div>
+                        </div>
+                        <div class="resume-table-cart-concept">
+                            <div class="resume-table-cart-concept-text">
+                                <td>TOTAL</td>
+                            </div>
+                            <div class="resume-table-cart-concept-amount-result">
+                                <td>332,30 €</td>
+                            </div>
                         </div>
                     </div>
+
                     <div class="cart-navigation-buttons">
                         <div class="two-columns">
                             <div class="column">
