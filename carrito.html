@@ -58,6 +58,7 @@
                     </div>
 
                     <div class="cart-table">
+                        <!-- TODO mejorar tabla -->
                         <table>
                             <tr class="cart-header">
                                 <th class="cart-header-product"></th>
@@ -110,45 +111,65 @@
                     
                     <!-- TODO Darle estilo a este elemento -->
                     <div class="resume-table-cart">
-                        <div class="resume-table-cart-title">
-                            <h2>Resumen de compra</h2>
-                        </div>
-                        <div class="resume-table-cart-concept">
-                            <div class="resume-table-cart-concept-text">
-                                <td>21% I.V.A.</td>
-                            </div>
-                            <div class="resume-table-cart-concept-amount-result">
-                                <td>56,70 €</td>
-                            </div>
-                        </div>
-                        <div class="resume-table-cart-concept">
-                            <div class="resume-table-concept-text"> 
-                                <td>Costes de envío</td>
-                            </div>
-                            <div class="resume-table-cart-concept-amount-result">
-                                <td>5,50 €</td>
-                            </div>
-                        </div>
-                        <div class="resume-table-cart-concept">
-                            <div class="resume-table-cart-concept-text">
-                                <td>TOTAL</td>
-                            </div>
-                            <div class="resume-table-cart-concept-amount-result">
-                                <td>332,30 €</td>
-                            </div>
-                        </div>
+                        <table class="default">
+                            <th>
+                                <div class="resume-table-title">
+                                    <h2>Resumen de compra</h2>
+                                </div>
+                            </th>
+                            <tr>
+                                <div class="resume-table-concept">
+                                    <div class="resume-table-concept-text">
+                                        <td>Precio</td>
+                                    </div>
+                                    <div class="resume-table-concept-amount">
+                                        <td class="resume-table-concept-amount-result">150,00 €</td>
+                                    </div>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="resume-table-concept">
+                                    <div class="resume-table-concept-text">
+                                        <td>21% I.V.A.</td>
+                                    </div>
+                                    <div class="resume-table-concept-amount">
+                                        <td class="resume-table-concept-amount-result">56,70 €</td>
+                                    </div>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="resume-table-concept">
+                                    <div class="resume-table-concept-text"> 
+                                        <td>Costes de envío</td>
+                                    </div>
+                                    <div class="resume-table-concept-amount">
+                                        <td class="resume-table-concept-amount-result">5,50 €</td>
+                                    </div>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="resume-table-concept">
+                                    <div class="resume-table-concept-text">
+                                        <td>TOTAL</td>
+                                    </div>
+                                    <div class="resume-table-concept-amount">
+                                        <td class="resume-table-concept-amount-result">332,30 €</td>
+                                    </div>
+                                </div>
+                            </tr>
+                        </table>
                     </div>
 
                     <div class="cart-navigation-buttons">
                         <div class="two-columns">
                             <div class="column">
                                 <div class="cart-navigation-button">
-                                    <button> Volver</button>
+                                    <button class="custom-button"> Volver</button>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="cart-navigation-button">
-                                    <button>Comprar</button>
+                                    <button class="custom-button">Pagar</button>
                                 </div>
                             </div>
                         </div>

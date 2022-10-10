@@ -252,7 +252,7 @@ td, th {
     border-color: hsl(29, 79%, 85%);
     border-style:solid;
     box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
-    z-index: 1; 
+    width: 100%;
 }
 
 h1 {
@@ -365,7 +365,7 @@ a:hover, a:focus {
 header{
     background-image: linear-gradient(-225deg, hsl(19, 100%, 80%) 0%, hsl(17, 100%, 81%) 48%, hsl(22, 100%, 72%) 100%);
     height: 8vh;
-    padding: 0 5%;
+    padding: 0.5rem 5% 0.5rem 5%;
     width: 90%;
 }
 
@@ -377,36 +377,28 @@ header .header-logo{
 header .header-logo-image{
     align-items: center;
     margin-right: 2em;
-    padding: 0.5rem 0;
     width: 8%;
 }
 
-header .header-logo-title{
-    margin-right: 1em;
-    display: flex;
-}
-
 header .header-logo-title h1{
-    margin-right: 1em;
-    display: flex;
     color: aliceblue;
 }
 
 header .header-menu{
-    margin: 3vh;
     margin-left: auto;
     width: 50%;
 }
 
 header .header-menu ul{
     align-items: center;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem;
 }
 
-header .header-menu li{
+header .header-menu ul li{
     color: aliceblue;
+    font-size: 1.5rem;
 }
 
 main{
@@ -414,27 +406,37 @@ main{
 }
 
 footer{
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 100%;
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    padding: 0 5%;
+    width: 90%;
     background-image: linear-gradient(-225deg, hsl(24, 100%, 73%) 0%, hsl(17, 93%, 72%) 48%, hsl(22, 100%, 72%) 100%);
     text-align: center;
+}
+
+footer .footer-copyright{
+    align-items: center;
+    display: flex;
+    height: 100%;
 }
 
 footer .footer-copyright p{
     color: aliceblue;
     font-size: 1.5em;
-    padding: 1em;
-    margin-left: auto;
     display: flex;
 }
 
 footer .footer-links{
     display: flex;
     height: 100%;
-    justify-content: space-evenly;
     align-items: center;
+    margin-left: auto;
+    width: max-content;
+}
+
+footer .footer-link{
+    margin-left:  2rem;
 }
 
 footer .footer-link a{
@@ -445,19 +447,16 @@ footer .footer-link a{
 
 /* Pages */
 
-.index{
-    min-height: 8vh;
-}
-
 .contact{
-    padding: 2rem;
-    position: relative;
-    font-weight: 600;
+    min-height: 80vh;
+    padding: 3rem 15%;
+    width: 70%;
 }
 
 .product{
-    display:flex;
     min-height: 80vh;
+    padding: 3rem 10%;
+    width: 80%;
 }
 
 .column-product{
@@ -470,30 +469,18 @@ footer .footer-link a{
     min-height: 80vh;
 }
 
-/* TODO trabajar los márgenes de las páginas con este estilo*/
 .cart{
     min-height: 80vh;
     padding: 3rem 10%;
     width: 80%;
 }
 
-.chekout{
-    padding: 2rem;
-    position: relative;
-    font-weight: 600;
-    margin: 20%;
-    min-height: 8vh;
+.checkout{
+    min-height: 80vh;
+    padding: 3rem 10%;
+    width: 80%;
 }
 
-/* TODO unificar títulos de las páginas*/
-
-.page-title-checkout h2{
-    padding: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 4rem;
-    color: hsl(0, 0%, 100%); 
-}
 
 .page-title{
     width: max-content;
@@ -514,20 +501,20 @@ footer .footer-link a{
 
 .slider{
     height: 90vh;
-    max-height: 100vh;
+    max-height: 90vh;
     margin-bottom: 5rem;
     position: relative;
 }
 
 .slider-image{
-    position:absolute; 
+    position: absolute; 
     display: flex;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .slider-title{
-    position:absolute; 
+    position: absolute; 
     z-index: 1001;
     top: 20%;
     left: 5%;
@@ -550,7 +537,6 @@ footer .footer-link a{
 .featured{
     padding: 2rem;
     position: relative;
-    margin-bottom: -2rem;
 }
 
 .featured-title h3{
@@ -561,28 +547,20 @@ footer .footer-link a{
 
 .featured-elements{
     padding: 3%;
-    position: relative;
 }
 
 .featured-item{
     border-style: solid;
     border-color: hsl(0, 0%, 100%); 
-    border-radius: 2em;
+    border-radius: 2rem;
     box-shadow: 10px 10px hsla(0, 0%, 0%, 0.048);
     overflow: hidden;
 }
 
 .featured-item-image{
-    border-radius: 2em;
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
-    overflow: hidden;
-}
-
-.featured-item-image img{
-    border-radius: 2em;
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
+    border-radius: 2rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .featured-item-text{
@@ -623,13 +601,9 @@ footer .footer-link a{
     margin: 0 auto;
 }
 
-.line.orange{
-    border-top: 0.2rem solid hsl(0, 0%, 100%);
-}
-
 .vertical-line{
     display: flex; 
-    margin-top: 10vh;
+    margin-top: 5vh;
     overflow: hidden; 
     border-style: solid;
     border-color: hsl(0, 0%, 100%);
@@ -644,54 +618,49 @@ footer .footer-link a{
     margin-bottom: 10rem;
 }
 
-.banner-text-description p{
+.banner-text-description{
     position: absolute;
-    display:flex;
+    left: 10%;
+    top: 40%;
+    width: 70%;
     z-index: 1001;
+}
+
+.banner-text-description p{
     text-align: left;
     font-style: italic;
     font-weight: 600;
     font-size: 3rem;
-    width: 70%;
     color: hsl(0, 0%, 100%);
     text-shadow: 3px 3px hsla(0, 0%, 0%, 0.527);
-}
-
-.banner-text-description {
-    position: absolute;
-    display:flex;
-    z-index: 1001;
-    padding: 8%;
-    margin-top: 10vh;
-    width: 70%;
-    align-items: center;
-    border-radius: 30em;
 }
 
 .banner-text-image{
     z-index: 1000;
     width: 100%;
-    margin-top: 2rem;
-    display: flex;
-    position: relative;
 }
 
 /* Contact options */
 
 .contact-options{
     padding: 10%;
-    margin-left: 10%;
 }
 
 .contact-options-element{
     display: flex;
-    margin-top: 3vh;
+    margin-bottom: 2rem;
 }
 
 .contact-options-element-icon{
     color: hsl(0, 0%, 100%);
     margin-right: 5rem;
 }
+
+.contact-options-element-icon svg{
+    height: 2rem;
+    width: 2rem;
+}
+
 
 .contact-options-element-text span{
     color: hsl(0, 0%, 100%);
@@ -702,11 +671,10 @@ footer .footer-link a{
 
 .contact-form{
     padding: 10%;
-    margin-right: 10%;
 }
 
 .form-element{
-    margin-top: 3vh;
+    margin-bottom: 2rem;
     width: 100%;
 }
 
@@ -719,16 +687,25 @@ footer .footer-link a{
     color: hsl(208, 100%, 97%);
 }
 
+.form-element-label{
+    margin-bottom: 1rem;
+}
+
 .form-element-label label{
     color: hsl(0, 0%, 100%);
     font-size: 1.5rem;
     text-align: center;
-    margin: auto;
+}
+
+.form-element-input {
+    width: 100%;
+    padding: 1rem 0 0;
 }
 
 .form-element-input input{
     width: 100%;
     height: 2.5rem;
+    padding-left: 0.5rem;
 }
 
 .form-element-radio input{
@@ -739,24 +716,14 @@ footer .footer-link a{
 }
 
 .form-element-input textarea{
+    padding: 1rem;
     width: 100%;
     height: 10rem;
 }
 
-.form-button{
+.contact-form-button{
+    width: 30%;
     margin-top: 5vh;
-}
-
-.form-button button{
-    font-family: 'Raleway', sans-serif;
-    color: hsl(0, 0%, 100%);
-    border-radius: 2rem;
-    font-size: 1.5rem;
-    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
-    padding: 0.5rem 1.5rem;
-    border-color: hsl(29, 79%, 85%);
-    border-style:solid;
-    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
 }
 
 /* Slider Gallery*/
@@ -766,31 +733,27 @@ footer .footer-link a{
 }
 
 .slider-gallery-main{
-    max-height: 73vh;
-    overflow: hidden;
+    max-height: 75vh;
     width: 100%;
 }
 
 .slider-gallery-miniatures{
     display: flex;
     max-height: 15vh;
-    overflow: hidden;
 }
 
 .slider-gallery-miniature{
     width: 20%;
 }
 
-
 /* Product details */
 
 .product-info{
     margin: 10% 0 5% 0;
-    width: 90%;
 }
 
 .product-details-title{
-    margin-bottom: 2%;
+    margin-bottom: 2rem;
 }
 
 .product-details-title h2{
@@ -836,7 +799,6 @@ footer .footer-link a{
     font-size: 2rem;
 }
 
-
 /* Plus minus button */
 
 .plus-minus-button{
@@ -872,7 +834,7 @@ footer .footer-link a{
 
 .plus-minus-button-input{
     height: 4vh;
-    width: 16%;
+    width: 15%;
     box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137); 
 }
 
@@ -883,39 +845,24 @@ footer .footer-link a{
     width: 100%;
 }
 
-/* Add to cart */
-
-.add-to-cart-button button{
-    font-family: 'Raleway', sans-serif;
+.add-to-cart-button{
     width: 30%;
-    color: hsl(0, 0%, 100%);
-    border-radius: 2rem;
-    font-size: 2rem;
-    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
-    padding: 0.5rem 1.5rem;
-    border-color: hsl(29, 79%, 85%);
-    border-style:solid;
-    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);    
 }
 
 /* Product Categories */
 
 .product-categories{
-    padding: 12%;
+    padding: 15%;
 }
 
 .product-categories-title{
-    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .product-categories-title h2{
     color: hsl(208, 100%, 97%);
     font-size: 3rem;
     font-weight: 600;
-}
-
-.product-categories-list{
-    margin-top: 2rem;
 }
 
 .product-categories-list li{
@@ -929,6 +876,7 @@ footer .footer-link a{
 .product-results{
     padding: 5%;
     display: flex;
+    justify-content: space-between;
 }
 
 .product-results-counter span{
@@ -937,14 +885,14 @@ footer .footer-link a{
 }
 
 .product-results-dropdown{
-    width: 50%;
-    position:relative;
-    left: 40%;
+    margin-left: auto;
+    width: max-content;
 }
 
-.product-results-dropdown input{
-    width: 50%;
+.product-results-dropdown select{
+    width: 100%;
     padding: 1rem;
+    font-size: 1.5rem;
 }
 
 /* Product Gallery */
@@ -952,17 +900,16 @@ footer .footer-link a{
 .product-gallery{
     display:flex;
     justify-content: center;
-    padding-left: 5%;
+    padding: 0 5%;
 }
 
 .product-gallery-item{
-    width: 70%;
-    margin-bottom: 20%;
+    margin-bottom: 5rem;
 }
 
 .product-gallery-item-image img{
-border-style: solid;
-border-color: hsl(208, 100%, 97%);
+    border-style: solid;
+    border-color: hsl(208, 100%, 97%);
 }
 
 .product-gallery-item-name{
@@ -976,7 +923,6 @@ border-color: hsl(208, 100%, 97%);
 
 .product-gallery-item-price{
     padding: 1rem 0;
-
 }
 
 .product-gallery-item-price span{
@@ -985,20 +931,8 @@ border-color: hsl(208, 100%, 97%);
 }
 
 .product-gallery-item-button{
-    width: 80%;
-    padding: 15%;
-}
-
-.product-gallery-item-button button{
-    width: 80%;
-    height: 4rem;
-    color: hsl(0, 0%, 100%);
-    border-radius: 2rem;
-    font-size: 1.7rem;
-    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
-    border-color: hsl(29, 79%, 85%);
-    border-style:solid;
-    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
+    margin: 0 auto;
+    width: 30%;
 }
 
 /* Cart Table */
@@ -1020,13 +954,11 @@ border-color: hsl(208, 100%, 97%);
     border-color: hsl(208, 100%, 97%);
 }
 
-.cart-table table td:nth-child(1){
-    max-height: 100px;
+.cart-table table td:first-child{
     width: 5%;
 }
 
-.cart-table table td:nth-child(4){
-    max-height: 100px;
+.cart-table table td:last-child{
     width: 20%;
 }
 
@@ -1043,31 +975,19 @@ border-color: hsl(208, 100%, 97%);
 }
 
 .resume-table-cart{
-    padding: 2%;
-    margin-left: 39%;
+    padding: 2rem 30% 2rem 20%;
+    margin-left: 10%;
 }
 
-.resume-table-cart-title h2{
-    color: hsl(208, 100%, 97%);
-    border-bottom: solid hsl(0, 0%, 100%);
-    font-weight: 300;
-    font-size: 2rem;
-}
-
-.resume-table-cart table{
-    font-size: 1.8rem;
-    border-bottom: solid white;
-}
 
 /* Resume Table */
 
 .resume-table{
-    padding: 10% 0 0 40%;
+    padding: 20% 0 0 20%;
 }
 
 .resume-table-title{
     margin-bottom: 3vh;
-    justify-content: center;
 }
 
 .resume-table-title h2{
@@ -1078,9 +998,12 @@ border-color: hsl(208, 100%, 97%);
 }
 
 .resume-table table{
-    font-size: 1.8rem;
     border-bottom: solid white;
     text-align: justify
+}
+
+.resume-table-concept {
+    margin-bottom: 1rem;
 }
 
 .resume-table-concept-amount-result{
@@ -1089,45 +1012,26 @@ border-color: hsl(208, 100%, 97%);
 
 .resume-plus-minus-button{
     display:flex;
-    padding-left: 35%;
+    justify-content: center;
 }
 
 /* Cart Navigation */
 
-.cart-navigation-buttons{
-    padding: 0 0 0 30%;
-    margin-top: -4rem;
+.resume-table-cart{
+    padding: 0rem 10% 3rem 30%;
 }
 
-.cart-navigation-button button{
-    width: 20%;
-    height: 4rem;
-    margin-top: 4vh;
-    color: hsl(0, 0%, 100%);
-    border-radius: 2rem;
-    font-size: 2rem;
-    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
-    border-color: hsl(29, 79%, 85%);
-    border-style:solid;
-    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
+.cart-navigation-buttons{
+    width: max-content;
+    padding-left: 45%;
 }
 
 .checkout-form{
     padding: 10%;
-    margin: 0rem 1rem 0rem 3rem;
+    margin: 5rem 1rem 0rem 3rem;
 }
 
 .checkout-payment-button button{
     width: 20%;
     height: 4rem;
-    margin-top: 4vh;
-    color: hsl(0, 0%, 100%);
-    border-radius: 2rem;
-    font-size: 2rem;
-    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
-    border-color: hsl(29, 79%, 85%);
-    border-style:solid;
-    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
 }
-
-
