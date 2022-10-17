@@ -1,5 +1,7 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+/* Este primer apartado recoge los estilos y propiedades básicas de los elementos estructurales y componentes esenciales de la página web */
+
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -11,7 +13,9 @@ body {
 }
 
 main {
-    display: block;
+    display: block; 
+
+    /* La propiedad block permite que el comportamiento de la main sea como un bloque */
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -188,6 +192,9 @@ template {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+
+    /* Las propiedades border-collapse: collapse y border-spacing: 0 establecen que las celdas dentro de una tabla tendrán bordes compartidos y sin espacio entre ellos */
+
 }
 
 ol, ul {
@@ -202,7 +209,9 @@ input::-webkit-inner-spin-button {
    margin: 0;
 }
 
-img{
+ /* Con la propiedad object-fit: cover, el contenido de la imagen o vídeo se dimensionará para mantener su relación de aspecto mientras llene toda la caja de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su caja, el objeto se recortará para que quepa */
+
+ img{
     object-fit: cover;
     max-width: 100%;
     width: 100%;
@@ -214,6 +223,8 @@ video{
 }
 
 /* Typography */
+/* Este apartado compila los estilos que se dan a los textos de la página web */
+/* También recogerá el estilo en que se definen los botones especiales o call to action */
 
 h1, h2, h3, h4, h5, h6, a, p{
     font-family: 'Raleway', sans-serif;
@@ -292,6 +303,11 @@ a:hover, a:focus {
 
 /* Columns */
 
+/* Este apartado concreta los estilos básicos que tendrán las columnas que definen la forma en que aparecerán estructurados los contenidos */
+/* La propiedad display: flex permite la alineación de los contenidos de las columnas en tanto el espacio lo permita */
+/* La propiedad flew-wrap: wrap nos especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también nos permite controlar la dirección en la cual serán apilados los elementos.*/
+/* Con justify-content: space-between haremos que los elementos se distribuyan uniformemente dentro de cada columna de modo que el espacio entre ellos sea uniforme */
+
 .five-columns{
     display: flex;
     flex-wrap: wrap;
@@ -361,6 +377,7 @@ a:hover, a:focus {
 }
 
 /* Structure */ 
+/* Este apartado recoge los estilos que tendrán el header y el footer de la página web */
 
 header{
     background-image: linear-gradient(-225deg, hsl(19, 100%, 80%) 0%, hsl(17, 100%, 81%) 48%, hsl(22, 100%, 72%) 100%);
@@ -372,12 +389,18 @@ header{
 header .header-logo{
     display: flex;
     align-items: center;
+
+    /* Con estas propiedades conseguimos que la caja que contiene el logo alinee sus elementos y estén centrados */
+
 }
 
 header .header-logo-image{
     align-items: center;
     margin-right: 2em;
     width: 8%;
+
+    /* Otorgamos una alineación, unos márgenes y un tamaño suficiente a la imagen del logo para que se adapte al tamaño y se ubique en el lugar que deseamos, en este caso, a la izquierda */
+
 }
 
 header .header-logo-title h1{
@@ -387,6 +410,9 @@ header .header-logo-title h1{
 header .header-menu{
     margin-left: auto;
     width: 50%;
+
+    /* Mediante el margin-left: auto, el margen izquierdo recibe una parte del espacio horizontal no utilizado. Como el valor de margin-left es auto, el espacio calculado se distribuye uniformemente.  */
+
 }
 
 header .header-menu ul{
@@ -394,11 +420,17 @@ header .header-menu ul{
     height: 100%;
     display: flex;
     justify-content: space-between;
+
+    /* Con estas propiedades, conseguimos que los elementos del menú aparezcan alineados, en el centro de sus respectivos contenedores, con el 100% de su altura, condicionada por la caja padre, y con espacios iguales de separación entre ellas*/
+
 }
 
 header .header-menu ul li{
     color: aliceblue;
     font-size: 1.5rem;
+
+    /* Las propiedades de estilo de texto concretas, que determinan color y/o tamaño, se separan de las propiedades que damos a sus respectivas cajas*/
+
 }
 
 main{
@@ -413,6 +445,9 @@ footer{
     width: 90%;
     background-image: linear-gradient(-225deg, hsl(24, 100%, 73%) 0%, hsl(17, 93%, 72%) 48%, hsl(22, 100%, 72%) 100%);
     text-align: center;
+
+    /* El footer contará con una altura de 19vh y una anchura en porcentaje del 90%, igual que el header. Su contenido aparecerá mostrado de manera flexible y cada elemento tendrá un espacio igualitario respecto al otro */
+    
 }
 
 footer .footer-copyright{
@@ -433,6 +468,9 @@ footer .footer-links{
     align-items: center;
     margin-left: auto;
     width: max-content;
+
+    /* Replicando la fórmula seguida con el menú del header, los links del footer contarán con un margin-left: auto, estarán alineados en el centro de sus contenedores y tendrán la anchura máxima que éstos les permitan*/
+
 }
 
 footer .footer-link{
@@ -443,9 +481,16 @@ footer .footer-link a{
     color: aliceblue;
     font-size: 1.5em;
     font-weight: 300;
+
+    /* De igual modo, procedemos a dar estilo a los textos de manera separada a la de sus respectivos contenedores */
+
 }
 
 /* Pages */
+/* Este apartado contiene los estilos, especialmente ancho, padding y margin, que tendrán las páginas */
+/* El width representa el ancho que tendrá la caja que las contiene  */
+/* Se establece que todas ellas tendrán una altura mínima de 80vh, a fin de que su contenido no engulla el footer */
+/* En función de su contenido, el padding empuja la caja para ajustar su contenido */
 
 .contact{
     min-height: 80vh;
@@ -481,6 +526,7 @@ footer .footer-link a{
     width: 80%;
 }
 
+/* A fin de facilitar la búsqueda, se incluyen los títulos de página en este apartado, aunque podrían recogerse en el apartado de elementos básicos estructurales */
 
 .page-title{
     width: max-content;
@@ -495,7 +541,11 @@ footer .footer-link a{
     color: hsl(0, 0%, 100%);  
 }
 
+/* Si nos fijamos, veremos que la caja contiene el borde inferior que acompaña al texto, lo que permite ampliar su anchura, centrar y establecer márgenes con respecto a él */
+
 /* Components */
+
+/* Este apartado compila los estilos de los componentes de cada página aisladamente considerados, a modo de módulos que poder rescatar y adaptar en el futuro para otros proyectos */
 
 /* Slider */ 
 
@@ -504,7 +554,13 @@ footer .footer-link a{
     max-height: 90vh;
     margin-bottom: 5rem;
     position: relative;
+
+    /* La caja del slider tendrá una posición relativa respecto a sus componentes, que serán absolutos, una altura máxima igual a la que se le otorga para que no exceda la medida asignada y un margen inferior, para separarlo de los elementos que le seguirán */
+
 }
+
+
+/* A continuación, podemos ver que mediante la propiedad z-index se define la posición que tendrá un elemento respecto al otro. En este caso, la imagen quedará por debajo del título y del botón, que aparecerán encima*/
 
 .slider-image{
     position: absolute; 
@@ -555,12 +611,18 @@ footer .footer-link a{
     border-radius: 2rem;
     box-shadow: 10px 10px hsla(0, 0%, 0%, 0.048);
     overflow: hidden;
+
+    /* Estas propiedades definen el estilo de los bordes de cada caja de producto, determinando que sean sólidos y curvos con sombreados */
+    /* También concreta los estilos de las imágenes de producto que se encuentran dentro de cada caja, así como los textos */
+    /* Con overflow: hidden haremos que el texto que exceda de la caja que lo contiene quede oculto*/
+
 }
 
 .featured-item-image{
     border-radius: 2rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+/* Introduciendo estos bordes en las imágenes podemos conseguir que los márgenes superiores de las imágenes estén igual de curvados*/
 }
 
 .featured-item-text{
@@ -594,6 +656,9 @@ footer .footer-link a{
 }
 
 /* Banner Text */ 
+/* Este apartado recoge los estilos de los diversos elementos que componen la parte inferior de la home */
+/* En este caso, se traza con CSS una línea horizontal que separa Featured de Banner,centrada y con una anchura del 50% */
+/* También se recoge el estilo de otra línea vertical hermanada con la anterior, y que se incluye aquí pese a que podría integrarse en los elementos básicos estructurales */
 
 .line {
     width: 50%;
@@ -610,6 +675,10 @@ footer .footer-link a{
     border-width: 1px;
 }
 
+/* El display:flex que aparece a continuación permite la exposición alineada de los elementos en tanto lo permita la caja que los contiene */
+/* Al igual que ocurre con el slider, replicamos la fórmula de posición relativa de la caja padre y absolutas de las hijas */
+/* De igual modo, mediante z-index definimos la posición de la descripción y de la imagen, de modo que el texto quede por encima de ésta */
+
 .banner-text{
     display: flex;
     position: relative;
@@ -617,6 +686,7 @@ footer .footer-link a{
     margin-top: 2rem;
     margin-bottom: 10rem;
 }
+
 
 .banner-text-description{
     position: absolute;
