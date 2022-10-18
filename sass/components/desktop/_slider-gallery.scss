@@ -1,0 +1,23 @@
+
+/* Slider Gallery*/
+
+.slider-gallery{
+    width: 100%;
+
+    .slider-gallery-main{
+        max-height: 75vh;
+        width: 100%;
+  
+        .slider-gallery-miniatures{
+            display: flex;
+            max-height: 15vh;
+
+            .slider-gallery-miniature{
+                width: 20%;
+            }
+
+        }
+
+    }
+
+}

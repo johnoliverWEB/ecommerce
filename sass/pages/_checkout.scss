@@ -1,0 +1,62 @@
+
+.checkout{
+    min-height: 80vh;
+    padding: 3rem 10%;
+    width: 80%;
+}
+
+/* Resume Table */
+
+.resume-table{
+    padding: 20% 0 0 20%;
+}
+
+.resume-table-title{
+    margin-bottom: 3vh;
+}
+
+.resume-table-title h2{
+    color: hsl(208, 100%, 97%);
+    border-bottom: solid hsl(0, 0%, 100%);
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.resume-table table{
+    border-bottom: solid white;
+    text-align: justify
+}
+
+.resume-table-concept {
+    margin-bottom: 1rem;
+}
+
+.resume-table-concept-amount-result{
+    text-align: right;
+}
+
+.resume-plus-minus-button{
+    display:flex;
+    justify-content: center;
+}
+
+/* Cart Navigation */
+
+.resume-table-cart{
+    padding: 0rem 10% 3rem 30%;
+}
+
+.cart-navigation-buttons{
+    width: max-content;
+    padding-left: 45%;
+}
+
+.checkout-form{
+    padding: 10%;
+    margin: 5rem 1rem 0rem 3rem;
+}
+
+.checkout-payment-button button{
+    width: 20%;
+    height: 4rem;
+}

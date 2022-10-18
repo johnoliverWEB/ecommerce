@@ -1,0 +1,18 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+ /* Con la propiedad object-fit: cover, el contenido de la imagen o vídeo se dimensionará para mantener su relación de aspecto mientras llene toda la caja de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su caja, el objeto se recortará para que quepa */
+
+ img{
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+}
+
+video{
+    object-fit: cover;
+    max-width: 100%;
+}

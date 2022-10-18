@@ -1,0 +1,49 @@
+/* Plus minus button */
+
+.plus-minus-button{
+    display:flex;
+    width: 100%;
+}
+
+.plus-minus-button-plus,
+.plus-minus-button-minus{
+    height: 4vh;
+    width: 15%;
+}
+    
+.plus-minus-button-plus button,
+.plus-minus-button-minus button{
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    color:hsl(208, 100%, 97%);
+    background-color: hsl(12, 100%, 69%);
+    border: solid hsl(0, 0%, 100%) 0.1rem;
+}
+
+.plus-minus-button-plus button{
+    border-radius: 20em 0 0 20em;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137); 
+}
+
+.plus-minus-button-minus button{
+    border-radius: 0 20em 20em 0;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137); 
+}
+
+.plus-minus-button-input{
+    height: 4vh;
+    width: 15%;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137); 
+}
+
+.plus-minus-button-input input{
+    font-size: 1.6rem;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+.add-to-cart-button{
+    width: 30%;
+}

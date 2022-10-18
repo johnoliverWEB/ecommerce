@@ -1,0 +1,17 @@
+/* En este caso, se traza con CSS una línea horizontal que separa Featured de Banner,centrada y con una anchura del 50% */
+/* También se recoge el estilo de otra línea vertical hermanada con la anterior, y que se incluye aquí pese a que podría integrarse en los elementos básicos estructurales */
+
+.line {
+    width: 50%;
+    border-top: 0.2rem solid hsl(0, 0%, 100%);
+    margin: 0 auto;
+}
+
+.vertical-line{
+    display: flex; 
+    margin-top: 5vh;
+    overflow: hidden; 
+    border-style: solid;
+    border-color: hsl(0, 0%, 100%);
+    border-width: 1px;
+}

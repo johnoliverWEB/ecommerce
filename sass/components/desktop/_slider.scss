@@ -1,0 +1,44 @@
+
+/* Slider */ 
+
+.slider{
+    height: 90vh;
+    max-height: 90vh;
+    margin-bottom: 5rem;
+    position: relative;
+
+    /* La caja del slider tendrá una posición relativa respecto a sus componentes, que serán absolutos, una altura máxima igual a la que se le otorga para que no exceda la medida asignada y un margen inferior, para separarlo de los elementos que le seguirán */
+
+
+
+/* A continuación, podemos ver que mediante la propiedad z-index se define la posición que tendrá un elemento respecto al otro. En este caso, la imagen quedará por debajo del título y del botón, que aparecerán encima*/
+
+    .slider-image{
+        position: absolute; 
+        display: flex;
+        width: 100%;
+        z-index: $z-index-slider-image;
+    }
+
+    .slider-title{
+        position: absolute; 
+        z-index: $z-index-slider-title;
+        top: 20%;
+        left: 5%;
+   
+
+        .slider-title h2{
+            font-size: 3rem;
+            color: hsl(208, 100%, 97%);
+        }
+    
+    }
+
+    .slider-button{
+        position: absolute; 
+        z-index: $z-index-slider-button;
+        top: 30%;
+        left: 5%;     
+    }
+
+}

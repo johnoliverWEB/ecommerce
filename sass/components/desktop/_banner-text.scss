@@ -1,0 +1,39 @@
+/* Banner Text */ 
+/* Este apartado recoge los estilos de los diversos elementos que componen la parte inferior de la home */
+/* El display:flex que aparece a continuación permite la exposición alineada de los elementos en tanto lo permita la caja que los contiene */
+/* Al igual que ocurre con el slider, replicamos la fórmula de posición relativa de la caja padre y absolutas de las hijas */
+/* De igual modo, mediante z-index definimos la posición de la descripción y de la imagen, de modo que el texto quede por encima de ésta */
+
+.banner-text{
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+
+
+    .banner-text-description{
+        position: absolute;
+        left: 10%;
+        top: 40%;
+        width: 70%;
+        z-index: $z-index-banner-text-description;
+    
+
+        .banner-text-description p{
+            text-align: left;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 3rem;
+            color: hsl(0, 0%, 100%);
+            text-shadow: 3px 3px hsla(0, 0%, 0%, 0.527);
+        }
+
+    }
+
+    .banner-text-image{
+        z-index: $banner-text-image;
+        width: 100%;
+    }
+
+}

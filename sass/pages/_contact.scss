@@ -1,0 +1,11 @@
+/* Pages */
+/* Este apartado contiene los estilos, especialmente ancho, padding y margin, que tendrán las páginas */
+/* El width representa el ancho que tendrá la caja que las contiene  */
+/* Se establece que todas ellas tendrán una altura mínima de 80vh, a fin de que su contenido no engulla el footer */
+/* En función de su contenido, el padding empuja la caja para ajustar su contenido */
+
+.contact{
+    min-height: 80vh;
+    padding: 3rem 15%;
+    width: 70%;
+}

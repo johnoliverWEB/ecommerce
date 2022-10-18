@@ -1,0 +1,66 @@
+/* Featured */ 
+
+.featured{
+    padding: 2rem;
+    position: relative;
+}
+
+.featured-title h3{
+    text-align: center;
+    font-size: 2rem;
+    color: hsl(0, 0%, 100%); 
+}
+
+.featured-elements{
+    padding: 3%;
+}
+
+.featured-item{
+    border-style: solid;
+    border-color: hsl(0, 0%, 100%); 
+    border-radius: 2rem;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.048);
+    overflow: hidden;
+
+    /* Estas propiedades definen el estilo de los bordes de cada caja de producto, determinando que sean sólidos y curvos con sombreados */
+    /* También concreta los estilos de las imágenes de producto que se encuentran dentro de cada caja, así como los textos */
+    /* Con overflow: hidden haremos que el texto que exceda de la caja que lo contiene quede oculto*/
+
+}
+
+.featured-item-image{
+    border-radius: 2rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+/* Introduciendo estos bordes en las imágenes podemos conseguir que los márgenes superiores de las imágenes estén igual de curvados*/
+}
+
+.featured-item-text{
+    background-color: hsl(29, 85%, 75%);
+    min-height: 15vh;
+    padding: 1rem;
+}
+
+.featured-item-name{
+    margin-bottom: 0.5rem;
+}
+
+.featured-item-name h4{
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.featured-item-category{
+    margin-bottom: 0.5rem;
+}
+
+.featured-item-category h5{
+    font-size: 1.5rem;
+    color: aliceblue;
+    font-style: italic;
+}
+
+.featured-item-description p{
+    font-size: 1.5rem;
+    color: aliceblue;
+}
