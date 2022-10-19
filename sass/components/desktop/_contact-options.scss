@@ -2,25 +2,24 @@
 
 .contact-options{
     padding: 10%;
-
+    
     .contact-options-element{
-        display: flex;
-        margin-bottom: 2rem;
+            display: flex;
+            margin-bottom: 2rem;
     
 
         .contact-options-element-icon{
             color: hsl(0, 0%, 100%);
             margin-right: 5rem;
-        
 
-            .contact-options-element-icon svg{
+            svg{
                 height: 2rem;
                 width: 2rem;
             }
-
+        
         }
 
-        .contact-options-element-text span{
+        span{
             color: hsl(0, 0%, 100%);
             font-size: 1.5rem;
         }
@@ -28,3 +27,9 @@
     }
 
 }
+
+
+
+
+
+

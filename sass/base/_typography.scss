@@ -26,7 +26,8 @@ h5, h6 {
 
 a, p, span, label, select, input, textarea, li{
     font-family: 'Raleway', sans-serif;
-    color:hsl(29, 84%, 75%);
+    color:hsl(0, 0%, 100%);
+    font-size: 1.5rem;
 }
 
 td, th {
@@ -66,4 +67,18 @@ a:hover, a:focus {
     outline: none;
     text-decoration: none;
     outline-offset: 0;
+}
+
+.page-title{
+    width: max-content;
+    padding: 0 10% 2rem;
+    margin: 0 auto;
+    border-bottom: 0.3rem solid white;
+
+    h2{
+        text-align: center;
+        font-size: 4rem;
+        color: hsl(0, 0%, 100%);  
+    }
+    
 }

@@ -1,0 +1,1007 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Este primer apartado recoge los estilos y propiedades básicas de los elementos estructurales y componentes esenciales de la página web */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(-225deg, hsl(42deg, 100%, 81%) 0%, hsl(24deg, 74%, 74%) 48%, hsl(27deg, 68%, 71%) 100%);
+  /* Como el cuerpo es la base sobre la que ubicaremos las cajas que contienen los elementos, no contiene márgenes */
+  /* El fondo aparece definido como imagen porque se trata de un degradado lineal ubicado transversalmente de la esquina superior izquierda a la inferior derecha*/
+}
+
+main {
+  display: block;
+  /* La propiedad block permite que el comportamiento de la main sea como un bloque */
+}
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+form {
+  margin: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Raleway", sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button,
+input { /* 1 */
+  overflow: visible;
+  border: none;
+  padding: 0;
+  /* La diferencia entre padding y margin es que el primero hace que la caja a la que se aplica empuje o contraiga a las de su entorno, mientras que el segundo simplemente dota de espacio de separación al elemento al que se aplica dentro de la caja en la que se encuentra */
+}
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* Las propiedades border-collapse: collapse y border-spacing: 0 establecen que las celdas dentro de una tabla tendrán bordes compartidos y sin espacio entre ellos */
+}
+
+ol, ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Con la propiedad object-fit: cover, el contenido de la imagen o vídeo se dimensionará para mantener su relación de aspecto mientras llene toda la caja de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su caja, el objeto se recortará para que quepa */
+img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+}
+
+video {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* Typography */
+/* Este apartado compila los estilos que se dan a los textos de la página web */
+/* También recogerá el estilo en que se definen los botones especiales o call to action */
+h1, h2, h3, h4, h5, h6, a, p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: hsl(29deg, 85%, 75%);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: hsl(208deg, 100%, 97%);
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+a, p, span, label, select, input, textarea, li {
+  font-family: "Raleway", sans-serif;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.5rem;
+}
+
+td, th {
+  font-family: "Raleway", sans-serif;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 2rem;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-decoration: none;
+  /* La diferencia entre font-size y font-weight radica en que la primera define el tamaño que se le dará al texto, mientras que la segunda establece el grosor de acuerdo a las modalidades tipográficas que se hayan incorporado previamente */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+h4 {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a {
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:hover, a:focus {
+  outline: none;
+  text-decoration: none;
+  outline-offset: 0;
+}
+
+/* En este apartado se recoge el estilo que se le otorgan a los títulos de página*/
+.page-title {
+  width: max-content;
+  padding: 0 10% 2rem;
+  margin: 0 auto;
+  border-bottom: 0.3rem solid white;
+}
+.page-title h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
+body {
+  background-image: linear-gradient(-225deg, hsl(42deg, 100%, 81%) 0%, hsl(24deg, 74%, 74%) 48%, hsl(27deg, 68%, 71%) 100%);
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  background-image: linear-gradient(-225deg, hsl(42deg, 100%, 81%) 0%, hsl(24deg, 74%, 74%) 48%, hsl(27deg, 68%, 71%) 100%);
+}
+
+/* Este apartado recoge los estilos que tendrán el header y el footer de la página web */
+header {
+  background-image: linear-gradient(-225deg, hsl(19deg, 100%, 80%) 0%, hsl(17deg, 100%, 81%) 48%, hsl(22deg, 100%, 72%) 100%);
+  height: 8vh;
+  padding: 1rem 5% 0.5rem 5%;
+  width: 90%;
+}
+header .header-logo {
+  display: flex;
+  align-items: center;
+  /* Con estas propiedades conseguimos que la caja que contiene el logo alinee sus elementos y estén centrados */
+}
+header .header-logo .header-logo-image {
+  align-items: center;
+  margin-right: 2em;
+  width: 8%;
+  /* Otorgamos una alineación, unos márgenes y un tamaño suficiente a la imagen del logo para que se adapte al tamaño y se ubique en el lugar que deseamos, en este caso, a la izquierda */
+}
+header .header-logo h1 {
+  color: aliceblue;
+}
+header .header-menu {
+  margin-left: auto;
+  width: 50%;
+  /* Mediante el margin-left: auto, el margen izquierdo recibe una parte del espacio horizontal no utilizado. Como el valor de margin-left es auto, el espacio calculado se distribuye uniformemente.  */
+}
+header .header-menu ul {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* Con estas propiedades, conseguimos que los elementos del menú aparezcan alineados, en el centro de sus respectivos contenedores, con el 100% de su altura, condicionada por la caja padre, y con espacios iguales de separación entre ellas*/
+}
+header .header-menu li {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 1.5rem;
+  /* Las propiedades de estilo de texto concretas, que determinan color y/o tamaño, se separan de las propiedades que damos a sus respectivas cajas*/
+}
+
+footer {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 90%;
+  background-image: linear-gradient(-225deg, hsl(19deg, 100%, 80%) 0%, hsl(17deg, 100%, 81%) 48%, hsl(22deg, 100%, 72%) 100%);
+  text-align: center;
+  /* El footer contará con una altura de 19vh y una anchura en porcentaje del 90%, igual que el header. Su contenido aparecerá mostrado de manera flexible y cada elemento tendrá un espacio igualitario respecto al otro */
+}
+footer .footer-copyright {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+footer .footer-copyright p {
+  color: aliceblue;
+  font-size: 1.5em;
+  display: flex;
+}
+footer .footer-links {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-left: auto;
+  width: max-content;
+  /* Replicando la fórmula seguida con el menú del header, los links del footer contarán con un margin-left: auto, estarán alineados en el centro de sus contenedores y tendrán la anchura máxima que éstos les permitan*/
+}
+footer .footer-links .footer-link {
+  margin-left: 2rem;
+}
+footer .footer-links .footer-link a {
+  color: aliceblue;
+  font-size: 1.5em;
+  font-weight: 300;
+  /* De igual modo, procedemos a dar estilo a los textos de manera separada a la de sus respectivos contenedores */
+}
+
+/* Layout */
+/* Columns */
+/* Este apartado concreta los estilos básicos que tendrán las columnas que definen la forma en que aparecerán estructurados los contenidos */
+/* La propiedad display: flex permite la alineación de los contenidos de las columnas en tanto el espacio lo permita */
+/* La propiedad flew-wrap: wrap nos especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también nos permite controlar la dirección en la cual serán apilados los elementos en relación a display*/
+/* Con justify-content: space-between haremos que los elementos se distribuyan uniformemente dentro de cada columna de modo que el espacio entre ellos sea uniforme */
+.five-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.five-columns > .column {
+  width: 18%;
+}
+
+.four-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.four-columns > .column {
+  width: 22%;
+}
+
+.three-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.three-columns > .column {
+  width: 30%;
+}
+
+.two-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.two-columns > .column {
+  width: 48%;
+}
+
+.two-columns-aside {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.two-columns-aside > .column-aside {
+  width: 20%;
+}
+
+.two-columns-aside > .column-main {
+  width: 75%;
+}
+
+.one-column {
+  width: 100%;
+}
+
+.one-column > .column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Product details */
+.product-info {
+  margin: 10% 0 5% 0;
+}
+.product-info .product-details-title {
+  margin-bottom: 2rem;
+  /* El margin-bottom es una propiedad altamente aconsejable a la hora de definir los márgenes entre los elementos situados uno encima del otro. Con esta propiedad, el elemento superior amplía su margen inferior y por tanto, su distancia con el que tiene debajo, haciendo innecesario aplicarle a éste último un margen superior y permitiendo por tanto, una más cómoda forma de distribuir dichos elementos*/
+}
+.product-info .product-details-title h2 {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 3rem;
+  font-weight: 600;
+}
+.product-info .product-details-price {
+  margin-bottom: 2rem;
+}
+.product-info .product-details-price span {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 2rem;
+}
+.product-info .product-details-text {
+  margin-bottom: 2rem;
+}
+.product-info .product-details-text p {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+.product-info .product-details-amount {
+  display: flex;
+  margin: 0 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.product-info .product-details-amount-text {
+  width: 70%;
+}
+.product-info .product-details-amount-text span {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 2rem;
+}
+
+/* Contact options */
+.contact-options {
+  padding: 10%;
+}
+.contact-options .contact-options-element {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.contact-options .contact-options-element .contact-options-element-icon {
+  color: hsl(0deg, 0%, 100%);
+  margin-right: 5rem;
+}
+.contact-options .contact-options-element .contact-options-element-icon svg {
+  height: 2rem;
+  width: 2rem;
+}
+.contact-options .contact-options-element span {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.5rem;
+}
+
+/* Featured */
+.featured {
+  padding: 2rem;
+  position: relative;
+}
+
+.featured-title h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.featured-elements {
+  padding: 3%;
+}
+
+.featured-item {
+  border-style: solid;
+  border-color: hsl(0deg, 0%, 100%);
+  border-radius: 2rem;
+  box-shadow: 10px 10px hsla(0deg, 0%, 0%, 0.048);
+  overflow: hidden;
+  /* Estas propiedades definen el estilo de los bordes de cada caja de producto, determinando que sean sólidos y curvos con sombreados */
+  /* También concreta los estilos de las imágenes de producto que se encuentran dentro de cada caja, así como los textos */
+  /* Con overflow: hidden haremos que el texto que exceda de la caja que lo contiene quede oculto*/
+}
+
+.featured-item-image {
+  border-radius: 2rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  /* Introduciendo estos bordes en las imágenes podemos conseguir que los márgenes superiores de las imágenes estén igual de curvados*/
+}
+
+.featured-item-text {
+  background-color: hsl(29deg, 85%, 75%);
+  min-height: 15vh;
+  padding: 1rem;
+}
+
+.featured-item-name {
+  margin-bottom: 0.5rem;
+}
+
+.featured-item-name h4 {
+  font-size: 1.5rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.featured-item-category {
+  margin-bottom: 0.5rem;
+}
+
+.featured-item-category h5 {
+  font-size: 1.5rem;
+  color: aliceblue;
+  font-style: italic;
+}
+
+.featured-item-description p {
+  font-size: 1.5rem;
+  color: aliceblue;
+}
+
+/* Plus minus button */
+.plus-minus-button {
+  display: flex;
+  width: 100%;
+}
+
+.plus-minus-button-plus,
+.plus-minus-button-minus {
+  height: 4vh;
+  width: 15%;
+}
+
+.plus-minus-button-plus button,
+.plus-minus-button-minus button {
+  font-size: 2rem;
+  height: 100%;
+  width: 100%;
+  color: hsl(208deg, 100%, 97%);
+  background-color: hsl(12deg, 100%, 69%);
+  border: solid hsl(0deg, 0%, 100%) 0.1rem;
+}
+
+.plus-minus-button-plus button {
+  border-radius: 20em 0 0 20em;
+  box-shadow: 10px 10px hsla(0deg, 0%, 0%, 0.137);
+}
+
+.plus-minus-button-minus button {
+  border-radius: 0 20em 20em 0;
+  box-shadow: 10px 10px hsla(0deg, 0%, 0%, 0.137);
+}
+
+.plus-minus-button-input {
+  height: 4vh;
+  width: 15%;
+  box-shadow: 10px 10px hsla(0deg, 0%, 0%, 0.137);
+}
+
+.plus-minus-button-input input {
+  font-size: 1.6rem;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.add-to-cart-button {
+  width: 30%;
+}
+
+.custom-button {
+  font-family: "Raleway", sans-serif;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b 51%, #ff7e5f 100%);
+  padding: 0.5rem 1.5rem;
+  border-color: hsl(29deg, 79%, 85%);
+  border-style: solid;
+  box-shadow: 10px 10px hsla(0deg, 0%, 0%, 0.137);
+  width: 100%;
+}
+
+/* Slider */
+.slider {
+  height: 90vh;
+  max-height: 90vh;
+  margin-bottom: 5rem;
+  position: relative;
+  /* La caja del slider tendrá una posición relativa respecto a sus componentes, que serán absolutos, una altura máxima igual a la que se le otorga para que no exceda la medida asignada y un margen inferior, para separarlo de los elementos que le seguirán */
+  /* A continuación, podemos ver que mediante la propiedad z-index se define la posición que tendrá un elemento respecto al otro. En este caso, la imagen quedará por debajo del título y del botón, que aparecerán encima*/
+}
+.slider .slider-image {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  z-index: 1000;
+}
+.slider .slider-title {
+  position: absolute;
+  z-index: 1001;
+  top: 20%;
+  left: 5%;
+}
+.slider .slider-title h2 {
+  font-size: 3rem;
+  color: hsl(208deg, 100%, 97%);
+}
+.slider .slider-button {
+  position: absolute;
+  z-index: 1001;
+  top: 30%;
+  left: 5%;
+}
+
+/* Slider Gallery*/
+.slider-gallery {
+  width: 100%;
+}
+
+.slider-gallery-main {
+  max-height: 75vh;
+  width: 100%;
+}
+
+.slider-gallery-miniatures {
+  display: flex;
+  max-height: 15vh;
+}
+
+.slider-gallery-miniature {
+  width: 20%;
+}
+
+/* Banner Text */
+/* Este apartado recoge los estilos de los diversos elementos que componen la parte inferior de la home */
+/* El display:flex que aparece a continuación permite la exposición alineada de los elementos en tanto lo permita la caja que los contiene */
+/* Al igual que ocurre con el slider, replicamos la fórmula de posición relativa de la caja padre y absolutas de las hijas */
+/* De igual modo, mediante z-index definimos la posición de la descripción y de la imagen, de modo que el texto quede por encima de ésta */
+.banner-text {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+.banner-text .banner-text-description {
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  width: 70%;
+  z-index: 1001;
+}
+.banner-text .banner-text-description p {
+  text-align: left;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 3rem;
+  color: hsl(0deg, 0%, 100%);
+  text-shadow: 3px 3px hsla(0deg, 0%, 0%, 0.527);
+}
+.banner-text .banner-text-image {
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Form */
+.contact-form {
+  padding: 10%;
+}
+
+.form-element {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.form-element-radio {
+  width: 100%;
+}
+
+.form-element-radio label {
+  font-size: 1.5rem;
+  color: hsl(208deg, 100%, 97%);
+}
+
+.form-element-label {
+  margin-bottom: 1rem;
+}
+
+.form-element-label label {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-element-input {
+  width: 100%;
+  padding: 1rem 0 0;
+}
+
+.form-element-input input {
+  width: 100%;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+}
+
+.form-element-radio input {
+  margin-right: 1rem;
+  margin-top: -0.5rem;
+  vertical-align: middle;
+  width: 1rem;
+}
+
+.form-element-input textarea {
+  padding: 1rem;
+  width: 100%;
+  height: 10rem;
+}
+
+.contact-form-button {
+  width: 30%;
+  margin-top: 5vh;
+}
+
+/* En este caso, se traza con CSS una línea horizontal que separa Featured de Banner,centrada y con una anchura del 50% */
+/* También se recoge el estilo de otra línea vertical hermanada con la anterior, y que se incluye aquí pese a que podría integrarse en los elementos básicos estructurales */
+.line {
+  width: 50%;
+  border-top: 0.2rem solid hsl(0deg, 0%, 100%);
+  margin: 0 auto;
+}
+
+.vertical-line {
+  display: flex;
+  margin-top: 5vh;
+  overflow: hidden;
+  border-style: solid;
+  border-color: hsl(0deg, 0%, 100%);
+  border-width: 1px;
+}
+
+.cart {
+  min-height: 80vh;
+  padding: 3rem 10%;
+  width: 80%;
+  /* Cart Table */
+}
+.cart .cart-header-product {
+  padding: 3rem;
+}
+.cart .cart-table {
+  margin: 3rem 0;
+}
+.cart .cart-table table td {
+  text-align: center;
+}
+.cart .cart-table table tr {
+  border-bottom: solid;
+  border-color: hsl(208deg, 100%, 97%);
+}
+.cart .cart-table table td:first-child {
+  width: 5%;
+}
+.cart .cart-table table td:last-child {
+  width: 20%;
+}
+.cart .cart-image-box {
+  width: 10rem;
+  height: 10rem;
+  margin: 1rem;
+}
+.cart .cart-image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.resume-table-cart {
+  padding: 2rem 30% 2rem 20%;
+  margin-left: 10%;
+}
+
+.checkout {
+  min-height: 80vh;
+  padding: 3rem 10%;
+  width: 80%;
+}
+
+/* Resume Table */
+.resume-table {
+  padding: 20% 0 0 20%;
+}
+
+.resume-table-title {
+  margin-bottom: 3vh;
+}
+
+.resume-table-title h2 {
+  color: hsl(208deg, 100%, 97%);
+  border-bottom: solid hsl(0deg, 0%, 100%);
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.resume-table table {
+  border-bottom: solid white;
+  text-align: justify;
+}
+
+.resume-table-concept {
+  margin-bottom: 1rem;
+}
+
+.resume-table-concept-amount-result {
+  text-align: right;
+}
+
+.resume-plus-minus-button {
+  display: flex;
+  justify-content: center;
+}
+
+/* Cart Navigation */
+.resume-table-cart {
+  padding: 0rem 10% 3rem 30%;
+}
+
+.cart-navigation-buttons {
+  width: max-content;
+  padding-left: 45%;
+}
+
+.checkout-form {
+  padding: 10%;
+  margin: 5rem 1rem 0rem 3rem;
+}
+
+.checkout-payment-button button {
+  width: 20%;
+  height: 4rem;
+}
+
+/* Pages */
+/* Este apartado contiene los estilos, especialmente ancho, padding y margin, que tendrán las páginas */
+/* El width representa el ancho que tendrá la caja que las contiene  */
+/* Se establece que todas ellas tendrán una altura mínima de 80vh, a fin de que su contenido no engulla el footer */
+/* En función de su contenido, el padding empuja la caja para ajustar su contenido */
+.contact {
+  min-height: 80vh;
+  padding: 3rem 15%;
+  width: 70%;
+}
+
+.product {
+  min-height: 80vh;
+  padding: 3rem 10%;
+  width: 80%;
+}
+
+.column-product {
+  width: 50%;
+  min-height: 90vh;
+}
+
+.products {
+  width: 100%;
+  min-height: 80vh;
+}
+
+/* Product Categories */
+.product-categories {
+  padding: 15%;
+}
+
+.product-categories-title {
+  margin-bottom: 2.5rem;
+}
+.product-categories-title h2 {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.product-categories-list li {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Product results */
+.product-results {
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-results-counter span {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 2rem;
+}
+
+.product-results-dropdown {
+  margin-left: auto;
+  width: max-content;
+}
+.product-results-dropdown select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Product Gallery */
+.product-gallery {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+}
+.product-gallery .product-gallery-item {
+  margin-bottom: 5rem;
+}
+.product-gallery .product-gallery-item img {
+  border-style: solid;
+  border-color: hsl(208deg, 100%, 97%);
+}
+.product-gallery .product-gallery-item .product-gallery-item-name {
+  padding-top: 1rem;
+}
+.product-gallery .product-gallery-item .product-gallery-item-name h3 {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 2rem;
+}
+.product-gallery .product-gallery-item .product-gallery-item-price {
+  padding: 1rem 0;
+}
+.product-gallery .product-gallery-item .product-gallery-item-price span {
+  color: hsl(208deg, 100%, 97%);
+  font-size: 1.5rem;
+}
+.product-gallery .product-gallery-item .product-gallery-item-button {
+  margin: 0 auto;
+  width: 35%;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -3,17 +3,16 @@
 header{
     background-image: $header;
     height: 8vh;
-    padding: 0.5rem 5% 0.5rem 5%;
+    padding: 1rem 5% 0.5rem 5%;
     width: 90%;
 
-
-    header .header-logo{
+    .header-logo{
         display: flex;
         align-items: center;
 
         /* Con estas propiedades conseguimos que la caja que contiene el logo alinee sus elementos y estén centrados */
 
-        header .header-logo-image{
+        .header-logo-image{
             align-items: center;
             margin-right: 2em;
             width: 8%;
@@ -22,34 +21,33 @@ header{
     
         }
 
-        header .header-logo-title h1{
+        h1{
             color: aliceblue;
-        }
-    
-        header .header-menu{
-            margin-left: auto;
-            width: 50%;
-    
-            header .header-menu ul{
-                align-items: center;
-                height: 100%;
-                display: flex;
-                justify-content: space-between;
-        
-                /* Con estas propiedades, conseguimos que los elementos del menú aparezcan alineados, en el centro de sus respectivos contenedores, con el 100% de su altura, condicionada por la caja padre, y con espacios iguales de separación entre ellas*/
-        
-                header .header-menu ul li{
-                    color: hsl(208, 100%, 97%);
-                    font-size: 1.5rem;
-            
-                    /* Las propiedades de estilo de texto concretas, que determinan color y/o tamaño, se separan de las propiedades que damos a sus respectivas cajas*/
-            
-                }
-
-            }
-            /* Mediante el margin-left: auto, el margen izquierdo recibe una parte del espacio horizontal no utilizado. Como el valor de margin-left es auto, el espacio calculado se distribuye uniformemente.  */
         }
 
     }
     
+    .header-menu{
+        margin-left: auto;
+        width: 50%;
+
+        ul{
+            align-items: center;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+    
+            /* Con estas propiedades, conseguimos que los elementos del menú aparezcan alineados, en el centro de sus respectivos contenedores, con el 100% de su altura, condicionada por la caja padre, y con espacios iguales de separación entre ellas*/
+        }
+        
+        li{
+            color: hsl(208, 100%, 97%);
+            font-size: 1.5rem;
+    
+            /* Las propiedades de estilo de texto concretas, que determinan color y/o tamaño, se separan de las propiedades que damos a sus respectivas cajas*/
+    
+        }
+        /* Mediante el margin-left: auto, el margen izquierdo recibe una parte del espacio horizontal no utilizado. Como el valor de margin-left es auto, el espacio calculado se distribuye uniformemente.  */
+    }
+
 }
