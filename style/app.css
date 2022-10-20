@@ -313,23 +313,27 @@ header {
   height: 8vh;
   padding: 1rem 5% 0.5rem 5%;
   width: 90%;
+  /* La propiedad background-image refiere al fondo que tendrá el header. En este caso, se ha optado por un degradado que conforme a las propiedades que se especifican consta de tres colores que se diluyen desde la esquina superior izquierda a la inferior derecha */
+  /* La propiedad height establece la altura del header, que en este caso se establece de manera que en relación al width, su anchura, ocupe el 90% de su caja pero su altura sea mucho menor, en este caso, de 8vh. */
+  /* El padding establece el espacio de relleno requerido por todos los lados de un elemento, es decir, define los márgenes exteriores en relación al resto de cajas de su entorno. En este caso, el primer valor se aplica a arriba (rem), el segundo valor se aplica a la derecha (porcentaje), el tercer valor se aplica a abajo (rem) y el cuarto valor se aplica a la izquierda (porcentaje), consiguiendo mantener el header a la altura que queremos y centrado respecto de la caja madre */
 }
 
 header .header-logo {
   display: flex;
   align-items: center;
-  /* Con estas propiedades conseguimos que la caja que contiene el logo alinee sus elementos y estén centrados */
+  /* Con estas propiedades conseguimos que la caja que contiene el logo alinee sus elementos (svg y h1) y estén centrados */
 }
 
 header .header-logo .header-logo-image {
   align-items: center;
   margin-right: 2em;
   width: 8%;
-  /* Otorgamos una alineación, unos márgenes y un tamaño suficiente a la imagen del logo para que se adapte al tamaño y se ubique en el lugar que deseamos, en este caso, a la izquierda */
+  /* Otorgamos una alineación, unos márgenes y un tamaño suficiente a la imagen del logo para que se adapte al tamaño y se ubique en el lugar que deseamos, en este caso, a la izquierda del header. Teniendo en cuenta las dimensiones del archivo, se ha optado por otorgarle tan solo un 8% de anchura respecto de su tamaño original, estableciéndose en porcentajes para que resulte adaptable*/
 }
 
 header .header-logo h1 {
   color: hsl(208, 100%, 97%);
+  /* Otorgamos el color elegido para el texto del header, propiedad que aplicamos introduciendo h1 a la denominación */
 }
 
 header .header-menu {
@@ -360,19 +364,21 @@ footer {
   width: 90%;
   background-image: linear-gradient(-225deg, hsl(19deg, 100%, 80%) 0%, hsl(17deg, 100%, 81%) 48%, hsl(22deg, 100%, 72%) 100%);
   text-align: center;
-  /* El footer contará con una altura de 10vh y una anchura en porcentaje del 90%, igual que el header. Su contenido aparecerá mostrado de manera flexible y cada elemento tendrá un espacio igualitario respecto al otro */
+  /* El footer contará con una altura de 10vh, siendo algo más alto que el header y una anchura en porcentaje del 90%, igual que el header. Su contenido aparecerá mostrado de manera flexible y cada elemento tendrá un espacio igualitario respecto al otro. En este caso aplicamos un padding con dos unidades, el primer valor se aplica a arriba y abajo, y el segundo valor se aplica a derecha e izquierda*/
 }
 
 footer .footer-copyright {
   align-items: center;
   display: flex;
   height: 100%;
+  /* En este caso estamos aplicando a la caja que contiene el texto de copyright la propiedad de aparecer alineada con el resto de elementos de su entorno inmediato (como enlaces) centrada y al 100% de su altura, dependiente de la caja madre */
 }
 
 footer .footer-copyright p {
   color: hsl(208, 100%, 97%);
   font-size: 1.5em;
   display: flex;
+  /* En este caso damos propiedades a la fuente del texto, que al tratarse de un fragmento se tipifica como p, otorgándole color y tamaño y haciendo que igualmente aparezca de manera alineada */
 }
 
 footer .footer-links {
@@ -386,6 +392,7 @@ footer .footer-links {
 
 footer .footer-links .footer-link {
   margin-left: 2rem;
+  /* Al otorgar margen, como se verá en reiteradas ocasiones en estos comentarios, definimos el espacio que tendrá el elemento dentro de su propia caja, lo que lo diferencia del padding, que lo que hace es definir el espacio que queda fuera de ella */
 }
 
 footer .footer-links .footer-link a {
@@ -691,6 +698,7 @@ footer .footer-links .footer-link a {
   display: flex;
   width: 100%;
   z-index: 1000;
+  /* La relación entre las propiedades relative de la caja padre y absolute de los hijos permite que la primera se posicione a la medida indicada en las propiedades a partir de la posición de la caja, mientras que el valor absoluto de las hijas parte del borde del navegador */
 }
 
 .slider .slider-title {
@@ -698,11 +706,13 @@ footer .footer-links .footer-link a {
   z-index: 1001;
   top: 20%;
   left: 5%;
+  /* Como comprobamos, al aplicar un z-index superior a un elemento respecto a otro, conseguimos que dicho elemento se posicione por encima respecto a éste */
 }
 
 .slider .slider-title h2 {
   font-size: 3rem;
   color: hsl(208deg, 100%, 97%);
+  /* Como en anteriores ocasiones, otorgamos propiedades al texto con la denominación h2, tales como color y tamaño. Si nos fijamos, veremos que la nomenclatura de los títulos no es arbitraria, ya que su denominación describe la importancia de los mismos influyendo en el SEO. Así, un h1 es más importante que un h2, y este a su vez más importante que, por ejemplo, un p */
 }
 
 .slider .slider-button {
@@ -710,11 +720,13 @@ footer .footer-links .footer-link a {
   z-index: 1001;
   top: 30%;
   left: 5%;
+  /* En este caso, el botón del slider, un call to action, contará igualmente con una posición absoluta respecto del padre, que es relativo, y una ubicación determinada por porcentajes arriba, abajo y a la izquierda*/
 }
 
 /* Slider Gallery*/
 .slider-gallery {
   width: 100%;
+
 }
 
 .slider-gallery-main {
@@ -771,6 +783,7 @@ footer .footer-links .footer-link a {
 /* Form */
 .contact-form {
   padding: 10%;
+  /* Cuando otorgamos a la caja del form un padding del 10%, se lo otorgamos a sus cuatro lados, arriba, abajo, derecha e izquierda */
 }
 
 .form-element {
