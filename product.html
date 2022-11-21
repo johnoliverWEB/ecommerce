@@ -12,12 +12,11 @@
             <title>Ilulo Ceramics</title>
             <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
             <meta name="keywords"    content="palabras clave, separadas, por comas">
-         
-            
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="style/app.css">
+            <script type="module" src="js/index.js"></script>
             <!-- Comando que enlaza al archivo css que hemos hecho -->
         </head>
     
@@ -96,18 +95,18 @@
                                         <span>¿Cuántos quieres?</span>
                                     </div>
                                     <div class="plus-minus-button">
-                                        <div class="plus-minus-button-plus">
+                                        <div id="plus" class="plus-minus-button-plus">
                                             <button>+</button>
                                         </div>
-                                        <div class="plus-minus-button-input">
+                                        <div id="number" class="plus-minus-button-input">
                                             <input type="number" value="1" size="5"/>
                                         </div>
-                                        <div class="plus-minus-button-minus">
+                                        <div id="minus" class="plus-minus-button-minus">
                                             <button>-</button>
                                         </div>
                                     </div>
                                 </div>
-    
+                               
                                 <div class="add-to-cart-button">
                                     <button class="custom-button">Comprar</button>
                                 </div>
