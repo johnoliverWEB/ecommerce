@@ -17,7 +17,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="style/app.css">
-            <script type="module" src="js/index.js"></script>
+            
             <!-- Comando que enlaza al archivo css que hemos hecho -->
         </head>
     
@@ -75,13 +75,13 @@
                                 <td>150,00 €</td>
                                 <td>
                                     <div class="resume-plus-minus-button">
-                                        <div class="plus-minus-button-plus">
+                                        <div id="plus" class="plus-minus-button-plus">
                                             <button>+</button>
                                         </div>
                                         <div class="plus-minus-button-input">
-                                            <input type="number" value="1" size="5"/>
+                                            <input type="number" class="amount" id="amount" value="1" data-min="1" data-max="10" size="5"/>
                                         </div>
-                                        <div class="plus-minus-button-minus">
+                                        <div id="minus" class="plus-minus-button-minus">
                                             <button>-</button>
                                         </div>
                                     </div>
@@ -95,13 +95,13 @@
                                 <td class="cart-product-price">120,00 €</td>
                                 <td>
                                     <div class="resume-plus-minus-button">
-                                        <div class="plus-minus-button-plus">
+                                        <div id="plus" class="plus-minus-button-plus">
                                             <button>+</button>
                                         </div>
                                         <div class="plus-minus-button-input">
-                                            <input type="number" value="1" size="5"/>
+                                            <input type="number" class="amount" id="amount" value="1" data-min="1" data-max="10" size="5"/>
                                         </div>
-                                        <div class="plus-minus-button-minus">
+                                        <div id="minus" class="plus-minus-button-minus">
                                             <button>-</button>
                                         </div>
                                     </div>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </footer>
-              
+            <script type="module" src="js/index.js"></script> 
         </body>
     
     </html>
