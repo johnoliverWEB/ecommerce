@@ -24,9 +24,15 @@ h5, h6 {
     font-family: 'Raleway', sans-serif;
 }
 
-a, p, span, label, select, input, textarea, li{
+a, p, span, label, li{
     font-family: 'Raleway', sans-serif;
     color:hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+}
+
+input, select, textarea{
+    color: hsl(0, 0%, 0%);
+    font-family: 'Raleway', sans-serif;
     font-size: 1.5rem;
 }
 

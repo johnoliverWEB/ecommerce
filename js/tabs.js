@@ -1,24 +1,23 @@
-export let rendertabs= () => {
+export let renderTabs= () => {
 
     let tabItems = document.querySelectorAll('.tab-item');
-    let tabsContents = document.querySelectorAll (".tabs-contents");
+    let tabsContents = document.querySelectorAll (".tab-content");
 
     tabItems.forEach(tabItem => {
 
         tabItem.addEventListener("click", () => {
 
             tabItems.forEach(tabsItem => {
-                tabsItem.classList.remove("tab-active");
+                tabsItem.classList.remove("active");
             });
                
-            tabItem.classList.add("tab-active");
+            tabItem.classList.add("active");
 
-            tabsContents.forEach(tabsContents => {
-                if(tabsContents.dataset.tab == tabItem.dataset.tab){
-                    tabsContents.classlist.add ("tab-active");
-
+            tabsContents.forEach(tabContent => {
+                if(tabContent.dataset.tab == tabItem.dataset.tab){
+                    tabContent.classList.add ("active");
                 }else{
-                    tabsContents.classlist.remove("tab-active");
+                    tabContent.classList.remove("active");
                 }
             
             });

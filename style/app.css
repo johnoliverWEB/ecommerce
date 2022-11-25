@@ -34,8 +34,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 b, strong {
@@ -193,15 +192,13 @@ input::-webkit-inner-spin-button {
 
 /* Con la propiedad object-fit: cover, el contenido de la imagen o vídeo se dimensionará para mantener su relación de aspecto mientras llene toda la caja de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su caja, el objeto se recortará para que quepa */
 img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   max-width: 100%;
   width: 100%;
 }
 
 video {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   max-width: 100%;
 }
 
@@ -230,9 +227,15 @@ h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
-a, p, span, label, select, input, textarea, li {
+a, p, span, label, li {
   font-family: "Raleway", sans-serif;
   color: hsl(0deg, 0%, 100%);
+  font-size: 1.5rem;
+}
+
+input, select, textarea {
+  color: hsl(0deg, 0%, 0%);
+  font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
 }
 
@@ -276,8 +279,6 @@ a:hover, a:focus {
 }
 
 .page-title {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   padding: 0 10% 2rem;
   margin: 0 auto;
@@ -366,8 +367,6 @@ footer .footer-links {
   height: 100%;
   align-items: center;
   margin-left: auto;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   /* Replicando la fórmula seguida con el menú del header, los links del footer contarán con un margin-left: auto, estarán alineados en el centro de sus contenedores y tendrán la anchura máxima que éstos les permitan*/
 }
@@ -803,6 +802,32 @@ footer .footer-links .footer-link a {
   border-width: 1px;
 }
 
+.tabs {
+  margin-bottom: 1rem;
+}
+.tabs .tabs-items {
+  display: flex;
+}
+.tabs .tabs-items .tab-item {
+  cursor: pointer;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 129, 97, 0.443);
+}
+.tabs .tabs-items .tab-item.active {
+  background-color: hsl(12deg, 100%, 69%);
+}
+.tabs .tabs-contents {
+  background-color: hsl(12deg, 100%, 69%);
+}
+.tabs .tabs-contents .tab-content {
+  display: none;
+  padding: 1rem;
+}
+.tabs .tabs-contents .tab-content.active {
+  display: block;
+}
+
 .cart {
   min-height: 80vh;
   padding: 3rem 10%;
@@ -836,8 +861,7 @@ footer .footer-links .footer-link a {
 .cart .cart-image-box img {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .resume-table-cart {
@@ -891,8 +915,6 @@ footer .footer-links .footer-link a {
 }
 
 .cart-navigation-buttons {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   padding-left: 45%;
 }
@@ -916,6 +938,13 @@ footer .footer-links .footer-link a {
   min-height: 80vh;
   padding: 3rem 15%;
   width: 70%;
+}
+.contact .form-element {
+  position: relative;
+}
+.contact .counter-text {
+  position: absolute;
+  right: 0;
 }
 
 .product {
@@ -968,8 +997,6 @@ footer .footer-links .footer-link a {
 
 .product-results-dropdown {
   margin-left: auto;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 .product-results-dropdown select {
@@ -1010,7 +1037,4 @@ footer .footer-links .footer-link a {
   width: 35%;
 }
 
-ul.tab_tab {
-  padding: 2rem;
-  background-color: hsl(208, 100%, 97%);
-}/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=app.css.map */
