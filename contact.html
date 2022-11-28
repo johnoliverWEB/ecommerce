@@ -131,14 +131,16 @@
                                         <div class="column">
                                             <div class="form-element">  
                                                 <div class="form-element-label"><label>Nombre</label></div>
-                                                <div class="form-element-input"><input id="name" type="text">
+                                                <div class="form-element-input"><input id="name" type="text" data-validate="only-letters">
                                                 </div>
+                                                <span class="mensaje-error">Formato incorrecto</span>
                                             </div>
                                         </div>
                                         <div class="column">
                                             <div class="form-element">  
                                                 <div class="form-element-label"><label>Apellidos</label></div>
-                                                <div class="form-element-input"><input id="name" type="text"></div>
+                                                <div class="form-element-input"><input id="name" type="text" data-validate="only-letters"></div>
+                                                <span class="mensaje-error">Formato incorrecto</span>
                                             </div>
                                         </div>
                                     </div>
@@ -146,13 +148,15 @@
                                         <div class="column">
                                             <div class="form-element">  
                                                 <div class="form-element-label"><label>Teléfono</label></div>
-                                                <div class="form-element-input"><input id="telephone" type="text"></div>
+                                                <div class="form-element-input"><input id="telephone" type="text" data-validate="telephone"></div>
+                                                <span class="mensaje-error">Formato incorrecto</span>
                                             </div>
                                         </div>
                                         <div class="column">
                                             <div class="form-element">  
                                                 <div class="form-element-label"><label>Email</label></div>
-                                                <div class="form-element-input"><input id="email" type="text"></div>
+                                                <div class="form-element-input"><input id="email" type="text" data-validate="email"></div>
+                                                <span class="mensaje-error">Formato incorrecto</span>
                                             </div>
                                         </div>
                                     </div>
@@ -160,22 +164,23 @@
                                         <div class="column">
                                             <div class="form-element">  
                                                 <div class="form-element-label">
-                                                    <label>Mensaje</label>
+                                                    <label id="message">Mensaje</label>
                                                     <span class="counter-text">
                                                         <span class="counter">0</span>
                                                         <span>/250</span>
                                                     </span>
                                                 </div>
                                                 <div class="form-element-input">
-                                                    <textarea class="validate-characters" type="text" maxlength="250"></textarea>
+                                                    <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250"></textarea>
                                                 </div>
+                                                <span class="mensaje-error">Este campo no puede estar vacío</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="one-column">
                                         <div class="column">
                                             <div class="contact-form-button"> 
-                                                <button class="custom-button">Enviar</button>
+                                                <button class="custom-button send-form-button">Enviar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -183,6 +188,9 @@
                             </div>
                         </div>
                     </div>    
+                </div>
+                <div id="notification"> 
+                    <p id="notification-message"></p>
                 </div>
             </main>
     

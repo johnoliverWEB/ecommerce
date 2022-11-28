@@ -40,6 +40,14 @@
     padding-left: 0.5rem;
 }
 
+.form-element-input input.invalid{
+    border: 1px solid hsl(0, 100%, 50%);
+}
+
+.form-element-input textarea.invalid{
+    border: 1px solid hsl(0, 100%, 50%);
+}
+
 .form-element-radio input{
     margin-right: 1rem;
     margin-top: -0.5rem;
@@ -57,3 +65,9 @@
     width: 30%;
     margin-top: 5vh;
 }
+
+.mensaje-error{
+    display: none;
+    
+}
+

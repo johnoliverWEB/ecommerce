@@ -34,7 +34,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 b, strong {
@@ -192,13 +193,15 @@ input::-webkit-inner-spin-button {
 
 /* Con la propiedad object-fit: cover, el contenido de la imagen o vídeo se dimensionará para mantener su relación de aspecto mientras llene toda la caja de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su caja, el objeto se recortará para que quepa */
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
   width: 100%;
 }
 
 video {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
 }
 
@@ -279,6 +282,8 @@ a:hover, a:focus {
 }
 
 .page-title {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding: 0 10% 2rem;
   margin: 0 auto;
@@ -367,6 +372,8 @@ footer .footer-links {
   height: 100%;
   align-items: center;
   margin-left: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   /* Replicando la fórmula seguida con el menú del header, los links del footer contarán con un margin-left: auto, estarán alineados en el centro de sus contenedores y tendrán la anchura máxima que éstos les permitan*/
 }
@@ -767,6 +774,14 @@ footer .footer-links .footer-link a {
   padding-left: 0.5rem;
 }
 
+.form-element-input input.invalid {
+  border: 1px solid hsl(0deg, 100%, 50%);
+}
+
+.form-element-input textarea.invalid {
+  border: 1px solid hsl(0deg, 100%, 50%);
+}
+
 .form-element-radio input {
   margin-right: 1rem;
   margin-top: -0.5rem;
@@ -783,6 +798,10 @@ footer .footer-links .footer-link a {
 .contact-form-button {
   width: 30%;
   margin-top: 5vh;
+}
+
+.mensaje-error {
+  display: none;
 }
 
 /* En este caso, se traza con CSS una línea horizontal que separa Featured de Banner,centrada y con una anchura del 50% */
@@ -828,6 +847,31 @@ footer .footer-links .footer-link a {
   display: block;
 }
 
+#notification {
+  padding: 1rem;
+  background-color: hsl(22deg, 100%, 72%);
+  border-bottom: solid hsla(18deg, 73%, 69%, 0.938);
+  border-radius: 1rem;
+  opacity: 0;
+  position: fixed;
+  right: 5rem;
+  transition: opacity 0.3s;
+  bottom: 2rem;
+  box-shadow: hsla(0deg, 0%, 0%, 0.341);
+}
+
+#notification.active {
+  opacity: 1;
+}
+
+#notification.success {
+  border-top: 2rem solid hsl(99deg, 74%, 30%);
+}
+
+#notification.error {
+  border-top: 2rem solid hsl(7deg, 74%, 30%);
+}
+
 .cart {
   min-height: 80vh;
   padding: 3rem 10%;
@@ -861,7 +905,8 @@ footer .footer-links .footer-link a {
 .cart .cart-image-box img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .resume-table-cart {
@@ -915,6 +960,8 @@ footer .footer-links .footer-link a {
 }
 
 .cart-navigation-buttons {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding-left: 45%;
 }
@@ -997,6 +1044,8 @@ footer .footer-links .footer-link a {
 
 .product-results-dropdown {
   margin-left: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 .product-results-dropdown select {
@@ -1035,6 +1084,4 @@ footer .footer-links .footer-link a {
 .product-gallery .product-gallery-item .product-gallery-item-button {
   margin: 0 auto;
   width: 35%;
-}
-
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */
