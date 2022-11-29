@@ -1,0 +1,50 @@
+
+footer{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    padding: 0 5%;
+    width: 90%;
+    background-image: $header;
+    text-align: center;
+
+    /* El footer contará con una altura de 19vh y una anchura en porcentaje del 90%, igual que el header. Su contenido aparecerá mostrado de manera flexible y cada elemento tendrá un espacio igualitario respecto al otro */
+
+    .footer-copyright{
+        align-items: center;
+        display: flex;
+        height: 100%;
+
+        p{
+            color: aliceblue;
+            font-size: 1.5em;
+            display: flex;
+        }
+    }
+
+    .footer-links{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        margin-left: auto;
+        width: max-content;
+
+        /* Replicando la fórmula seguida con el menú del header, los links del footer contarán con un margin-left: auto, estarán alineados en el centro de sus contenedores y tendrán la anchura máxima que éstos les permitan*/
+
+        .footer-link{
+            margin-left:  2rem;
+
+            a{
+                color: aliceblue;
+                font-size: 1.5em;
+                font-weight: 300;
+    
+                /* De igual modo, procedemos a dar estilo a los textos de manera separada a la de sus respectivos contenedores */
+    
+            }
+
+        }
+
+    }
+
+}

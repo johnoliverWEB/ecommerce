@@ -1,0 +1,33 @@
+.tabs{
+      margin-bottom: 1rem;
+
+      .tabs-items{
+
+            display: flex;
+
+            .tab-item{
+                  cursor: pointer;
+                  margin-right: 0.5rem;
+                  padding: 1rem;
+                  background-color: rgba(255, 129, 97, 0.443);
+            }
+
+            .tab-item.active{
+                  background-color: hsl(12deg, 100%, 69%);
+            }
+      }
+
+      .tabs-contents{
+
+            background-color: hsl(12deg, 100%, 69%); ;
+
+            .tab-content{
+                  display: none;
+                  padding: 1rem;
+            }
+
+            .tab-content.active{
+                  display: block;
+            }
+      }
+}

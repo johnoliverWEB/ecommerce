@@ -1,0 +1,12 @@
+.custom-button{
+    font-family: 'Raleway', sans-serif;
+    color: hsl(0, 0%, 100%);
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, #ff7e5f 0%, #feb47b  51%, #ff7e5f  100%);
+    padding: 0.5rem 1.5rem;
+    border-color: hsl(29, 79%, 85%);
+    border-style:solid;
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.137);
+    width: 100%;
+}

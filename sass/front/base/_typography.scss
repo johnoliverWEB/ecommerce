@@ -1,0 +1,90 @@
+/* Typography */
+/* Este apartado compila los estilos que se dan a los textos de la página web */
+/* También recogerá el estilo en que se definen los botones especiales o call to action */
+
+h1, h2, h3, h4, h5, h6, a, p{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: hsl(29, 85%, 75%);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: hsl(208, 100%, 97%);
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    margin: 0;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+a, p, span, label, li{
+    font-family: 'Raleway', sans-serif;
+    color:hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+}
+
+input, select, textarea{
+    color: hsl(0, 0%, 0%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+}
+
+td, th {
+    font-family: 'Raleway', sans-serif;
+    color: hsl(0, 0%, 100%);
+    font-size: 2rem;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+h4 {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a {
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+    outline-offset: 0;
+}
+
+.page-title{
+    width: max-content;
+    padding: 0 10% 2rem;
+    margin: 0 auto;
+    border-bottom: 0.3rem solid white;
+
+    h2{
+        text-align: center;
+        font-size: 4rem;
+        color: hsl(0, 0%, 100%);  
+    }
+    
+}

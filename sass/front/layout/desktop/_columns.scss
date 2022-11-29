@@ -1,0 +1,76 @@
+/* Layout */
+
+/* Columns */
+
+/* Este apartado concreta los estilos básicos que tendrán las columnas que definen la forma en que aparecerán estructurados los contenidos */
+/* La propiedad display: flex permite la alineación de los contenidos de las columnas en tanto el espacio lo permita */
+/* La propiedad flew-wrap: wrap nos especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también nos permite controlar la dirección en la cual serán apilados los elementos.*/
+/* Con justify-content: space-between haremos que los elementos se distribuyan uniformemente dentro de cada columna de modo que el espacio entre ellos sea uniforme */
+
+.five-columns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;  
+}
+
+.five-columns > .column{
+    width: 18%;
+}  
+
+.four-columns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.four-columns > .column{
+    width: 22%;
+}
+
+.three-columns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.three-columns > .column{
+    width: 30%;
+}
+
+.two-columns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.two-columns > .column{
+    width: 48%;
+}
+
+.two-columns-aside{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.two-columns-aside > .column-aside{
+    width: 20%;
+}
+
+.two-columns-aside > .column-main{
+    width: 75%;
+}
+
+.one-column{
+    width: 100%;
+}
+
+.one-column > .column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

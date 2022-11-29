@@ -1,0 +1,195 @@
+<doctype html>
+  <html lang="es">
+    <head>
+      <!-- Aquí van los metadatos de la web, y lo que aparecerá en buscadores -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- ^^ Esto es lo que se encarga del web responsive ^^ -->
+      <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
+      <!-- ^^^Enlace a un recurso externo, a un icono que servirá como favicon de 36x36 o 42 x 42 ^^^ -->
+      <title>Ilulo Ceramics</title>
+      <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+      <meta name="keywords"    content="palabras clave, separadas, por comas">
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="user">
+            <img class ="user-img" src="">
+            <h5 class="user-name">Iris Luque</h5>
+            <p class="user-role">Administrador/a</p>
+          </div>
+          <div class="search">
+            <input type="text" class="search-input" placeholder="Buscar">
+          </div>
+        </div>
+        <div class="sidebar-categories">
+          <ul>
+            <li class="sidebar-element">
+              <a href="#">Datos de empresa</a>
+            </li>
+            <li class="sidebar-element">
+              <a class="sidebar-element-item" href="#">
+                Configuración
+              </a>
+            </li>
+            <li class="sidebar-element">
+              <a class="sidebar-element-item" href="#">
+                Cuenta
+              </a>
+            </li>
+            <li class="sidebar-element">
+              <a class="sidebar-element-item" href="#">
+                Correo
+              </a>
+            </li>
+            <li class="sidebar-element">
+              <a class="sidebar-element-item" href="#">
+                Ayuda
+              </a>
+            </li>
+            <li class="sidebar-element">
+              <a class="sidebar-element-item" href="#">
+                Cerrar sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="adm-navbar">
+        <div class="navbar-header">
+          <div class="header-logo">
+            <div class="header-logo-image">
+                <img src="" alt="logo">
+            </div>
+            <div class="header-logo-title">
+                <h1>ILULO CERAMICS</h1>
+            </div>
+          </div>
+
+          <div class="navbar-menu-button">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation"></button>
+          </div>
+        </div>
+        <nav class="navbar-menu">
+        </nav>
+      </header>
+      <main>
+        <div class="list">
+          <div class="list-elements">
+            <ul class="list-element">
+              <li>
+                <div class="list-element-datas">
+                  <div class="list-element-data">
+                    <span>Nombre:</span> Carlos Seda
+                  </div>
+                  <div class="list-element-data">
+                    <span>Categoría:</span> general
+                  </div>
+                  <div class="list-element-data">
+                    <span>Creado el:</span> 12/05/2022
+                  </div>
+                </div>
+
+                <div class="buttons">
+                  <button></button>
+                  <button></button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="list-showing-info">
+            <div class="list-register-amount">
+              <a>
+                4 Registros
+              </a>
+            </div>
+            <div class="list-showing">
+              <a>
+                Mostrando la página 1 de 1
+              </a>
+            </div>
+          </div>
+        </div>
+       
+        <div class="form">
+          <div class="display-section">
+            <div class="display-section-items">
+              <ul class="tabs-items">
+                  <li class="tab-item active" data-tab="contents">
+                    Contenido
+                  </li>
+                  <li class="tab-item" data-tab="images">
+                    Imágenes
+                  </li>
+              </ul>
+              <div class="tabs-contents">
+                <form> 
+                  <div class="tab-content active" data-tab="contents">
+                    <div class="one-column">
+                      <div class="form-element">  
+                        <div class="form-element-label">
+                          <label>
+                            Título
+                          </label>
+                        </div>
+                        <div class="form-element-input"><input id="title" type="text" data-validate="only-letters">
+                        </div>
+                      </div>
+                      <div class="form-element">  
+                        <div class="form-element-label">
+                            <label id="message">Descripción</label>
+                            <span class="counter-text">
+                                <span class="counter">0</span>
+                                <span>/500</span>
+                            </span>
+                        </div>
+                        <div class="form-element-input">
+                            <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250">
+                            </textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content" data-tab="Images">
+                    <div class="images-gallery">
+                      <div class="three-columns">
+                        <div class="column">
+                          <div class="images-gallery-item">
+                            <div class="images-gallery-image">
+                              <img src="imagenes/featured/producto1.jpg" alt="lafemme">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="images-gallery-item">
+                            <div class="images-gallery-image">
+                              <img src="imagenes/featured/producto1.jpg" alt="lafemme">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="images-gallery-item">
+                            <div class="images-gallery-image">
+                              <img src="imagenes/featured/producto1.jpg" alt="lafemme">
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>                 
+        </div>
+      </main>
+    </body>
+  </html>
+</doctype>

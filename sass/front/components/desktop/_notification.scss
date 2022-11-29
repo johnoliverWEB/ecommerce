@@ -1,0 +1,24 @@
+#notification{
+    padding: 1rem;
+    background-color:  hsl(22deg, 100%, 72%);
+    border-bottom: solid hsla(18, 73%, 69%, 0.938);
+    border-radius: 1rem;
+    opacity: 0;
+    position: fixed;
+    right: 5rem;
+    transition: opacity 0.3s;
+    bottom: 2rem;
+    box-shadow: hsla(0, 0%, 0%, 0.341);
+}
+
+#notification.active{
+    opacity: 1;
+}
+
+#notification.success{
+    border-top: 2rem solid hsl(99, 74%, 30%);
+}
+
+#notification.error{
+    border-top: 2rem solid hsl(7, 74%, 30%);
+}
