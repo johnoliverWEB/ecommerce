@@ -1,0 +1,41 @@
+.sidebar {
+    position:fixed;
+    overflow: auto;
+    padding: 3rem;
+    width: 260px;
+    background-color: hsl(224, 25%, 20%);
+
+    .sidebar-header{
+        display: flex;
+        padding: 1rem;
+        margin-bottom: 3.5rem;
+  
+        .sidebar-header-logo{
+          
+            .sidebar-header-logo-image{
+                align-items: center;
+                width: 30%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .sidebar-categories{
+        height: 50rem;
+
+        .sidebar-element{
+            margin-bottom: 2.5rem;
+            
+            a{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            svg{
+                fill:hsla(208, 100%, 97%, 0.913);
+                width: 10%;
+            }
+        } 
+    }
+}

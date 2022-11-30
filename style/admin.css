@@ -1,0 +1,460 @@
+@charset "UTF-8";
+.sidebar {
+  position: fixed;
+  overflow: auto;
+  padding: 3rem;
+  width: 260px;
+  background-color: hsl(224deg, 25%, 20%);
+}
+.sidebar .sidebar-header {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 3.5rem;
+}
+.sidebar .sidebar-header .sidebar-header-logo .sidebar-header-logo-image {
+  align-items: center;
+  width: 30%;
+  margin-bottom: 1rem;
+}
+.sidebar .sidebar-categories {
+  height: 50rem;
+}
+.sidebar .sidebar-categories .sidebar-element {
+  margin-bottom: 2.5rem;
+}
+.sidebar .sidebar-categories .sidebar-element a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar .sidebar-categories .sidebar-element svg {
+  fill: hsla(208deg, 100%, 97%, 0.913);
+  width: 10%;
+}
+
+header {
+  height: 5vh;
+  width: 100%;
+  padding: 2rem;
+  background-color: hsl(0deg, 0%, 96%);
+}
+header .navbar-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+header .navbar-header .search {
+  margin-bottom: 2rem;
+  padding-left: 25rem;
+}
+header .navbar-header .search input {
+  border-radius: 1.5rem;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: hsl(0deg, 0%, 80%);
+  padding: 0.5rem;
+}
+header .navbar-header .user {
+  margin-right: 5%;
+  margin-bottom: 2rem;
+  display: flex;
+}
+header .navbar-header .user svg {
+  padding: 1.5rem;
+  margin-right: 3rem;
+}
+header .navbar-header .user .user-data h5 {
+  height: 3vh;
+  margin-right: 4rem;
+}
+header .navbar-header .user .icon-default {
+  justify-content: end;
+}
+
+.panel {
+  padding-left: 25rem;
+  width: 80%;
+  height: 87vh;
+}
+.panel h1 {
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+.panel .workplace {
+  display: flex;
+  justify-content: space-between;
+}
+.panel .workplace .list {
+  width: 20%;
+  height: 45vh;
+}
+.panel .workplace .list .list-elements {
+  background-color: hsl(208deg, 100%, 97%);
+  padding: 2rem;
+  display: flex;
+  width: 100%;
+}
+.panel .workplace .list .list-elements ul {
+  width: 100%;
+}
+.panel .workplace .list .list-elements ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.panel .workplace .list .list-elements ul li .list-element-datas .list-element-data span {
+  font-weight: 800;
+  color: hsl(30deg, 73%, 68%);
+}
+.panel .workplace .list .list-elements ul li .buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.panel .workplace .list .list-elements ul li .buttons .button-element {
+  box-sizing: content-box;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.panel .workplace .list .list-elements ul li .buttons .button-element svg {
+  width: 2rem;
+}
+.panel .workplace .list .list-showing-info {
+  padding: 1rem;
+}
+.panel .workplace .list .list-showing-info .list-register-amount {
+  margin-bottom: 1rem;
+}
+.panel .workplace .list .list-showing-info .list-register-amount a {
+  color: hsl(227deg, 37%, 22%);
+}
+.panel .workplace .list .list-showing-info .list-showing a {
+  color: hsl(227deg, 37%, 22%);
+}
+.panel .workplace .form {
+  background-color: aqua;
+  width: 60%;
+  padding-right: 3rem;
+  margin-right: 3rem;
+}
+.panel .workplace .form .display-section .display-section-items .tabs-items {
+  display: flex;
+}
+.panel .workplace .form .display-section .display-section-items .tabs-items .tab-item {
+  cursor: pointer;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(173, 173, 173, 0.443);
+}
+.panel .workplace .form .display-section .display-section-items .tabs-items .tab-item.active {
+  background-color: hsl(208deg, 100%, 97%);
+}
+.panel .workplace .form .display-section .display-section-items .tabs-contents {
+  background-color: hsl(208deg, 100%, 97%);
+}
+.panel .workplace .form .display-section .display-section-items .tabs-contents .tab-content {
+  display: none;
+  padding: 1rem;
+}
+.panel .workplace .form .display-section .display-section-items .tabs-contents .tab-content.active {
+  display: block;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Este primer apartado recoge los estilos y propiedades básicas de los elementos estructurales y componentes esenciales de la página web */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(-225deg, hsl(42deg, 100%, 81%) 0%, hsl(24deg, 74%, 74%) 48%, hsl(27deg, 68%, 71%) 100%);
+}
+
+main {
+  display: block;
+  /* La propiedad block permite que el comportamiento de la main sea como un bloque */
+}
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+form {
+  margin: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Raleway", sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button,
+input { /* 1 */
+  overflow: visible;
+  border: none;
+  padding: 0;
+}
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* Las propiedades border-collapse: collapse y border-spacing: 0 establecen que las celdas dentro de una tabla tendrán bordes compartidos y sin espacio entre ellos */
+}
+
+ol, ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Con la propiedad object-fit: cover, el contenido de la imagen o vídeo se dimensionará para mantener su relación de aspecto mientras llene toda la caja de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su caja, el objeto se recortará para que quepa */
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+}
+
+video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+}
+
+/* Typography */
+/* Este apartado compila los estilos que se dan a los textos de la página web */
+/* También recogerá el estilo en que se definen los botones especiales o call to action */
+h1, h2, h3, h4, h5, h6, a, p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: hsl(28deg, 25%, 49%);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: hsl(208deg, 100%, 97%);
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+a, p, span, label, li {
+  font-family: "Raleway", sans-serif;
+  color: hsl(0deg, 0%, 63%);
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+input, select, textarea {
+  color: hsl(0deg, 0%, 0%);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+}
+
+td, th {
+  font-family: "Raleway", sans-serif;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 2rem;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+h4 {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a {
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:hover, a:focus {
+  outline: none;
+  text-decoration: none;
+  outline-offset: 0;
+}
+
+.page-title {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 10% 2rem;
+  margin: 0 auto;
+  border-bottom: 0.3rem solid white;
+}
+.page-title h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: hsl(0deg, 0%, 100%);
+}/*# sourceMappingURL=admin.css.map */

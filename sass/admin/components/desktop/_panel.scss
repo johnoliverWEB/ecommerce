@@ -1,0 +1,128 @@
+.panel{
+
+    padding-left: 25rem;
+    width: 80%;
+    height: 87vh;
+
+    h1{
+        padding: 2rem;
+        margin-bottom: 3rem;
+        
+    }
+
+    .workplace{
+        display: flex;
+        justify-content: space-between;
+
+        .list{
+            width: 20%;
+            height: 45vh;
+            
+            .list-elements{
+                background-color: hsl(208, 100%, 97%);
+                padding: 2rem;
+                display: flex;
+                width: 100%;
+
+                ul{
+                    width: 100%;
+
+                    li{
+                        display:flex;
+                        justify-content: space-between;
+                        margin-bottom: 2rem;
+                        
+                        .list-element-datas{
+
+                            .list-element-data{
+
+                                span{
+                                    font-weight: 800;
+                                    color: hsl(30, 73%, 68%);
+                                }
+                            }
+                        }
+
+                        .buttons{
+                            display:flex;
+                            justify-content: flex-end;
+                            gap: 1rem;
+
+                            .button-element{
+                                box-sizing: content-box;
+                                width: max-content;
+                                
+                                svg{
+                                    width: 2rem;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .list-showing-info{
+                padding: 1rem;
+
+                .list-register-amount{
+                    margin-bottom: 1rem;
+
+                    a{
+                        color: hsl(227, 37%, 22%);
+                    }
+                }
+
+                .list-showing{
+
+                    a{
+                        color: hsl(227, 37%, 22%);
+                    }
+                }
+            }
+        }
+
+        .form{
+            background-color: aqua;
+            width: 60%;
+            padding-right: 3rem;
+            margin-right: 3rem;
+
+            .display-section{
+
+                .display-section-items{
+                   
+                    .tabs-items{
+                       
+                        display: flex;
+            
+                        .tab-item{
+                            cursor: pointer;
+                            margin-right: 0.5rem;
+                            padding: 1rem;
+                            background-color: rgba(173, 173, 173, 0.443);
+                        }
+            
+                        .tab-item.active{
+                            background-color: hsl(208, 100%, 97%);
+                        }
+                    }
+            
+                    .tabs-contents{
+                        
+                        background-color:hsl(208, 100%, 97%);
+            
+                        .tab-content{
+                            display: none;
+                            padding: 1rem;
+                        }
+            
+                        .tab-content.active{
+                            display: block;
+                        }
+                    }
+                }
+            }      
+        }
+    } 
+}
