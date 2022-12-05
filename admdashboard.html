@@ -30,13 +30,13 @@
         </div>
         <div class="sidebar-categories">
           <ul>
-            <li class="sidebar-element">
+            <li class="sidebar-element drowpdown-element">
               <a href="#">
                 Menú
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                <svg class="drowpdown-element-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/>
                 </svg>
               </a>
-              <ul>
+              <ul class="sidebar-dropdown drowpdown-related">
                 <li>
                   <a href="">opción</a>
                 </li>
@@ -45,13 +45,13 @@
                 </li>
               </ul>
             </li>
-            <li class="sidebar-element">
+            <li class="sidebar-element drowpdown-element">
               <a class="sidebar-element-item" href="#"> 
                 Productos
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                <svg class="drowpdown-element-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/>
                 </svg>
               </a>
-                <ul>
+                <ul class="sidebar-dropdown drowpdown-related">
                   <li>
                     <a href="">opción</a>
                   </li>
@@ -60,13 +60,13 @@
                   </li>
                 </ul>
             </li>
-            <li class="sidebar-element">
+            <li class="sidebar-element drowpdown-element">
               <a class="sidebar-element-item" href="#">
                 Clientes
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                <svg class="drowpdown-element-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/>
                 </svg>
               </a>
-                <ul>
+                <ul class="sidebar-dropdown drowpdown-related">
                   <li>
                     <a href="">opción</a>
                   </li>
@@ -75,14 +75,14 @@
                   </li>
                 </ul>
             </li>
-            <li class="sidebar-element">
+            <li class="sidebar-element drowpdown-element">
               <a class="sidebar-element-item" href="#">
                 Ventas
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+                <svg class="drowpdown-element-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/>
                 </svg>
               </a>
-                <ul>
-                  <li>
+                <ul class="sidebar-dropdown drowpdown-related">
+                  <li class="item-animated">
                     <a href="">opción</a>
                   </li>
                   <li>
@@ -268,46 +268,45 @@
                               </span>
                           </div>
                           <div class="form-element-input">
-                              <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250">
-                              </textarea>
+                              <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250"></textarea>
                           </div>
+                          <div class="form-button"> 
+                            <button class="form-button-send">Guardar</button>
+                        </div>
                         </div>
                       </div>
                     </div>
                     <div class="tab-content" data-tab="Images">
-                      <!-- <div class="images-gallery">
-                        <div class="three-columns">
-                          <div class="column">
-                            <div class="images-gallery-item">
-                              <div class="images-gallery-image">
-                                <img src="imagenes/featured/producto1.jpg" alt="lafemme">
-                              </div>
-                            </div>
+                      <div class="images-gallery">
+                        <div class="images-gallery-item">
+                          <div class="images-gallery-image">
+                            <img src="imagenes/featured/producto1.jpg" alt="lafemme">
                           </div>
-                          <div class="column">
-                            <div class="images-gallery-item">
-                              <div class="images-gallery-image">
-                                <img src="imagenes/featured/producto1.jpg" alt="lafemme">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="column">
-                            <div class="images-gallery-item">
-                              <div class="images-gallery-image">
-                                <img src="imagenes/featured/producto1.jpg" alt="lafemme">
-                              </div>
-                            </div>
-                          </div> 
                         </div>
-                      </div> -->
+                        <div class="images-gallery-item">
+                          <div class="images-gallery-image">
+                            <img src="imagenes/featured/producto1.jpg" alt="lafemme">
+                          </div>
+                        </div>
+                          <div class="images-gallery-item">
+                            <div class="images-gallery-image">
+                              <img src="imagenes/featured/producto1.jpg" alt="lafemme">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </form>
+                  <div id="notification"> 
+                    <p id="notification-message"></p>
+                </div>
                 </div>
               </div>
             </div>                 
           </div>
         </div>
       </div>
+      <script type="module" src="js/index.js"></script>
     </body>
   </html>
 </doctype>
