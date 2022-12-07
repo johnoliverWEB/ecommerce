@@ -5,6 +5,7 @@ import { renderCounter } from "./counter.js";
 import { renderForm } from "./form.js";
 import { renderNotification } from "./notification.js";
 import { renderDropdown } from "./dropdown.js";
+import { renderLogin } from "./login.js";
 
 
 renderCartPlusMinusButton();
@@ -13,3 +14,4 @@ renderCounter();
 renderForm();
 renderNotification();
 renderDropdown();
+renderLogin();
