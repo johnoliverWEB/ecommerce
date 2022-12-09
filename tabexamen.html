@@ -1,0 +1,210 @@
+<doctype html>
+    <html lang="es">
+        <head>
+            <!-- Aquí van los metadatos de la web, y lo que aparecerá en buscadores -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- ^^ Esto es lo que se encarga del web responsive ^^ -->
+            <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
+            <!-- ^^^Enlace a un recurso externo, a un icono que servirá como favicon de 36x36 o 42 x 42 ^^^ -->
+            <title>Ilulo Ceramics</title>
+            <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+            <meta name="keywords"    content="palabras clave, separadas, por comas">
+        
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+            <!-- <link rel="stylesheet" href="style/admin.css"> -->
+        </head>
+        <body>
+            <div class="workplace">
+                <div class="list">
+                  <div class="list-elements">
+                    <ul class="list-element">
+                      <li>
+                        <div class="list-element-datas">
+                          <div class="list-element-data">
+                            <span>Question:</span> Loremipsum
+                          </div>
+                          <div class="list-element-data">
+                            <span>Category:</span> Loremipsum
+                          </div>
+                          <div class="list-element-data">
+                            <span>Created at:</span> Loremipsum
+                          </div>
+                        </div>
+                        <div class="buttons">
+                          <div class="button-element">
+                            <!-- edit button <svg> 
+                            </svg> -->
+                          </div>
+                          <div class="button-element">
+                            <!-- delete button <svg>
+                            </svg> -->
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list-element-datas">
+                            <div class="list-element-data">
+                              <span>Question:</span> Loremipsum
+                            </div>
+                            <div class="list-element-data">
+                              <span>Category:</span> Loremipsum
+                            </div>
+                            <div class="list-element-data">
+                              <span>Created at:</span> Loremipsum
+                            </div>
+                        </div>
+                        <div class="buttons">
+                          <div class="button-element">
+                            <!-- edit button <svg> 
+                            </svg> -->
+                          </div>
+                          <div class="button-element">
+                            <!-- delete button <svg>
+                            </svg> -->
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list-element-datas">
+                            <div class="list-element-data">
+                              <span>Question:</span> Loremipsum
+                            </div>
+                            <div class="list-element-data">
+                              <span>Category:</span> Loremipsum
+                            </div>
+                            <div class="list-element-data">
+                              <span>Created at:</span> Loremipsum
+                            </div>
+                        </div>
+                        <div class="buttons">
+                          <div class="button-element">
+                            <!-- edit button <svg> 
+                            </svg> -->
+                          </div>
+                          <div class="button-element">
+                            <!-- delete button <svg>
+                            </svg> -->
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-showing-info">
+                    <div class="list-register-amount">
+                      <a>
+                        3 Results
+                      </a>
+                    </div>
+                    <div class="list-showing">
+                      <a>
+                        Showing page 1 of 1
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="form">
+                    <div class="display-section">
+                        <div class="display-section-items">
+                            <ul class="tabs-items">
+                                <li class="tab-item active" data-tab="faqs-categories">
+                                    Categories
+                                </li>
+                                <li class="tab-item" data-tab="faqs">
+                                    FAQS
+                                </li>
+                            </ul>
+                            <div class="tabs-contents">
+                                <form> 
+                                    <div class="tab-content active" data-tab="faqs">
+                                        <div class="form-element">  
+                                            <div class="form-element-label">
+                                                <label>
+                                                    Question
+                                                </label>
+                                            </div>
+                                            <div class="form-element-input"><input id="question" type="text" data-validate="only-letters">
+                                            </div>
+                                        </div>
+                                        <div class="form-element">  
+                                            <div class="form-element-label">
+                                                <label id="answer">Answer</label>
+                                                <span class="counter-text">
+                                                    <span class="counter">0</span>
+                                                    <span>/500</span>
+                                                </span>
+                                            </div>
+                                            <div class="form-element-input">
+                                                <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250"></textarea>
+                                            </div>
+                                            <div class="form-element-input">
+                                                <label id="answer">Active</label>
+                                                <select name="active" id="active" type="number" data-validate="type">
+                                                    <option value="0">0</option>
+                                                    <option value="1">1</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-element-input">
+                                                <label id="answer">Category</label>
+                                                <select name="faqs-categories_id" id="faqs-categories_id" type="text" data-validate="type">
+                                                    <option value="0">Uncategorized</option>
+                                                    <option value="1">Category 1</option>
+                                                    <option value="2">Category 2</option>
+                                                    <option value="3">Category 3</option>
+                                                    <option value="4">Category 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-button"> 
+                                            <button class="form-button-send custom-button send-form-button">Save</button>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content" data-tab="faqs-categories">
+                                        <div class="tab-content active" data-tab="faqs-categories">
+                                            <div class="form-element">  
+                                                <div class="form-element-label">
+                                                    <label>
+                                                        Category title
+                                                    </label>
+                                                </div>
+                                                <div class="form-element-input"><input id="title" type="text" data-validate="only-letters">
+                                                </div>
+                                            </div>
+                                            <div class="form-element">  
+                                                <div class="form-element-label">
+                                                    <label id="description">Description</label>
+                                                    <span class="counter-text">
+                                                        <span class="counter">0</span>
+                                                        <span>/120</span>
+                                                    </span>
+                                                </div>
+                                                <div class="form-element-input">
+                                                    <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250"></textarea>
+                                                </div>
+                                                <div class="form-element-input">
+                                                    <label id="answer">Active</label>
+                                                    <select name="active" id="active" type="number" data-validate="type">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-button"> 
+                                                <button class="form-button-send custom-button send-form-button">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> 
+                            <div id="notification"> 
+                            <p id="notification-message"></p>
+                        </div>
+                        <script type="module" src="js/index.js"></script>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+</doctype>

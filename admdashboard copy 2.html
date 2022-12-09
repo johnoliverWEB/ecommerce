@@ -17,22 +17,23 @@
       <link rel="stylesheet" href="style/admin.css">
     </head>
     <body>
-      <form form data-url="http://192.168.1.16:8080/api/admin/users"> 
+      <form data-url="http://192.168.1.16:8080/api/admin/taxes"> 
         <div class="form-element">  
-          <div class="form-element-label"><label>Nombre</label></div>
-          <div class="form-element-input"><input name="name" id="name" type="text" data-validate="only-letters">
+          <div class="form-element-label"><label>Tipo</label></div>
+          <div class="form-element-input"><input name="type" id="type" type="number" data-validate="only-numbers">
           </div>
         </div>
         <div class="form-element">  
-          <div class="form-element-label"><label>Email</label></div>
-          <div class="form-element-input"><input name="email" id="email" type="text" data-validate="email"></div>
-        </div>
-        <div class="form-element">  
-          <div class="form-element-label"><label>Contraseña</label></div>
-          <div class="form-element-input"><input name="password" id="password" type="password" data-validate="password"></div>
+          <div class="form-element-label"><label>Válido</label></div>
+          <div class="form-element-input">
+            <select name="valid" id="valid" type="number" data-validate="type">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            </select>
+          </div>
         </div>
         <div class="contact-form-button"> 
-          <button class="custom-button send-form-button">Enviar</button>
+          <button class="custom-button send-form-button">Guardar</button>
         </div>
       </form>
       <div id="notification"> 

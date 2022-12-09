@@ -6,6 +6,7 @@ import { renderForm } from "./form.js";
 import { renderNotification } from "./notification.js";
 import { renderDropdown } from "./dropdown.js";
 import { renderLogin } from "./login.js";
+import { renderTaxesForm } from "./Taxesform.js"
 
 
 renderCartPlusMinusButton();
@@ -15,3 +16,4 @@ renderForm();
 renderNotification();
 renderDropdown();
 renderLogin();
+renderTaxesForm();

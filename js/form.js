@@ -16,8 +16,9 @@ export let renderForm = () => {
             
             let formData = new FormData(form);
             let formDataJson = Object.fromEntries(formData.entries());
+            let url = form.dataset.url;
 
-            fetch('http://192.168.1.16:8080/api/admin/users', {
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
