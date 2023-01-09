@@ -6,8 +6,6 @@ export let renderCounter = () => {
     inputs.forEach( input => {
         
         input.addEventListener('input', () => {
-            console.log(input.dataset.validation);
-            console.log(input.value.length);
             counter.textContent = input.value.length;
         });
         

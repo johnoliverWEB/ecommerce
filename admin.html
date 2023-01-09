@@ -247,28 +247,28 @@
                     </li>
                 </ul>
                 <div class="tabs-contents">
-                  <form> 
+                  <form action="http://127.0.0.1:8080/api/admin/faqs"> 
                     <div class="tab-content active" data-tab="contents">
                       <div class="one-column">
                         <div class="form-element">  
                           <div class="form-element-label">
                             <label>
-                              Título
+                              Pregunta
                             </label>
                           </div>
-                          <div class="form-element-input"><input id="title" type="text" data-validate="only-letters">
+                          <div class="form-element-input"><input id="title" name="question" type="text" data-validate="only-letters">
                           </div>
                         </div>
                         <div class="form-element">  
                           <div class="form-element-label">
-                              <label id="message">Descripción</label>
+                              <label id="message">Respuesta</label>
                               <span class="counter-text">
                                   <span class="counter">0</span>
                                   <span>/500</span>
                               </span>
                           </div>
                           <div class="form-element-input">
-                              <textarea data-minrequired="24" class="validate-characters" type="text" maxlength="250"></textarea>
+                              <textarea data-minrequired="24" class="validate-characters" name="answer" type="text" maxlength="250"></textarea>
                           </div>
                           <div class="form-button"> 
                             <button class="form-button-send custom-button send-form-button">Guardar</button>

@@ -1,0 +1,40 @@
+<doctype html>
+  <html lang="es">
+    <head>
+      <!-- Aquí van los metadatos de la web, y lo que aparecerá en buscadores -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- ^^ Esto es lo que se encarga del web responsive ^^ -->
+      <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
+      <!-- ^^^Enlace a un recurso externo, a un icono que servirá como favicon de 36x36 o 42 x 42 ^^^ -->
+      <title>Ilulo Ceramics</title>
+      <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+      <meta name="keywords"    content="palabras clave, separadas, por comas">
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style/app.css">
+    </head>
+    <body>
+      <form class="login-form" form data-url="http://192.168.1.16:8080/api/admin/users"> 
+        <div class="form-element">  
+          <h2 class="login-header"> Iniciar sesión</h2>
+          <div class="form-element-label"><label>Email</label></div>
+          <div class="form-element-input"><input name="email" id="email" type="text" data-validate="email"></div>
+        </div>
+        <div class="form-element">  
+          <div class="form-element-label"><label>Contraseña</label></div>
+          <div class="form-element-input"><input name="password" id="password" type="password" data-validate="password"></div>
+        </div>
+        <div class="contact-form-button"> 
+          <button class="custom-button send-login-button">Entrar</button>
+        </div>
+      </form>
+      <div id="notification"> 
+        <p id="notification-message"></p>
+      </div>
+      <script type="module" src="js/index.js"></script>
+    </body>
+  </html>
+</doctype>

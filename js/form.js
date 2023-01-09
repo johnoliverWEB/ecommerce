@@ -2,8 +2,6 @@ import {validateForm} from "./validate.js";
 
 export let renderForm = () => {
 
-    let form = document.querySelector('form');
-    let formInputs = form.elements;
     let sendFormButton = document.querySelector('.send-form-button');
 
     if(sendFormButton){
@@ -12,17 +10,20 @@ export let renderForm = () => {
 
             event.preventDefault();
 
+            let form = document.querySelector('form');
+            let formInputs = form.elements;
+
             validateForm(formInputs);
             
             let formData = new FormData(form);
             let formDataJson = Object.fromEntries(formData.entries());
-            let url = form.dataset.url;
+            let url = form.action;
 
             fetch(url, {
                 method: 'POST',
                 headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken'),
                     'Content-Type': 'application/json',
-                    'x-access-token': sessionStorage.getItem('accessToken')
                 },
                 body: JSON.stringify(formDataJson)
             }).then(response => {

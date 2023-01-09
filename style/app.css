@@ -1084,4 +1084,13 @@ footer .footer-links .footer-link a {
 .product-gallery .product-gallery-item .product-gallery-item-button {
   margin: 0 auto;
   width: 35%;
+}
+
+.login-header {
+  margin-bottom: 3rem;
+}
+
+.login-form {
+  padding: 10%;
+  margin: 0 30%;
 }/*# sourceMappingURL=app.css.map */
