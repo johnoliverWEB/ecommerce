@@ -13,7 +13,9 @@ export let renderForm = () => {
             let form = document.querySelector('form');
             let formInputs = form.elements;
 
-            validateForm(formInputs);
+            if(!validateForm(formInputs)){
+                return;
+            };
             
             let formData = new FormData(form);
             let formDataJson = Object.fromEntries(formData.entries());
