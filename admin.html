@@ -17,7 +17,10 @@
       <link rel="stylesheet" href="style/admin.css">
     </head>
     <body>
-      <div class="sidebar">
+
+
+      <sidebar-menu title="SidebarMenu" menu="sidebar-menu"></sidebar-menu>
+      <!-- <div class="sidebar">
         <div class="sidebar-header">
           <div class="sidebar-header-logo">
             <div class="sidebar-header-logo-image">
@@ -120,7 +123,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <header class="navbar">
         <div class="navbar-header">
           <div class="search">
@@ -144,9 +147,7 @@
       </header>
 
       <div class="panel">
-        <h1 class="title">
-          Panel de administración
-        </h1>
+        <page-title-component title="clientes"></page-title-component>
         <div class="workplace">
           <div class="list">
             <div class="list-elements">

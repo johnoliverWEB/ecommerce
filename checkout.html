@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <form>
+                    <form action="http://127.0.0.1:8080/api/front/checkout">
                         <div class="two-columns">
                             <div class="column">
                                 <div class="checkout-form">
@@ -66,7 +66,8 @@
                                                 <div class="form-element-label">
                                                     <label>Nombre</label>
                                                 </div>
-                                                <div class="form-element-input" data-validate="only-letters"><input type="text">
+                                                <div class="form-element-input" >
+                                                    <input type="text"  name="name" data-validate="only-letters">
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +76,9 @@
                                                 <div class="form-element-label">
                                                     <label>Apellidos</label>
                                                 </div>
-                                                <div class="form-element-input" data-validate="only-letters"><input type="text"></div>
+                                                <div class="form-element-input">
+                                                    <input type="text" name="surname" data-validate="only-letters">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -85,7 +88,8 @@
                                                 <div class="form-element-label">
                                                     <label>Teléfono</label>
                                                 </div>
-                                                <div class="form-element-input" data-validate="telephone"><input type="text"></div>
+                                                <div class="form-element-input">
+                                                    <input type="text" name="phone" data-validate="telephone"></div>
                                             </div>
                                         </div>
                                         <div class="column">
@@ -93,7 +97,8 @@
                                                 <div class="form-element-label">
                                                     <label>Email</label>
                                                 </div>
-                                                <div class="form-element-input" data-validate="email"><input type="text"></div>
+                                                <div class="form-element-input">
+                                                    <input type="text" name="email" data-validate="email"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +108,8 @@
                                                 <div class="form-element-label">
                                                     <label>Ciudad</label>
                                                 </div>
-                                                <div class="form-element-input" data-validate="only-letters"><input type="text"></div>
+                                                <div class="form-element-input">
+                                                    <input type="text" name="city" data-validate="only-letters"></div>
                                             </div>
                                         </div>
                                         <div class="column">
@@ -111,16 +117,17 @@
                                                 <div class="form-element-label">
                                                     <label>Código postal</label>
                                                 </div>
-                                                <div class="form-element-input" data-validate="only-letters"><input type="text"></div>
+                                                <div class="form-element-input">
+                                                    <input type="text" name="postalcode"></div>
                                             </div>
                                         </div>
                                         <div class="one-column">
                                             <div class="column">
                                                 <div class="form-element">  
                                                     <div class="form-element-label">
-                                                        <label data-validate="only-letters">Dirección</label>
+                                                        <label>Dirección</label>
                                                     </div>
-                                                    <div class="form-element-input"><input type="text"></div>
+                                                    <div class="form-element-input"><input type="text" name="address"></div>
                                                 </div>
                                                 
                                             </div>
@@ -197,12 +204,15 @@
                                         </div>
                                     </div>
                                     <div class="checkout-payment-button">
-                                        <button class="custom-button">Pagar</button>
+                                        <button class="custom-button send-form-button">Pagar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                </div>
+                <div id="notification"> 
+                    <p id="notification-message"></p>
                 </div>
             </main>
     
