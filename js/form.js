@@ -10,6 +10,15 @@ export let renderForm = () => {
 
             event.preventDefault();
 
+            document.dispatchEvent(new CustomEvent('message', {
+                detail: {
+                    text: 'Formulario enviado correctamente',
+                    type: 'success'
+                }
+            }));
+
+            event.preventDefault();
+
             let form = document.querySelector('form');
             let formInputs = form.elements;
 

@@ -178,89 +178,107 @@ class sidebarMenu extends HTMLElement {
         </div> 
     	`;
 
-    let list = this.shadow.querySelector(".sidebar-categories ul");
+	let list =this.shadow.querySelector(".sidebar-categories ul");
 
-    this.menuItems.forEach(menuItem => {
+	// Seleccionas la ul (la de arriba)
+	this.menuItems.forEach(menuItem => {
 
-      let listItem = document.createElement("li");
-      listItem.classList.add ("sidebar-element");
+    console.log(menuItem);
+		// Por cada menuItem
+		if(menuItem.customUrl && menuItem.parentId == null){
+			// Si tiene custom URL y parentId null
+			let listItem = document.createElement("li");
+			listItem.classList.add ("sidebar-element");
+			// Crea un li y añádele la clase indicada
 
-      let link = document.createElement('a');
-      link.classList.add("sidebar-menu-item");
+			let link = document.createElement("a");
+			// Crea un elemento a
+			link.classList.add("sidebar-menu-item");
+			// Añade la clase correspondiente
+			link.href = menuItem.customUrl;
+			// Atribuye la customUrl
+			link.name = menuItem.name;
+			link.textContent = menuItem.name;
 
-      link.href = menuItem.customUrl;
-      link.name = menuItem.name;
-      link.textContent = menuItem.name;
+			listItem.append(link);
+			list.append(listItem);
 
-      link.setAttribute("href", menuItem.customUrl);
-      link.textContent = menuItem.name;
+		}else if(!menuItem.customUrl && menuItem.parentId == null){
+			// Si no existe customurl ni parentID
+			let listItem = document.createElement("li");
+			// Crea un elemento li
+			listItem.classList.add ("sidebar-element", "drowpdown-element");
+			// Añádele esta clase
 
-      listItem.appendChild(link);
+			let sidebarMenu = document.createElement("a");
+			sidebarMenu.classList.add("sidebar-menu-item");
+			// Crea un elemento a y añade la clase indicada
+			sidebarMenu.name = menuItem.name;
+			sidebarMenu.textContent = menuItem.name;
+			listItem.append(sidebarMenu);
 
-      this.createSubMenu(menuItem, listItem); 
+			if(menuItem.children){ 
+			// Si tiene elementos children
+				let sidebarChildren = document.createElement("ul");
+				// Crea un elemento ul
+				sidebarChildren.classList.add("sidebar-drowpdown");
+				sidebarChildren.classList.add("drowpdown-related");
+				// Añade la clase "sidebar-children"
+				menuItem.children.forEach(element => {
+				// Por cada elemento children
+					let sidebarChildrenLi = document.createElement("li");
+					sidebarChildrenLi.classList.add("sidebar-option");
+					// Crea un li
+					sidebarChildrenLi.textContent = element.name;
+					// Asigna el nombre del elemento children
+					sidebarChildren.append(sidebarChildrenLi); 
+					// Añade el ul al li
+				});
+				
+				listItem.append(sidebarChildren);
+			}
 
-      list.appendChild(listItem);
-    });
+			list.append(listItem);
+			
+		}
+	});
+      
+	let sidebarOptions = this.shadow.querySelectorAll('.sidebar-option');
+	let drowpdownElements = this.shadow.querySelectorAll('.drowpdown-element');
 
-    this.shadow.querySelectorAll('a').forEach(link => {
+    // Creas un evento de sidebarOptions con this.shadow, ya que lo creas a partir del código incluido en este componente.
+      
+    sidebarOptions.forEach( sidebarOption => {
 
-      link.addEventListener("click", (event) => {
+        sidebarOption.addEventListener('click', event => {
 
-          event.preventDefault();
+          // es un evento de click.
 
-          document.dispatchEvent(new CustomEvent('newUrl', {
-              detail: {
-                  url: link.getAttribute("href"),
-                  title: link.textContent,
-              }
-          }));
-      });
-    });
-  }
+        	event.preventDefault();
 
-  createSubMenu(menuItem, li) {
+          // Como el efecto del evento pertenece a PageTitle, partes en este caso de DOCUMENT creando un evento customizado.
+          // Mediante este evento, si utilizas la palabra newURL otro evento deberá emitir esta palabra para que sea cazado y actualizar el atributo título
 
-    if (menuItem.children) {
-
-      let subMenu = document.createElement('ul');
-      subMenu.classList.add("sidebar-drowpdown","drowpdown-related");
-      li.append(subMenu);
-
-      Object.values(menuItem.children).forEach(subMenuItem => {
-
-          let subLi = document.createElement('li');
-          let subLink = document.createElement('a');
-          subLi.classList.add("sidebar-option");
-
-          subLink.setAttribute("href", subMenuItem.customUrl);
-          subLink.textContent = subMenuItem.name;
-
-          subLi.appendChild(subLink);
-          subMenu.appendChild(subLi);
-
-          this.createSubMenu(subMenuItem, subLi); 
-      });
-
-      subMenu.addEventListener('click', () => {
-
-        let drowpdownElements = this.shadow.querySelectorAll('.drowpdown-element');
-
-        drowpdownElement.forEach(element => {
-          drowpdownElement.querySelector('.drowpdown-element-button').classList.remove('active');
-          drowpdownElement.querySelector('.drowpdown-related').classList.remove('active');
-          drowpdownElement.classList.remove('item-animated');
+        	document.dispatchEvent(new CustomEvent('newUrl', {
+            	detail: {
+                	title: sidebarOption.getAttribute('name')
+            	}
+         	}));
         });
+    });
 
+    // Este es el evento responsable de que al hacer click en los elementos del menú se desplieguen el resto de opciones
 
-        subMenu.querySelector('.drowpdown-element-button').classList.add('active');
-        subMenu.querySelector('.drowpdown-related').classList.remove('active');
-        subMenu.lassList.remove('item-animated');
+		drowpdownElements.forEach( drowpdownElement => {
+
+			drowpdownElement.addEventListener('click', () => {
+
+				drowpdownElement.querySelector('.drowpdown-element-button').classList.toggle('active');
+				drowpdownElement.querySelector('.drowpdown-related').classList.toggle('active');
+				drowpdownElement.classList.toggle ('item-animated');
 			});
-
-      li.appendChild(subMenu);
-    }
-  }
-
+		});
+	}
 
 	// Este código es una función recursiva que crea un submenú a partir de un elemento de menú dado. 
 	// function createSubmenu(menuItem, ) {
