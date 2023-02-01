@@ -1,3 +1,5 @@
+import {API_URL} from "../config/config.js"
+
 class sidebarMenu extends HTMLElement {
     constructor() {
       super();
@@ -24,7 +26,7 @@ class sidebarMenu extends HTMLElement {
     // En resumen, utilizando la palabra clave async antes de una función te permite utilizar await dentro de ella para esperar a que una promesa se resuelva antes de continuar con el código. En este caso, estamos esperando a que la respuesta del fetch se complete antes de convertirla en un objeto JSON y guardarlo en una propiedad del componente.
     async loadData(){
 
-      let url = `http://127.0.0.1:8080/api/admin/menus/display/${this.menu}`
+      let url = `${API_URL}/api/admin/menus/display/${this.menu}`
 
       let response = await fetch( url, {
         headers: {
@@ -243,7 +245,7 @@ class sidebarMenu extends HTMLElement {
 
       subMenu.addEventListener('click', () => {
 
-        let drowpdownElements = this.shadow.querySelectorAll('.drowpdown-element');
+        let drowpdownElement = this.shadow.querySelectorAll('.drowpdown-element');
 
         drowpdownElement.forEach(element => {
           drowpdownElement.querySelector('.drowpdown-element-button').classList.remove('active');

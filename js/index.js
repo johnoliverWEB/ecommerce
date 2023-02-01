@@ -10,6 +10,7 @@ import { renderLogin } from "./login.js";
 import "./pageTitle.js";
 import "./sidebarMenu.js";
 import "./notificationComp.js";
+import "./tableGenerator.js";
 
 // renderCartPlusMinusButton();
 // renderTabs();
