@@ -35,6 +35,9 @@ class TableGenerator extends HTMLElement {
   render() {
     this.shadow.innerHTML = `
     <style>
+    ul{
+      margin: 0;
+    }
     h1, h2, h3, h4, h5, h6, a, p {
       font-family: "Raleway", sans-serif;
       font-weight: 300;

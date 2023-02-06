@@ -12,21 +12,24 @@ class formGenerator extends HTMLElement {
 	}
 
   	async render() {
-
     	this.shadow.innerHTML = `
 			<style>
 			* {
 				box-sizing:border-box;
 			}
+			ul{
+				margin:0;
+				padding: 0;
+			}
 			h1, h2, h3, h4, h5, h6, a, p {
-			font-family: "Raleway", sans-serif;
-			font-weight: 300;
-			color: hsl(28deg, 25%, 49%);
+				font-family: "Raleway", sans-serif;
+				font-weight: 300;
+				color: hsl(28deg, 25%, 49%);
 			}
 			h1, h2, h3, h4 {
-			font-family: "Raleway", sans-serif;
-			font-weight: 600;
-			color: hsl(208deg, 100%, 97%);
+				font-family: "Raleway", sans-serif;
+				font-weight: 600;
+				color: hsl(208deg, 100%, 97%);
 			}
 			h1, h2, h3, h4, h5, h6, p, a {
 			margin: 0;
@@ -99,12 +102,10 @@ class formGenerator extends HTMLElement {
 			}
 			.tab-item.active {
 			background-color: hsl(208deg, 100%, 97%);
-			margin-left: -2rem;
 			}
 			.tabs-contents {
 			background-color: hsl(208deg, 100%, 97%);
 			width: 100%;
-			height: 55vh;
 			}
 			.tab-content {
 			display: none;
@@ -144,32 +145,127 @@ class formGenerator extends HTMLElement {
 			<div class="form">
 				<div class="display-section">
 					<div class="display-section-items">
-						
+						<ul class="tabs-items">
+
+						</ul>
+						<div class="tabs-contents">
+							<form>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		`;
 
-		let form = this.shadow.querySelector(".display-section-items");
     	let formStructure = await this.setFormStructure();
+		let tabsItems = this.shadow.querySelector("ul");
+		let form = this.shadow.querySelector("form");
 
-		let tabsItems = document.createElement("ul");
       	Object.keys(formStructure.tabs).forEach(key => {
 
-			tabsItems.classList.add("tabs-items");
 			let tabItem = document.createElement("li");
 			tabItem.classList.add("tab-item");
-			tabItem.setAttribute("data-tab", key);
 			tabItem.textContent = formStructure.tabs[key].label;
+			tabItem.dataset.tab = key;
 			tabsItems.append(tabItem);
-			form.append(tabsItems);
+
+			let tabContent = document.createElement ("tab-content");
+			tabContent.classList.add("tab-content");
+			tabContent.dataset.tab = key;
+			form.append(tabContent);
+
+			// Buscas la key de formStructure que se encuentre en tabsContent y por cada una
+			Object.keys(formStructure.tabsContent[key].rows).forEach(row => {
+
+				let rowContainer = document.createElement("div");
+				rowContainer.classList.add("row");
+				tabContent.append(rowContainer);
+				
+				Object.values(formStructure.tabsContent[key].rows[row].formElements).forEach(formElement => {
+
+					let formEl = document.createElement ("div");
+					formEl.classList.add("form-element");
+
+					let formElLabel = document.createElement ("div");
+					formElLabel.classList.add("form-element-label");
+
+					let formElInput = document.createElement ("div");
+					formElInput.classList.add("form-element-input");
+					formEl.append(formElLabel, formElInput);
+					rowContainer.append(formEl);
+
+					let label = document.createElement("label");
+					label.textContent = formElement.label;
+
+					// if (formElement.element === "select") {
+					// 	let select = document.createElement("select");
+
+					// } else {
+					// 	let input = document.createElement(formElement.element);
+					// 	input.setAttribute("type", formElement.type);
+					// 	input.setAttribute("maxLength", formElement.maxLength || "");
+					// 	input.setAttribute("placeholder", formElement.placeholder || "");
+					
+					// 	if (formElement.options) {
+					// 		formElement.options.forEach(option => {
+					// 			let opt = document.createElement("option");
+					// 			opt.value = option.value;
+					// 			opt.textContent = option.label;
+					// 			input.append(opt);
+					// 		});
+					// 	}
+					// };
+					
+					if (formElement.options) {
+						formElement.options.forEach(option => {
+							let input = document.createElement("input");
+							input.setAttribute("type", formElement.type);
+							input.setAttribute("name", formElement.name || "");
+							input.setAttribute("value", option.value);
+							let inputLabel = document.createElement("label");
+							inputLabel.textContent = option.label;
+							formElInput.append(input, inputLabel);	
+						});
+						
+					} else {
+						let input = document.createElement(formElement.element);
+						input.setAttribute("type", formElement.type);
+						input.setAttribute("maxLength", formElement.maxLength || "");
+						input.setAttribute("placeholder", formElement.placeholder || "");
+						
+						formElInput.append(input);
+					}
+
+					formElLabel.append(label);
+
+				})
+			});
 		});
 
 		this.shadow.querySelector(".tab-item").classList.add("active");
+		this.shadow.querySelector(".tab-content").classList.add("active");
+
 		this.renderTabs();
   	}
 
   	renderTabs = () => {
+		let tabItems = this.shadow.querySelectorAll('.tab-item');
+		let tabsContents = this.shadow.querySelectorAll (".tab-content");
+		tabItems.forEach(tabItem => {
+			tabItem.addEventListener("click", () => {
+				tabItems.forEach(tabsItem => {
+					tabsItem.classList.remove("active");
+				});
+				tabItem.classList.add("active");
+				tabsContents.forEach(tabContent => {
+					if(tabContent.dataset.tab == tabItem.dataset.tab){
+						tabContent.classList.add ("active");
+					}else{
+						tabContent.classList.remove("active");
+					}
+				});
+			});
+		});
 	}
 
 	setFormStructure = async () => {
@@ -388,7 +484,7 @@ class formGenerator extends HTMLElement {
 							row9: {
 								formElements:{
 									pdf: {
-										label: 'Pdf',
+										label: 'Adjuntar archivo',
 										element: 'input',
 										type: 'file',
 										placeholder: '',
@@ -412,6 +508,15 @@ class formGenerator extends HTMLElement {
 										placeholder: '',
 										required: true
 									}
+								}
+							}
+						}
+					},
+					images: {
+						rows: {
+							row1: {
+								formElements:{
+
 								}
 							}
 						}
