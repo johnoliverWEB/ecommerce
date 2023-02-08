@@ -35,6 +35,9 @@ class TableGenerator extends HTMLElement {
   render() {
     this.shadow.innerHTML = `
     <style>
+    *{
+      box-sizing: border-box;
+    }
     ul{
       margin: 0;
     }
@@ -117,12 +120,17 @@ class TableGenerator extends HTMLElement {
       width: 25%;
       height: 45vh;
     }
+    .list-elements{
+      display: flex;
+      flex-direction: column;
+    
+    }
     .list .list-element {
       background-color: hsl(208deg, 100%, 97%);
       list-style-type: none;
       padding: 2rem;
-      display: flex;
-      width: 100%;
+      width: 100%;  
+      margin-bottom: 1rem;
     }
     .list .list-element ul li .list-element-datas .list-element-data span {
       font-weight: 800;
@@ -133,6 +141,9 @@ class TableGenerator extends HTMLElement {
       justify-content: space-between;
       flex-grow: 1;
       align-items: center;
+      margin-bottom: .5rem;
+      background:hsl(227deg, 37%, 22%);
+      padding: 1rem;
     }
     .list .list-element ul li .buttons {
       display: flex;
