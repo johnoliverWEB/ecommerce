@@ -1,4 +1,5 @@
-import {API_URL} from "../config/config.js"
+import {API_URL} from "../config/config.js";
+import {validateForm} from "./validate.js";
 
 class formGenerator extends HTMLElement {
 
@@ -91,6 +92,9 @@ class formGenerator extends HTMLElement {
 				text-decoration: none;
 				outline-offset: 0;
 			}
+			.div form{
+				height: max-content;
+			}
 			.form {
 				background-color: hsl(227deg, 37%, 22%);
 			}
@@ -115,7 +119,7 @@ class formGenerator extends HTMLElement {
 				background-color: hsl(208deg, 100%, 97%);
 				padding: 2rem;
 				width: 100%;
-				height: 100%;
+				height: 80%;
 			}
 			.tab-panel {
 				display: none;
@@ -189,7 +193,7 @@ class formGenerator extends HTMLElement {
 				background: transparent;
 			}
 			</style>
-			<div class="form">
+			<div class="form-table">
 				<div class="display-section">
 					<div class="display-section-items">
 						<ul class="tabs-items">
@@ -199,6 +203,9 @@ class formGenerator extends HTMLElement {
 							<form>
 
 							</form>
+							<div id="notification"> 
+					
+						  </div>
 						</div>
 					</div>
 				</div>
@@ -213,7 +220,8 @@ class formGenerator extends HTMLElement {
 		let sendFormButton = document.createElement ("button");
 		sendFormButton.classList.add ("form-button-send", "custom-button", "send-form-button");
 		sendFormButton.innerHTML = "Guardar";
-		
+			// Aquí escribirás el código para enviar el formulario
+
       	Object.keys(formStructure.tabs).forEach(key => {
 
 			let tabItem = document.createElement("li");
@@ -481,45 +489,53 @@ class formGenerator extends HTMLElement {
 	}
 
 	renderSubmitButton = () => {
-
 		const sendFormButton = this.shadow.querySelector('.send-form-button');
-			
-		sendFormButton.addEventListener('click', (event) => {
+	
+		if (sendFormButton) {
+			sendFormButton.addEventListener('click', (event) => {
+				event.preventDefault();
+		
+				const form = this.shadow.querySelector('form');
+				const formInputs = form.elements;
 
-			event.preventDefault();
+				if(!validateForm(formInputs)){
+					return;
+				};
+
+				const formData = new FormData(form);
+				const formDataJson = Object.fromEntries(formData.entries());
+				const url = API_URL + this.getAttribute('url');
 		
-			const form = this.shadow.querySelector('form');
-			const formInputs = form.elements;
-		
-			const formData = new FormData(form);
-			const formDataJson = Object.fromEntries(formData.entries());
-			const url = API_URL + this.getAttribute('url');
-		
-			fetch(url, {
+				fetch(url, {
 				headers: {
-					'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken'),
-					'Content-Type': 'application/json'
+					Authorization: 'Bearer ' + sessionStorage.getItem('accessToken'),
+					'Content-Type': 'application/json',
 				},
 				method: 'POST',
-				body: JSON.stringify(formDataJson)
-			})
-			.then((response) => response.json())
-			.then((data) => {
+				body: JSON.stringify(formDataJson),
+				})
+				.then((response) => response.json())
+				.then(() => {
 
-				document.dispatchEvent(
-					new CustomEvent('message', {
-					detail: {
-						text: 'Formulario enviado correctamente',
-						type: 'success',
-					},
-					})
-				);
-			})
-			.catch((error) => {
-			console.log(error);
+					this.render();
+
+					document.dispatchEvent(
+						new CustomEvent('message', {
+							detail: {
+								text: 'Formulario enviado correctamente',
+								type: 'success',
+							},
+						})
+					);
+
+					document.dispatchEvent(new CustomEvent('newData'));
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 			});
-		});
-	}
+		}
+	};
 
 	renderTabs = () => {
 		let tabItems = this.shadow.querySelectorAll('.tab-item');

@@ -117,7 +117,7 @@ class notificationComp extends HTMLElement {
     }
     #notification {
       padding: 1rem;
-      background-color: hsl(22deg, 100%, 72%);
+      background-color: hsl(227deg, 37%, 22%);
       border-bottom: solid hsla(18deg, 73%, 69%, 0.938);
       border-radius: 1rem;
       opacity: 0;

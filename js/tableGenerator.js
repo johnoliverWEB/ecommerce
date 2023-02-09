@@ -14,6 +14,11 @@ class TableGenerator extends HTMLElement {
       this.setAttribute('url', event.detail.url);
       // event.detail era href y tiene que ser url porque es el atributo que figura en sidebarMenu (línea 215)
     }));
+
+    document.addEventListener('newData', event => {
+      this.loadData().then(() => this.render());
+      // Ojo, se queda escuchando el evento newData de formGenerator y despues lo carga y lo renderiza para que se refresque la tabla en pantalla.
+    });
   }
 
   async loadData() {
@@ -30,6 +35,9 @@ class TableGenerator extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue){
     this.loadData().then(() => this.render());
+
+  
+
   }
 
   render() {

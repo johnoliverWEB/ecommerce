@@ -13,6 +13,7 @@ import "./notificationComp.js";
 import "./tableGenerator.js";
 import "./formGenerator.js";
 import "./loginComp.js";
+import "./validate.js";
 
 // renderCartPlusMinusButton();
 // renderTabs();
