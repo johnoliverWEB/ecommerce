@@ -14,6 +14,10 @@ class formGenerator extends HTMLElement {
 		document.addEventListener("newUrl",( event =>{
 			this.setAttribute('url', event.detail.url);
 		}));
+
+		document.addEventListener("showElement",( event =>{
+			this.showElement(event.detail.id);
+		}));
 	}
 
 	attributeChangedCallback(name, oldValue, newValue){
@@ -554,6 +558,35 @@ class formGenerator extends HTMLElement {
 					}
 				});
 			});
+		});
+	}
+
+	showElement(id){
+
+		let url = `${API_URL}${this.getAttribute('url')}/${id}`;
+		
+		fetch(url, {
+			headers: {
+				Authorization: 'Bearer ' + sessionStorage.getItem('accessToken'),
+				'Content-Type': 'application/json',
+			},
+		})
+		.then(response => {
+		if (response.ok) {
+			return response.json();
+		}
+		throw new Error("Error fetching data");
+		})
+		.then(data => {
+			for (let key in data) {
+				const formElInput = this.shadow.querySelector(`input[name=${key}]`);
+				if (formElInput) {
+					formElInput.value = data[key];
+				}
+			}
+		})
+		.catch(error => {
+		console.error(error);
 		});
 	}
 

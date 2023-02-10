@@ -14,6 +14,8 @@ import "./tableGenerator.js";
 import "./formGenerator.js";
 import "./loginComp.js";
 import "./validate.js";
+import "./deleteModal.js";
+
 
 // renderCartPlusMinusButton();
 // renderTabs();
