@@ -6,6 +6,7 @@ class formGenerator extends HTMLElement {
 	constructor() {
 		super();
 		this.shadow = this.attachShadow({ mode: "open" });
+		this.elementId = null;
 	}
 
 	static get observedAttributes() { return ["url"]; }
@@ -16,8 +17,10 @@ class formGenerator extends HTMLElement {
 		}));
 
 		document.addEventListener("showElement",( event =>{
+			this.elementId = event.detail.id;
 			this.showElement(event.detail.id);
 		}));
+
 	}
 
 	attributeChangedCallback(name, oldValue, newValue){
@@ -362,9 +365,8 @@ class formGenerator extends HTMLElement {
 							}
 
 							case 'file': {
-
-								
-									for (let file  in formElement.pdf){
+	
+								for (let file  in formElement.pdf){
 
 										let file = formElement.pdf[file];
 
@@ -493,29 +495,33 @@ class formGenerator extends HTMLElement {
 	}
 
 	renderSubmitButton = () => {
+
 		const sendFormButton = this.shadow.querySelector('.send-form-button');
 	
 		if (sendFormButton) {
+
 			sendFormButton.addEventListener('click', (event) => {
+
 				event.preventDefault();
 		
 				const form = this.shadow.querySelector('form');
 				const formInputs = form.elements;
 
-				if(!validateForm(formInputs)){
-					return;
-				};
+				// if(!validateForm(formInputs)){
+				// 	return;
+				// };
 
 				const formData = new FormData(form);
 				const formDataJson = Object.fromEntries(formData.entries());
-				const url = API_URL + this.getAttribute('url');
-		
+				const url = this.elementId ?  `${API_URL}${this.getAttribute('url')}/${this.elementId}` : `${API_URL}${this.getAttribute('url')}`;
+				let method = this.elementId ? 'PUT':'POST';
+
 				fetch(url, {
 				headers: {
 					Authorization: 'Bearer ' + sessionStorage.getItem('accessToken'),
 					'Content-Type': 'application/json',
 				},
-				method: 'POST',
+				method: method,
 				body: JSON.stringify(formDataJson),
 				})
 				.then((response) => response.json())
@@ -532,7 +538,7 @@ class formGenerator extends HTMLElement {
 						})
 					);
 
-					document.dispatchEvent(new CustomEvent('newData'));
+					document.dispatchEvent(new CustomEvent('refreshTable'));
 				})
 				.catch((error) => {
 					console.log(error);
@@ -562,9 +568,7 @@ class formGenerator extends HTMLElement {
 	}
 
 	showElement(id){
-
 		let url = `${API_URL}${this.getAttribute('url')}/${id}`;
-		
 		fetch(url, {
 			headers: {
 				Authorization: 'Bearer ' + sessionStorage.getItem('accessToken'),
@@ -593,13 +597,9 @@ class formGenerator extends HTMLElement {
 	setFormStructure = async () => {
 
 		let url = this.getAttribute('url');
-
 		switch (url) {
-
 			case '/api/admin/users':
-
 			return {
-
 				tabs:{
 					main: {
 						label: 'Crear usuario'
@@ -653,7 +653,6 @@ class formGenerator extends HTMLElement {
 			};
 
 			case '/api/admin/ejemplos':
-
 			return {
 				tabs:{
 					main: {
@@ -908,6 +907,5 @@ class formGenerator extends HTMLElement {
 		}
 	}
 }
-			
 
 customElements.define("form-generator", formGenerator);

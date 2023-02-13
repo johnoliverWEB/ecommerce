@@ -6,6 +6,9 @@ class TableGenerator extends HTMLElement {
     this.shadow = this.attachShadow({ mode: "open" });
     this.data = [];
     this.editData = [];
+    this.total = [];
+    this.currentPage = [];
+    this.pages = [];
   }
 
   static get observedAttributes() { return ["url"]; }
@@ -14,16 +17,17 @@ class TableGenerator extends HTMLElement {
     document.addEventListener("newUrl",( event =>{
       this.setAttribute('url', event.detail.url);
       // event.detail era href y tiene que ser url porque es el atributo que figura en sidebarMenu (línea 215)
+      
     }));
 
-    document.addEventListener('newData', event => {
+    document.addEventListener('refreshTable', event => {
       this.loadData().then(() => this.render());
       // Ojo, se queda escuchando el evento newData de formGenerator y despues lo carga y lo renderiza para que se refresque la tabla en pantalla.
     });
   }
 
-  async loadData() {
-    let url = `${API_URL}${this.getAttribute('url')}`;
+  async loadData(pagination) {
+    let url = pagination ? `${API_URL}${this.getAttribute('url')}${pagination}` : `${API_URL}${this.getAttribute('url')}`;
     let response = await fetch(url, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken'),
@@ -32,13 +36,14 @@ class TableGenerator extends HTMLElement {
 
     let data = await response.json();
     this.data = data.rows;
+
+    this.total = data.meta.total;
+    this.currentPage = data.meta.currentPage;
+    this.pages = data.meta.pages;
   }
 
   attributeChangedCallback(name, oldValue, newValue){
     this.loadData().then(() => this.render());
-
-  
-
   }
 
   render() {
@@ -187,6 +192,19 @@ class TableGenerator extends HTMLElement {
       width: 30px;
       height: 30px;
     }
+
+    .table-pagination-button{
+      cursor: pointer;
+      margin-right: 1em;
+    }
+
+    .table-pagination-button:hover{
+        color: hsl(19, 100%, 50%);
+    }
+
+    .table-pagination-button.inactive{
+        color: hsl(0, 0%, 69%);
+    }
     </style>
     <div class="list">
       <div class="list-elements">
@@ -196,13 +214,21 @@ class TableGenerator extends HTMLElement {
       </div>
         <div class="list-register-amount">
           <a>
-            3 Registros
+            ${this.total} Registros
           </a>
         </div>
         <div class="list-showing">
           <a>
-            Mostrando la página 1 de 1
+            Mostrando la página ${this.currentPage} de ${this.pages}
           </a>
+        </div>
+        <div class="table-pagination-buttons">
+          <p>
+            <span class="table-pagination-button" id="firstPageUrl">Primera</span>
+            <span class="table-pagination-button" id="previousPageUrl">Anterior</span>
+            <span class="table-pagination-button" id="nextPageUrl">Siguiente</span>
+            <span class="table-pagination-button" id="lastPageUrl">Última</span>
+          </p>
         </div>
       </div>
     </div> 
@@ -240,7 +266,7 @@ class TableGenerator extends HTMLElement {
     });
 
     this.renderButtons();
-
+    this.renderPaginationButtons();
   }
 
   renderButtons = (event) => {
@@ -267,6 +293,32 @@ class TableGenerator extends HTMLElement {
         }));
       });
     });
+  }
+
+  renderPaginationButtons(){
+
+    this.shadow.querySelector("#firstPageUrl").addEventListener("click", () => {
+      this.loadData(`?page=1`).then(() => this.render());
+    });
+
+    this.shadow.querySelector("#previousPageUrl").addEventListener("click", () => {
+      if (this.currentPage > 1) {
+        let page = parseInt(this.currentPage) - 1;
+        this.loadData(`?page=${page}`).then(() => this.render());
+      }
+    });
+    
+    this.shadow.querySelector("#nextPageUrl").addEventListener("click", () => {
+      if (this.currentPage < this.pages) {
+        let page = parseInt(this.currentPage) + 1;
+        this.loadData(`?page=${page}`).then(() => this.render());
+      }
+    });
+
+    this.shadow.querySelector("#lastPageUrl").addEventListener("click", () => {
+      this.loadData(`?page=${this.pages}`).then(() => this.render());
+    });
+
   }
 
   // Instalador de estructura de tablas
@@ -307,6 +359,186 @@ class TableGenerator extends HTMLElement {
           remove: true
         }
       };
+
+      case '/api/admin/sliders':
+        
+      return{ 
+        headers:{
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/emails':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/sales':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/sale-error':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/repayments':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/repayment-details':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/product':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/payment_methods':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/languages':
+        
+      return{ 
+        headers:{
+          email: {
+            label: 'Email',
+          },
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/product-categories':
+        
+      return{ 
+        headers:{
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+      case '/api/admin/product-categories':
+        
+      return{ 
+        headers:{
+          name: {
+            label: 'Nombre',
+          }
+        },
+        buttons: {
+          edit: true,
+          remove: true
+        }
+      };
+
+
     }
   }
 }

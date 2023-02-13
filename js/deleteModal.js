@@ -1,3 +1,5 @@
+import {API_URL} from "../config/config.js";
+
 class deleteModal extends HTMLElement {
 
   constructor() {
@@ -8,23 +10,26 @@ class deleteModal extends HTMLElement {
   }
 
   connectedCallback() {
+
     document.addEventListener('showDeleteModal', (event) => {
       this.setAttribute("id", event.detail.id);
       this.shadow.querySelector('#delete-modal').classList.add('active');
       this.shadow.querySelector('#overlay').classList.add('active');
     });
 
+    document.addEventListener("newUrl",( event =>{
+      this.setAttribute('url', event.detail.url);
+    }));
+
     this.render();
   }
 
   static get observedAttributes() {
-    return ['text'];
+    return ['url'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'text') {
-      this.text = newValue;
-    }
+    this.render();
   }
 
 
@@ -123,9 +128,35 @@ class deleteModal extends HTMLElement {
 
     acceptButton.addEventListener("click", (event) => {
       let id = this.getAttribute("id");
-      let url = this.getAttribute('url');
-      
+      let url = `${API_URL}${this.getAttribute('url')}/${id}`;
 
+      event.preventDefault();
+        
+      fetch(url, {
+      headers: {
+        Authorization: 'Bearer ' + sessionStorage.getItem('accessToken'),
+      },
+      method: 'DELETE',
+      })
+      .then((response) => response.json())
+      .then(() => {
+
+        this.render();
+
+        document.dispatchEvent(
+          new CustomEvent('message', {
+            detail: {
+              text: 'Registro borrado correctamente',
+              type: 'success',
+            },
+          })
+        );
+
+        document.dispatchEvent(new CustomEvent('refreshTable'));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     });
 
     cancelButton.addEventListener("click", (event) => {
