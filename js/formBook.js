@@ -1,6 +1,6 @@
 import {API_URL} from "../config/config.js";
 
-class formGenerator extends HTMLElement {
+class formBook extends HTMLElement {
 
 	constructor() {
 		super();
@@ -293,64 +293,6 @@ class formGenerator extends HTMLElement {
 								continue;
 							}
 
-							case 'checkbox':
-							case 'radio': {
-								const inputContainer = document.createElement ('div');
-								inputContainer.classList.add (`${formElement.type}-container`);
-
-								for (let item  in formElement.options){
-
-									let option = formElement.options[item];
-			
-									const input = document.createElement('input');
-									const inputLabel = document.createElement ('label');
-
-									inputLabel.innerText= option.label;
-									input.id = field;
-									input.type = formElement.type;
-									input.name = field;
-									input.value = option.value || '';
-									input.checked = option.checked || false;
-									input.disabled = option.disabled || false;
-
-									inputContainer.append(inputLabel);
-									inputContainer.append(input);
-								}
-
-								formElInput.append(inputContainer);
-
-								break;
-							}
-
-							case 'range': {
-
-								const rangeContainer = document.createElement('div');
-								rangeContainer.classList.add('range-container');
-
-								const input = document.createElement('input');
-								input.id = field;
-								input.type = formElement.type;
-								input.name = field;
-								input.min = formElement.min || '';
-								input.max = formElement.max || '';
-								input.step = formElement.step || '';
-								input.value = formElement.value || '';
-								rangeContainer.append(input);
-
-								const rangeValue = document.createElement('span');
-								rangeValue.classList.add('range-value');
-								rangeValue.innerText = formElement.value;
-								rangeContainer.append(rangeValue);
-
-								input.addEventListener('input', () => {
-									rangeValue.innerText = input.value;
-								});
-
-								formElInput.append(rangeContainer);
-
-								break;
-							}
-
 							case 'number':
 							case 'date':
 							case 'time':
@@ -372,34 +314,6 @@ class formGenerator extends HTMLElement {
 								formElInput.append(input);
 							
 								break;
-							}
-
-							case 'file': {
-	
-								for (let file  in formElement.pdf){
-
-										let file = formElement.pdf[file];
-
-									if(!this.shadow.querySelector('image-gallery-component')){
-										const imageGallery = document.createElement('image-gallery-component');
-										this.shadow.append(imageGallery);
-									}
-
-									const input = document.createElement('upload-image-button-component');
-									input.id = file;
-									input.setAttribute("name", field);
-									input.setAttribute("languageAlias", "es");
-									input.setAttribute("quantity", formElement.quantity);
-
-									input.accept = formElement.accept || '';
-									input.multiple = formElement.multiple || false;
-									input.required = formElement.required || false;
-									input.dataset.validate = formElement.validate || '';
-
-									formElInput.append(input);
-
-									break;
-								}
 							}
 
 							default: {
@@ -466,32 +380,11 @@ class formGenerator extends HTMLElement {
 						formElInput.append(textarea);
 					}
 
-					if (formElement.element === 'select') {
-		
-						const select = document.createElement('select');
-						select.id = field;
-						select.name = field;
-						select.disabled = formElement.disabled || false;
-						select.required = formElement.required || false;
-						select.multiple = formElement.multiple || false;
-		
-						formElement.options.forEach(option => {
-							const optionElement = document.createElement('option');
-							optionElement.value = option.value;
-							optionElement.innerText = option.label;
-							select.append(optionElement);
-						});
-		
-						formElInput.append(select);
-					}
-
 					rowContainer.append(formEl);
-					
                 };
 				
                 tabPanel.append(rowContainer);
         	})
-
     	});
 
 		formButton.append(sendFormButton);
@@ -654,11 +547,11 @@ class formGenerator extends HTMLElement {
 
 		let url = this.getAttribute('url');
 		switch (url) {
-			case '/api/admin/users':
+			case '/api/admin/books':
 			return {
 				tabs:{
 					main: {
-						label: 'Crear usuario'
+						label: 'Nueva entrada'
 					}
 				},
 				tabsContent: {
@@ -666,8 +559,8 @@ class formGenerator extends HTMLElement {
 						rows:{
 							row1: {
 								formElements:{
-									name: {
-										label: 'Nombre',
+									title: {
+										label: 'Título',
 										element: 'input',
 										maxLength: '20',
 										type: 'text',
@@ -675,268 +568,17 @@ class formGenerator extends HTMLElement {
 										required: true,
 										validate: 'only-letters'
 									},
-									email: {
-										label: 'Email',
+									author: {
+										label: 'Autor',
 										element: 'input',
-										type: 'email',
-										placeholder: '',
-										required: true,
-										validate: 'email'
-									}
-								}
-							},
-							row2: {
-								formElements:{
-									password: {
-										label: 'Contraseña',
-										element: 'input',
-										type: 'password',
-										placeholder: '',
-										required: true
-									},
-									repeatPassword: {
-										label: 'Repita la contraseña',
-										element: 'input',
-										type: 'password',
-										placeholder: '',
-										required: true
-									}
-								}
-							},
-						}
-					}
-				}
-			};
-
-			case '/api/admin/ejemplos':
-			return {
-				tabs:{
-					main: {
-						label: 'Principal',
-					},
-					images: {
-						label: 'Imágenes',
-					}
-				},
-				tabsContent: {
-					main: {
-						rows:{
-							row1: {
-								formElements:{
-									id:{
-										element: 'input',
-										type: 'hidden',
-									},
-									name: {
-										label: 'Nombre',
-										element: 'input',
-										maxLength: '10',
 										type: 'text',
 										placeholder: '',
 										required: true,
 										validate: 'only-letters'
-									},
-									email: {
-										label: 'Email',
-										element: 'input',
-										type: 'email',
-										placeholder: '',
-										required: true,
-										validate: 'email'
 									}
 								}
 							},
 							row2: {
-								formElements:{
-									password: {
-										label: 'Contraseña',
-										element: 'input',
-										type: 'password',
-										placeholder: '',
-										required: true
-									},
-									repeatPassword: {
-										label: 'Repita la contraseña',
-										element: 'input',
-										type: 'password',
-										placeholder: '',
-										required: true
-									}
-								}
-							},
-							row3: {
-								formElements:{
-									permissions: {
-										label: 'Permisos',
-										element: 'input',
-										type: 'checkbox',
-										required: true,
-										options: [
-											{
-												label: 'Crear',
-												value: 'create',
-												checked: true
-											},
-											{
-												label: 'Leer',
-												value: 'read'
-											},
-											{
-												label: 'Actualizar',
-												value: 'update'
-											},
-											{
-												label: 'Eliminar',
-												value: 'delete'
-											}
-										]
-									},
-									sex: {
-										label: 'Sexo',
-										element: 'input',
-										type: 'radio',
-										required: true,
-										options: [
-											{
-												label: 'Masculino',
-												value: "M",
-												checked: true
-											},
-											{
-												label: 'Femenino',
-												value: "F"
-											}
-										],
-									}
-								}
-							},
-							row4: {
-								formElements:{
-									color: {
-										label: 'Color',
-										element: 'input',
-										type: 'color',
-										placeholder: ''
-									},
-									role: {
-										label: 'Rol',
-										element: 'select',
-										required: true,
-										options: [
-											{
-												label: 'Administrador',
-												value: 'admin'
-											},
-											{
-												label: 'Usuario',
-												value: 'user'
-											}
-										]
-									}
-								}
-							},
-							row5: {
-								formElements:{
-									edad: {
-										label: 'Edad',
-										element: 'input',
-										type: 'number',
-										placeholder: '',
-										required: true
-									},
-									telefono: {
-										label: 'Teléfono',
-										element: 'input',
-										type: 'tel',
-										placeholder: '',
-										required: true
-									},
-									url: {
-										label: 'URL',
-										element: 'input',
-										type: 'url',
-										placeholder: '',
-										required: true
-									}
-								}
-							},
-							row6: {
-								formElements:{
-									creationDate: {
-										label: 'Fecha de creación',
-										element: 'input',
-										type: 'date',
-										placeholder: '',
-										required: true,
-										validate: 'date'
-									},
-									creationTime: {
-										label: 'Hora de creación',
-										element: 'input',
-										type: 'time',
-										placeholder: '',
-										required: true
-									}
-								}
-							},
-							row7: {
-								formElements:{
-									reservationWeek: {
-										label: 'Semana de reserva',
-										element: 'input',
-										type: 'week',
-										placeholder: '',
-										required: true
-									},
-									reservationMonth: {
-										label: 'Mes de reserva',
-										element: 'input',
-										type: 'month',
-										placeholder: '',
-										required: true
-									},
-									reservationDateTime: {
-										label: 'Fecha y hora',
-										element: 'input',
-										type: 'datetime-local',
-										placeholder: '',
-										required: true
-									}
-								}
-							},
-							row8: {
-								formElements:{
-									capital: {
-										label: 'Capital',
-										element: 'input',
-										type: 'range',
-										min: 0,
-										max: 100,
-										step: 1,
-										value: 50,
-										placeholder: ''
-									},
-								}
-							},
-							row9: {
-								formElements:{
-									pdf: {
-										label: 'Adjuntar archivo',
-										element: 'input',
-										type: 'file',
-										placeholder: '',
-										required: true
-									},
-									search: {
-										label: 'Buscar',
-										element: 'input',
-										type: 'search',
-										placeholder: '',
-										required: true
-									}
-								}
-							},
-							row10: {
 								formElements:{
 									description: {
 										label: 'Descripción',
@@ -946,22 +588,42 @@ class formGenerator extends HTMLElement {
 										required: true
 									}
 								}
-							}
-						}
-					},
-					images: {
-						rows: {
-							row1: {
+							},
+							row2: {
 								formElements:{
+									isbn: {
+										label: 'ISBN',
+										element: 'input',
+										type: 'number',
+										placeholder: '',
+										required: true
+									},
+									pageCount: {
+										label: 'Número de páginas',
+										element: 'input',
+										type: 'number',
+										placeholder: '',
+										required: true
+									},
+									publishedDate: {
+										label: 'Fecha de publicación',
+										element: 'input',
+										type: 'date',
+										placeholder: '',
+										required: true,
+										validate: 'date'
+									},
 
 								}
 							}
+
 						}
 					}
 				}
-			}
+			};
+						
 		}
 	}
 }
 
-customElements.define("form-generator", formGenerator);
+customElements.define("form-book", formBook);

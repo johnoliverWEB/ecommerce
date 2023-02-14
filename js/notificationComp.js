@@ -28,7 +28,19 @@ class notificationComp extends HTMLElement {
       this.setAttribute("type", event.detail.type);
       // actualizas sus atributos con setAttribute
       this.render();
+    });
       // Se llama al método render para que actualice la vista del componente
+    document.addEventListener("notification", (event) => {
+      if (event.detail.type === "error") {
+        this.text = event.detail.text;
+        this.type = event.detail.type;
+        this.setAttribute("text", event.detail.text);
+        this.setAttribute("type", event.detail.type);
+        this.shadow.querySelector("#notification").classList.add("active", "error");
+        setTimeout(() => {
+          this.shadow.querySelector("#notification").classList.remove("active", "error");
+        }, 5000);
+      }
     });
   }
 
@@ -141,13 +153,19 @@ class notificationComp extends HTMLElement {
           <p>${this.text}</p>
     </div>
     `;
-  
     let notification = this.shadow.getElementById("notification");
     notification.classList.add("active");
 
     setTimeout(() => {
         notification.classList.remove("active");
     }, 5000);
+
+    if (this.type === "error") {
+      this.shadow.querySelector("#notification").classList.add("active", "error");
+      setTimeout(() => {
+        this.shadow.querySelector("#notification").classList.remove("active", "error");
+      }, 5000);
+    }
   }
 }
 
