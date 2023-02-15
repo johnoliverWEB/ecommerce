@@ -639,10 +639,14 @@ class formGenerator extends HTMLElement {
 		})
 		.then(data => {
 			for (let key in data) {
-				const formElInput = this.shadow.querySelector(`input[name=${key}]`);
-				if (formElInput) {
-					formElInput.value = data[key];
+			  const formEl = this.shadow.querySelector(`[name=${key}]`);
+			  if (formEl) {
+				if (formEl.tagName.toLowerCase() === 'text') {
+				  formEl.innerHTML = data[key];
+				} else {
+				  formEl.value = data[key];
 				}
+			  }
 			}
 		})
 		.catch(error => {
@@ -703,6 +707,81 @@ class formGenerator extends HTMLElement {
 									}
 								}
 							},
+						}
+					}
+				}
+			};
+
+			case '/api/admin/books':
+			return {
+				tabs:{
+					main: {
+						label: 'Nueva entrada'
+					}
+				},
+				tabsContent: {
+					main: {
+						rows:{
+							row1: {
+								formElements:{
+									title: {
+										label: 'Título',
+										element: 'input',
+										maxLength: '40',
+										type: 'text',
+										placeholder: '',
+										required: true,
+										validate: 'only-letters'
+									},
+									author: {
+										label: 'Autor',
+										element: 'input',
+										type: 'text',
+										placeholder: '',
+										required: true,
+										validate: 'only-letters'
+									}
+								}
+							},
+							row2: {
+								formElements:{
+									description: {
+										label: 'Descripción',
+										element: 'textarea',
+										maxLength: 200,
+										placeholder: '',
+										required: true
+									}
+								}
+							},
+							row3: {
+								formElements:{
+									isbn: {
+										label: 'ISBN',
+										element: 'input',
+										type: 'text',
+										placeholder: '',
+										required: true,
+									},
+									pageCount: {
+										label: 'Número de páginas',
+										element: 'input',
+										type: 'text',
+										placeholder: '',
+										required: true
+									},
+									publishedDate: {
+										label: 'Fecha de publicación',
+										element: 'input',
+										type: 'date',
+										placeholder: '',
+										required: true,
+										validate: 'date'
+									},
+
+								}
+							}
+
 						}
 					}
 				}

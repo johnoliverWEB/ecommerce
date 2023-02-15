@@ -408,75 +408,7 @@ class TableGenerator extends HTMLElement {
         }
       };
 
-      case '/api/admin/sale-error':
-        
-      return{ 
-        headers:{
-          email: {
-            label: 'Email',
-          },
-          name: {
-            label: 'Nombre',
-          }
-        },
-        buttons: {
-          edit: true,
-          remove: true
-        }
-      };
-
-      case '/api/admin/repayments':
-        
-      return{ 
-        headers:{
-          email: {
-            label: 'Email',
-          },
-          name: {
-            label: 'Nombre',
-          }
-        },
-        buttons: {
-          edit: true,
-          remove: true
-        }
-      };
-
-      case '/api/admin/repayment-details':
-        
-      return{ 
-        headers:{
-          email: {
-            label: 'Email',
-          },
-          name: {
-            label: 'Nombre',
-          }
-        },
-        buttons: {
-          edit: true,
-          remove: true
-        }
-      };
-
       case '/api/admin/product':
-        
-      return{ 
-        headers:{
-          email: {
-            label: 'Email',
-          },
-          name: {
-            label: 'Nombre',
-          }
-        },
-        buttons: {
-          edit: true,
-          remove: true
-        }
-      };
-
-      case '/api/admin/payment_methods':
         
       return{ 
         headers:{
@@ -510,12 +442,15 @@ class TableGenerator extends HTMLElement {
         }
       };
 
-      case '/api/admin/product-categories':
-        
-      return{ 
+      case '/api/admin/books':
+
+      return {
         headers:{
-          name: {
-            label: 'Nombre',
+          title: {
+            label: 'Título',
+          },
+          author: {
+            label: 'Autor',
           }
         },
         buttons: {
@@ -523,21 +458,6 @@ class TableGenerator extends HTMLElement {
           remove: true
         }
       };
-
-      case '/api/admin/product-categories':
-        
-      return{ 
-        headers:{
-          name: {
-            label: 'Nombre',
-          }
-        },
-        buttons: {
-          edit: true,
-          remove: true
-        }
-      };
-
 
     }
   }
