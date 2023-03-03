@@ -15,6 +15,13 @@ import "./formGenerator.js";
 import "./loginComp.js";
 import "./validate.js";
 import "./deleteModal.js";
+import "./headerComp.js";
+import "./sliderComp.js";
+import "./featuredComp.js";
+import "./detailsComp.js";
+import "./teamComp.js";
+import "./contactComp.js";
+import "./footerComp.js";
 
 
 // renderCartPlusMinusButton();
