@@ -10,7 +10,7 @@ class teamComp extends HTMLElement {
 
     connectedCallback() {
 
-      this.loadData().then(() => this.render());
+      this.render();
     
       };
   
@@ -35,102 +35,300 @@ class teamComp extends HTMLElement {
    
       this.shadow.innerHTML = `
         <style>
-        h1, h2, h3, h4, h5, h6, a, p {
-          font-family: "Raleway", sans-serif;
-          font-weight: 300;
-          color: hsl(28deg, 25%, 49%);
-        }
-        h1, h2, h3, h4 {
-          font-family: "Raleway", sans-serif;
-          font-weight: 600;
-          color: hsl(208deg, 100%, 97%);
-        }
-        h1, h2, h3, h4, h5, h6, p, a {
-          margin: 0;
-          font-size: 2rem;
-          text-decoration: none;
-        }
-        h5, h6 {
-          font-family: "Raleway", sans-serif;
-        }
-        a, p, span, label, li {
-          font-family: "Raleway", sans-serif;
-          color: hsl(0deg, 0%, 63%);
-          font-weight: 300;
-          font-size: 1.5rem;
-        }
-        input, select, textarea {
-          color: hsl(0deg, 0%, 0%);
-          font-family: "Raleway", sans-serif;
-          font-size: 1.5rem;
-        }
-        td, th {
-          font-family: "Raleway", sans-serif;
-          color: hsl(0deg, 0%, 100%);
-          font-size: 2rem;
-        }
-        h1 {
-          font-family: "Raleway", sans-serif;
-          font-size: 2.5rem;
-          font-weight: 300;
-          text-decoration: none;
-        }
-        h2 {
-          font-size: 2rem;
-          font-weight: 300;
-          text-decoration: none;
-        }
-        h4 {
-          font-weight: 600;
-          text-decoration: none;
-        }
-        a {
-          -webkit-transition: 300ms;
-          -moz-transition: 300ms;
-          -o-transition: 300ms;
-          font-weight: 600;
-          text-decoration: none;
-          transition: 300ms;
-        }
-        a:hover, a:focus {
-          outline: none;
-          text-decoration: none;
-          outline-offset: 0;
-        }
         .team{
+          padding-top: 2%;
+          background: hsl(202, 44%, 96%);
+          height: 80vh;
+        }
+
+        .team-title{
 
         }
-        .team-title{
+
+        .team-title h2{
+          font-family: "Raleway", sans-serif;
+          font-weight: 800;
+          text-decoration: none;
+          font-size: 3rem;
+          color: hsl(173, 9%, 20%);
+          text-align: center;
 
         }
         .team-subtitle{
 
         }
-        .team-members{
 
+        .team-subtitle h3{
+          font-family: "Raleway", sans-serif;
+          font-weight: 300;
+          text-decoration: none;
+          font-size: 1.5rem;
+          color: hsl(173, 6%, 30%);
+          text-align: center;
+
+        }
+
+        .line{
+          display: block;
+          background:  hsl(0, 0%, 82%);
+          margin: 0 auto;
+          width: 82px;
+          height: 6px;
+        }
+
+        .team-members{
+          padding-top: 3rem;
+          display: flex;
+          justify-content: space-between;
+          margin: 2rem auto;
+          width: 80%;
         }
         .team-member{
+ 
 
         }
+
         .team-member-image{
+          position: relative;
 
         }
+
         .team-member-name{
 
         }
+
+        .team-member-name h5{
+          font-family: "Raleway", sans-serif;
+          font-weight: 800;
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: hsl(173, 6%, 30%);
+          text-align: center;
+          margin: 1rem;;
+
+        }
+
         .team-member-position{
 
         }
+
+        .team-member-position p{
+          font-family: "Raleway", sans-serif;
+          font-weight: 300;
+          text-decoration: none;
+          font-size: 1.1rem;
+          color: hsl(173, 6%, 30%);
+          text-align: center;
+          margin: 0;
+
+        }
+
+        .team-member-social-networks{
+          z-index: 1001;
+          margin-left: 13rem;
+          margin-top: 1.5rem;
+          position: absolute;
+        }
+
+        .burger-menu {
+
+        }
+        
+        .burger-menu .menu-check {
+          display: none;
+        }
+      
+        .burger-menu .menu-open {
+          border: 2px solid hsl(0, 0%, 40%);
+          padding: 0.5rem 1.1rem;;
+          border-radius: 100%;
+          position: relative;
+          background: hsl(0, 0%, 40%);
+          box-shadow: 1px 1px 3px;
+          cursor: pointer;
+          z-index: 1001;
+
+        }
+        
+        .burger-menu .menu-open span {
+          width: 1.5rem;
+          height: 0.2rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -1.5px;
+          margin-left: -12px;
+          background-color: #fff;
+          font-weight: bold;
+          opacity: 1;
+          transition: 0.3s;
+        }
+        .burger-menu .menu-open span.burger1 {
+          transform: translate3d(0px, -10px, 0px);
+        }
+        .burger-menu .menu-open span.burger2 {
+          transform: translate3d(0px, 0px, 0px);
+          transition: 0.1s;
+        }
+        .burger-menu .menu-open span.burger3 {
+          transform: translate3d(0px, 10px, 0px);
+        }
+        .burger-menu .menu-check:checked + .menu-open {
+          background: #fff;
+          border: 0;
+        }
+        .burger-menu .menu-check:checked + .menu-open span {
+          background-color: #299309;
+        }
+        .burger-menu .menu-check:checked + .menu-open span.burger1 {
+          transform: translate3d(0px, -10px, 0px) rotate(-45deg);
+          width: 30px;
+        }
+        .burger-menu .menu-check:checked + .menu-open span.burger2 {
+          opacity: 0;
+        }
+        .burger-menu .menu-check:checked + .menu-open span.burger3 {
+          transform: translate3d(0px, 10px, 0px) rotate(45deg);
+          width: 30px;
+        }
+        .burger-menu .menu-options {
+          background-color: #299309;
+          position: absolute;
+          width: 0;
+          top: 0;
+          left: 0;
+          padding: 80px 0px 50px;
+          opacity: 0;
+          transition: 0.3s;
+        }
+        
+        .burger-menu .menu-options li {
+          color: #fff;
+          text-align: center;
+          list-style: none;
+          display: block;
+          font-weight: normal;
+        }
+        .burger-menu .menu-options li a {
+          text-decoration: none;
+          color: #fff;
+          line-height: 4em;
+          display: block;
+          transition: 0.5s;
+        }
+        .burger-menu .menu-options li a:hover {
+          background: #65b74d;
+        }
+        .burger-menu .menu-options li.search {
+          margin-bottom: 1em;
+        }
+        .burger-menu .menu-options li.search .search-box {
+          width: 300px;
+          height: 35px;
+          font-size: 1em;
+          color: #299309;
+          padding: 0 15px;
+          font-weight: lighter;
+        }
+        .burger-menu .menu-check:checked ~ .menu-options {
+          width: 100%;
+          opacity: 1;
+        }
+
+
         </style>
         <div class="team">
-          <div class="team-title"><h2></h2></div>
-          <div class="team-subtitle"><h3></h3></div>
+          <div class="team-title"><h2>MEET THE TEAM</h2></div>
+          <div class="team-subtitle"><h3>We are a small group of inverntors, hackers and designers from the differrent parts of the world on a mission.</h3></div>
+          <div class="line"></div>
           <div class="team-members">
             <div class="team-member">
-              <div class="team-member-social-networks"></div>
-              <div class="team-member-image"></div>
-              <div class="team-member-name"></div>
-              <div class="team-member-position"></div>
+              <div class="team-member-social-networks">
+                <nav class="burger-menu">
+                  <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
+                  <label class="menu-open" for="menu-check">
+                    <span class="burger1"></span>
+                    <span class="burger2"></span>
+                    <span class="burger3"></span>
+                  </label>
+
+                  <ul class="menu-options">
+                    <li><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 6</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="team-member-image"><img src="imagenes/TEAM/team-1.jpg" alt="team-img"></div>
+              <div class="team-member-name"><h5>Gary Elliot</h5></div>
+              <div class="team-member-position"><p>Co-Founder and CEO</p></div>
+            </div>
+            <div class="team-member">
+              <div class="team-member-social-networks">
+                <nav class="burger-menu">
+                    <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
+                    <label class="menu-open" for="menu-check">
+                      <span class="burger1"></span>
+                      <span class="burger2"></span>
+                      <span class="burger3"></span>
+                    </label>
+
+                    <ul class="menu-options">
+                      <li><a href="#">Menu 1</a></li>
+                      <li><a href="#">Menu 2</a></li>
+                      <li><a href="#">Menu 3</a></li>
+                      <li><a href="#">Menu 6</a></li>
+                    </ul>
+                  </nav>
+              </div>
+              <div class="team-member-image"><img src="imagenes/TEAM/team-2.jpg" alt="team-img"></div>
+              <div class="team-member-name"><h5>Jeffrey Allen</h5></div>
+              <div class="team-member-position"><p>Co-Founder and CTO</p></div>
+            </div>
+            <div class="team-member">
+              <div class="team-member-social-networks">
+                <nav class="burger-menu">
+                  <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
+                  <label class="menu-open" for="menu-check">
+                    <span class="burger1"></span>
+                    <span class="burger2"></span>
+                    <span class="burger3"></span>
+                  </label>
+
+                  <ul class="menu-options">
+                    <li><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 6</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="team-member-image"><img src="imagenes/TEAM/team-3.jpg" alt="team-img"></div>
+              <div class="team-member-name"><h5>Sara Mendez</h5></div>
+              <div class="team-member-position"><p>Lead Developer, Hacker</p></div>
+            </div>
+            <div class="team-member">
+              <div class="team-member-social-networks">
+                <nav class="burger-menu">
+                    <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
+                    <label class="menu-open" for="menu-check">
+                      <span class="burger1"></span>
+                      <span class="burger2"></span>
+                      <span class="burger3"></span>
+                    </label>
+
+                    <ul class="menu-options">
+                      <li><a href="#">Menu 1</a></li>
+                      <li><a href="#">Menu 2</a></li>
+                      <li><a href="#">Menu 3</a></li>
+                      <li><a href="#">Menu 6</a></li>
+                    </ul>
+                </nav>
+              </div>
+              <div class="team-member-image"><img src="imagenes/TEAM/team-4.jpg" alt="team-img"></div>
+              <div class="team-member-name"><h5>Alberto Castro</h5></div>
+              <div class="team-member-position"><p>3D Designer & Prototyper</p></div>
             </div>
           </div>
         </div>
