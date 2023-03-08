@@ -9,6 +9,7 @@ html {
 body {
   margin: 0;
   background-image: linear-gradient(-225deg, hsl(42deg, 100%, 81%) 0%, hsl(24deg, 74%, 74%) 48%, hsl(27deg, 68%, 71%) 100%);
+  color:hsl(207, 100%, 82%)
 }
 
 main {

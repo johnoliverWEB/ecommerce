@@ -104,7 +104,7 @@ class teamComp extends HTMLElement {
           font-size: 1.2rem;
           color: hsl(173, 6%, 30%);
           text-align: center;
-          margin: 1rem;;
+          margin: 1rem;
 
         }
 
