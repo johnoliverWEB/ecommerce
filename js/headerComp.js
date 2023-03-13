@@ -72,7 +72,7 @@ class headerComp extends HTMLElement {
           margin: 0;
           width: 100%; 
         }
-        li{
+        a{
           list-style: none;
           font-family: "Raleway", sans-serif;
           font-size: 1rem;
@@ -103,11 +103,11 @@ class headerComp extends HTMLElement {
             </div>
             <div class="header-navbar">
               <ul>
-                <li>HOME</li>
-                <li>FEATURED</li>
-                <li>DETAILS</li>
-                <li>TEAM</li>
-                <li>CONTACT</li>
+                <li><a href="">HOME</a></li>
+                <li><a href="">FEATURED</a></li>
+                <li><a href="">DETAILS</a></li>
+                <li><a href="">TEAM</a></li>
+                <li><a href="">CONTACT</a></li>
               </ul>
             </div>
             <div class="header-button">

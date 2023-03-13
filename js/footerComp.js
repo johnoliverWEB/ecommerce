@@ -76,10 +76,11 @@ class footerComp extends HTMLElement {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding-top: 1rem;
+          padding-top: 2rem;
+          margin-bottom:2rem;
         }
 
-        .footer-navbar-link {
+        .footer-navbar-link a{
           font-family: "Raleway", sans-serif;
           font-weight: 400;
           text-decoration: none;
