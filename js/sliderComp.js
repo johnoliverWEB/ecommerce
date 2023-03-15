@@ -21,7 +21,7 @@ class sliderComp extends HTMLElement {
 
         .slider {
           height: 90vh;
-          max-height: 90vh;
+          max-height: 100vh;
           margin-bottom: 5rem;
           position: relative;
         }

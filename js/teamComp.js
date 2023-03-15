@@ -81,7 +81,7 @@ class teamComp extends HTMLElement {
           display: flex;
           justify-content: space-between;
           margin: 2rem auto;
-          width: 80%;
+          width: 70%;
         }
         .team-member{
  
@@ -127,46 +127,111 @@ class teamComp extends HTMLElement {
         }
 
         .burger-menu {
+          background: grey;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 4em;
+          margin: 0 auto;
 
         }
-        
-        .burger-menu .menu-check {
-          display: none;
+
+        .burger-menu active{
+          background: hsl(0, 0%, 20%);
+          width: 2rem;
+          height: 10rem;
+          border-radius: 4em;
+          margin: 0 auto;
+
         }
       
-        .burger-menu .menu-open {
-          border: 2px solid hsl(0, 0%, 40%);
-          padding: 0.5rem 1.1rem;;
-          border-radius: 100%;
-          position: relative;
-          background: hsl(0, 0%, 40%);
-          box-shadow: 1px 1px 3px;
-          cursor: pointer;
-          z-index: 1001;
-        }
-        .burger-menu .menu-open span {
+        .menu-burguer{
           width: 1rem;
+          height: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          cursor: pointer;
+          padding-top: 0.5rem;
+          margin-left: 0.5rem;
+        }
+
+        .menu-line {
           height: 0.2rem;
-          position: absolute;
-          top: 50%;
-          left: 60%;
-          margin-top: -1.5px;
-          margin-left: -12px;
           background-color: #fff;
-          font-weight: bold;
-          opacity: 1;
-          transition: 0.3s;
+          border-radius: 3px;
+          transition: all 250ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
         }
-        .burger-menu .menu-open span.burger1 {
-          transform: translate3d(0px, -10px, 0px);
+        
+        .menu-line:first-child {
+          animation: firstLinetoClose 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);
         }
-        .burger-menu .menu-open span.burger2 {
-          transform: translate3d(0px, 0px, 0px);
-          transition: 0.1s;
+        
+        .open .menu-line:first-child {
+          animation: firstLinetoOpen 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);
+          animation-fill-mode: forwards;
         }
-        .burger-menu .menu-open span.burger3 {
-          transform: translate3d(0px, 10px, 0px);
+        
+        @keyframes firstLinetoOpen {
+          0%   {
+            transform: translateY(0);
+          }
+        
+          50% { 
+            transform: translateY(12px);
+          }
+        
+          100% {
+            transform: translateY(17px) rotate(45deg);
+          }
         }
+        
+        @keyframes firstLinetoClose {
+          0%   {
+            transform: translateY(17px) rotate(0);
+          }
+        
+          100% {
+            transform: translateY(0);
+          }
+        }
+        
+        .open .menu-line:nth-child(2){
+          opacity: 0;
+        }
+        
+        .menu-line:last-child {
+          animation: lastLinetoClose 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);  
+        }
+        
+        .open .menu-line:last-child {
+          animation: lastLinetoOpen 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);
+          animation-fill-mode: forwards;
+        }
+        
+        @keyframes lastLinetoOpen {
+          0%   {
+            transform: translateY(0);
+          }
+        
+          50% {
+            transform: translateY(-12px);
+          }
+        
+          100% {
+            transform: translateY(-17px) rotate(-45deg);
+          }
+        }
+        
+        @keyframes lastLinetoClose {
+          0%   {
+            transform: translateY(-17px);
+          }
+        
+          100% {
+            transform: translateY(0);
+          }
+        }.
+
         .burger-menu .menu-check:checked + .menu-open {
           background-color: hsl(0, 0%, 18%);
           border: 0;
@@ -175,27 +240,26 @@ class teamComp extends HTMLElement {
           background-color: hsl(0, 0%, 18%);
         }
         .burger-menu .menu-options {
+          z-index:1001;
           background-color: hsl(0, 0%, 18%);
           position: absolute;
-          width: 0;
           top: 0;
           left: 0;
           padding: 20px 0px 10px;
           opacity: 0;
           transition: 0.3s;
           list-style: none;
-          height: 13vh;
+          height: 10vh;
           border-radius: 0 0 2rem 2rem;
         }
         .burger-menu .menu-check:checked ~ .menu-options {
           width: 100%;
           opacity: 1;
-       
         }
-        svg{
-          fill: grey;
-          width: 70%;
-
+        .menu-options a{
+          fill: white;
+          width: 40%;
+          margin-left: 0.8rem;
         }
 
         </style>
@@ -207,12 +271,11 @@ class teamComp extends HTMLElement {
             <div class="team-member">
               <div class="team-member-social-networks">
                 <nav class="burger-menu">
-                  <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
-                  <label class="menu-open" for="menu-check">
-                    <span class="burger1"></span>
-                    <span class="burger2"></span>
-                    <span class="burger3"></span>
-                  </label>
+                  <div class="menu-burguer">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                  </div>
                   <ul class="menu-options">
                     <li>
                       <a href="https://www.facebook.com/">
@@ -244,12 +307,11 @@ class teamComp extends HTMLElement {
             <div class="team-member">
               <div class="team-member-social-networks">
                 <nav class="burger-menu">
-                  <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
-                    <label class="menu-open" for="menu-check">
-                      <span class="burger1"></span>
-                      <span class="burger2"></span>
-                      <span class="burger3"></span>
-                    </label>
+                  <div class="menu-burguer">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                  </div>
                   <ul class="menu-options">
                     <li>
                       <a href="https://www.facebook.com/">
@@ -281,12 +343,11 @@ class teamComp extends HTMLElement {
             <div class="team-member">
               <div class="team-member-social-networks">
                 <nav class="burger-menu">
-                  <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
-                    <label class="menu-open" for="menu-check">
-                      <span class="burger1"></span>
-                      <span class="burger2"></span>
-                      <span class="burger3"></span>
-                    </label>
+                  <div class="menu-burguer">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                  </div>
                   <ul class="menu-options">
                     <li>
                       <a href="https://www.facebook.com/">
@@ -318,12 +379,11 @@ class teamComp extends HTMLElement {
             <div class="team-member">
               <div class="team-member-social-networks">
                 <nav class="burger-menu">
-                  <input class="menu-check" type="checkbox" name="menu-check" value="" id="menu-check">
-                    <label class="menu-open" for="menu-check">
-                      <span class="burger1"></span>
-                      <span class="burger2"></span>
-                      <span class="burger3"></span>
-                    </label>
+                  <div class="menu-burguer">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                  </div>
                   <ul class="menu-options">
                     <li>
                       <a href="https://www.facebook.com/">
@@ -357,6 +417,17 @@ class teamComp extends HTMLElement {
     	`;
 
     }
+
+
+    // var iconMenu = document.querySelector('.menu-burguer');
+
+    // iconMenu.addEventListener('click', function() {
+    //   if (iconMenu.classList.contains('open')) {
+    //     iconMenu.classList.remove('open');
+    //   } else {
+    //     iconMenu.classList.add('open');
+    //   }
+    // }, false);
 
   disconnectedCallback() {
     

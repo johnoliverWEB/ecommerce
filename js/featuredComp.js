@@ -20,10 +20,11 @@ class featuredComp extends HTMLElement {
       .featured{
         padding-top: 7%;
         background: hsl(202, 44%, 96%);
-        height: 70vh;
+        height: 80vh;
       }
 
       .featured .featured-title{
+        
 
       }
 
@@ -37,6 +38,7 @@ class featuredComp extends HTMLElement {
       }
 
       .featured .featured-subtitle{
+        
     
       }
 
@@ -47,12 +49,13 @@ class featuredComp extends HTMLElement {
         font-size: 1.5rem;
         color: hsl(173, 6%, 30%);
         text-align: center;
+        margin: 0 15rem;
       }
 
       .line{
         display: block;
         background:  hsl(0, 0%, 82%);
-        margin: 0 auto;
+        margin: 2rem auto;
         width: 82px;
         height: 6px;
       }
