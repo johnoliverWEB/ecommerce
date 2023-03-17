@@ -22,6 +22,7 @@ import "./detailsComp.js";
 import "./teamComp.js";
 import "./contactComp.js";
 import "./footerComp.js";
+import "./FaqsComp.js";
 
 
 // renderCartPlusMinusButton();

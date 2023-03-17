@@ -39,7 +39,7 @@ class detailsComp extends HTMLElement {
         .details{
           padding-top: 2%;
           background: hsl(200, 100%, 99%);
-          height: 70vh;
+          height: 90vh;
           display: flex;
           justify-content: space-between;
           align-items: center;

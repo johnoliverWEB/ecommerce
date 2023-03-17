@@ -20,7 +20,7 @@ class featuredComp extends HTMLElement {
       .featured{
         padding-top: 7%;
         background: hsl(202, 44%, 96%);
-        height: 80vh;
+        height: 90vh;
       }
 
       .featured .featured-title{
