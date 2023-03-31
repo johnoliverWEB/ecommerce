@@ -19,6 +19,10 @@
       <main>
         <slider-comp title ="slider" name="slider"></slider-comp>
 
+        <pop-modal title="modal" name="modal">
+          <product-comp slot="modal-content"></product-comp>
+        </pop-modal>
+
         <featured-comp title="featured" name="featured"></featured-comp>
 
         <faqs-comp title="faqs" name="faqs"></faqs-comp>
@@ -27,7 +31,9 @@
 
         <team-comp title="team" name="team"></team-comp>
 
-        <contact-comp title="contact" name="contact"></contact-comp>
+        <contact-comp title="contact" name="contact">
+
+        </contact-comp>
       </main>
       <footer-comp title="footer" name="footer"></footer-comp>
       <script type="module" src="js/index.js"></script>

@@ -1,16 +1,17 @@
 import {API_URL} from "../config/config.js"
 
+
 class sliderComp extends HTMLElement {
     constructor() {
       super();
-      this.shadow = this.attachShadow({ mode: 'open' });
-      // this.menu = this.getAttribute('menu');
-      // this.menuItems = [];
+      this.shadow = this.attachShadow({ mode: 'open' })
+      this.modalButton = this.getAttribute('button')
+      this.modalButtons = [];
     }
     
     connectedCallback() {
 
-     this.render();
+      this.render();
      
     };
 
@@ -96,15 +97,23 @@ class sliderComp extends HTMLElement {
           </div>
           <div class="slider-title"><h2>The future of tech is here</h2></div>
           <div class="slider-subtitle"><h3>Holisticly incentivize revolutionary collaboration and idea sharing before cost effective users. Actual focused services before highly efficient human capital.</h3></div>
-          <div class="slider-button">
+          <div class="slider-button" id="slider-button">
             <button>BUY WITH PAYPAL</button>
           </div>
         </div>
     	`;
+
+      const sliderButton = this.shadow.querySelector(".slider-button");
+      // const modal = this.shadow.querySelector('.modal');
+
+      // Añadimos el evento de click al botón del modal
+      sliderButton.addEventListener('click', () => {
+        document.dispatchEvent(new CustomEvent('openModal'));
+      });
     }
-   
+
     disconnectedCallback() {
-      	
+
     }
 }
 customElements.define('slider-comp', sliderComp);

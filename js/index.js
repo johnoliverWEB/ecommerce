@@ -23,8 +23,10 @@ import "./teamComp.js";
 import "./contactComp.js";
 import "./footerComp.js";
 import "./FaqsComp.js";
+import "./modalComp.js";
+import "./productComp.js";
 
-
+// El orden es indistinto siempre que algo no dependa de algo. Si algo llama a otro algo, primero tienes que cargar al que genera dependencia al otro.
 // renderCartPlusMinusButton();
 // renderTabs();
 // renderCounter();
